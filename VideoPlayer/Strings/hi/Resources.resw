@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="addFolder_str" xml:space="preserve">
+    <value>फ़ोल्डर जोड़ें</value>
+  </data>
+  <data name="videoFolder_str" xml:space="preserve">
+    <value>वीडियो सूची को ताज़ा करें</value>
+  </data>
+  <data name="wait_content" xml:space="preserve">
+    <value>कृपया लोडिंग पूर्ण होने की प्रतीक्षा करें</value>
+  </data>
+  <data name="bin_item.Text" xml:space="preserve">
+    <value>रीसायकल बिन में रखो</value>
+  </data>
+  <data name="cancel_menuItem.Text" xml:space="preserve">
+    <value>रद्द</value>
+  </data>
+  <data name="dark_memuItem.Text" xml:space="preserve">
+    <value>अंधेरा</value>
+  </data>
+  <data name="deleteLocal_menuItem.Text" xml:space="preserve">
+    <value>स्थानीय से निकालें</value>
+  </data>
+  <data name="delete_menuItem.Text" xml:space="preserve">
+    <value>सूची से निकालें</value>
+  </data>
+  <data name="directly_item.Text" xml:space="preserve">
+    <value>स्थायी विलोपन</value>
+  </data>
+  <data name="light_menuItem.Text" xml:space="preserve">
+    <value>उज्ज्वल</value>
+  </data>
+  <data name="pause_menuItem.Text" xml:space="preserve">
+    <value>ठहराव</value>
+  </data>
+  <data name="play_menuItem.Text" xml:space="preserve">
+    <value>प्रसारण</value>
+  </data>
+  <data name="theme_menuItem.Text" xml:space="preserve">
+    <value>विषय</value>
+  </data>
+  <data name="autoPlay_menuItem.Text" xml:space="preserve">
+    <value>ऑटो खेलते हैं</value>
+  </data>
+  <data name="default_item.Text" xml:space="preserve">
+    <value>चूक</value>
+  </data>
+  <data name="listScyle_item.Text" xml:space="preserve">
+    <value>सूची पाश</value>
+  </data>
+  <data name="list_item.Text" xml:space="preserve">
+    <value>सूची का नाटक</value>
+  </data>
+  <data name="single_item.Text" xml:space="preserve">
+    <value>एकल चक्र</value>
+  </data>
+  <data name="isHaveVideo_content" xml:space="preserve">
+    <value>वीडियो खाली है, कृपया फ़ोल्डर संचालन जोड़ें! ! !</value>
+  </data>
+  <data name="playError_str" xml:space="preserve">
+    <value>वीडियो स्रोत फ़ाइल हटा दी गई है या स्थानांतरित कर दी गई है। यदि प्लेबैक विफल रहता है, तो आइटम को सूची से स्वचालित रूप से हटा दिया जाएगा।</value>
+  </data>
+  <data name="searchResult_str" xml:space="preserve">
+    <value>कोई परिणाम नहीं</value>
+  </data>
+  <data name="setting_str" xml:space="preserve">
+    <value>सेट करें</value>
+  </data>
+  <data name="about_button.Content" xml:space="preserve">
+    <value>पर</value>
+  </data>
+  <data name="comment_button.Content" xml:space="preserve">
+    <value>स्टोर रेटिंग</value>
+  </data>
+  <data name="email_button.Content" xml:space="preserve">
+    <value>मेल भेजें</value>
+  </data>
+  <data name="setting_textBlock.Text" xml:space="preserve">
+    <value>सेट करें</value>
+  </data>
+  <data name="Cancel.Content" xml:space="preserve">
+    <value>रद्द</value>
+  </data>
+  <data name="EnableMrfCrf444.Content" xml:space="preserve">
+    <value>गुणवत्ता प्राथमिकता (MRFCRF444S मीडिया वीडियो प्रोसेसिंग एल्गोरिदम)</value>
+  </data>
+  <data name="ouput_textBlock.Text" xml:space="preserve">
+    <value>आउटपुट स्थान:</value>
+  </data>
+  <data name="OutputPath.Text" xml:space="preserve">
+    <value>आउटपुट पथ:</value>
+  </data>
+  <data name="PickFileButton.Content" xml:space="preserve">
+    <value>फ़ाइल का चयन करें</value>
+  </data>
+  <data name="profile_textBlock.Text" xml:space="preserve">
+    <value>लक्ष्य पिक्सेल:</value>
+  </data>
+  <data name="select_textBlock.Text" xml:space="preserve">
+    <value>फ़ाइल का चयन करें:</value>
+  </data>
+  <data name="SetOutputButton.Content" xml:space="preserve">
+    <value>आउटपुट पथ चुनें</value>
+  </data>
+  <data name="targetFormat_textBloc.Text" xml:space="preserve">
+    <value>प्रारूप का चयन करें:</value>
+  </data>
+  <data name="Transcode.Content" xml:space="preserve">
+    <value>रूपांतरण शुरू करें</value>
+  </data>
+  <data name="input_textBlock.Text" xml:space="preserve">
+    <value>इनपुट पथ:</value>
+  </data>
+  <data name="cancel_str" xml:space="preserve">
+    <value>रूपांतरण रद्द!</value>
+  </data>
+  <data name="CodecNotFound_str" xml:space="preserve">
+    <value>कोडेक नहीं मिल सकता है!</value>
+  </data>
+  <data name="complete_str" xml:space="preserve">
+    <value>रूपांतरण पूरा हो गया है!</value>
+  </data>
+  <data name="InvalidProfile_str" xml:space="preserve">
+    <value>कॉन्फ़िगरेशन फ़ाइल अमान्य है!</value>
+  </data>
+  <data name="output_str" xml:space="preserve">
+    <value>आउटपुट पथ:</value>
+  </data>
+  <data name="progress_str" xml:space="preserve">
+    <value>प्रगति:</value>
+  </data>
+  <data name="transcode_str" xml:space="preserve">
+    <value>रूपांतरण प्रारूप</value>
+  </data>
+  <data name="unknowError_str" xml:space="preserve">
+    <value>अज्ञात कारण विफलता की ओर जाता है!</value>
+  </data>
+  <data name="alipay_textBlock.Text" xml:space="preserve">
+    <value>AliPay</value>
+  </data>
+  <data name="pay_textBlock.Text" xml:space="preserve">
+    <value>यदि एप्लिकेशन आपके लिए उपयोगी है, तो आप लेखक को खिला सकते हैं! ! ! बहुत आभारी नहीं! ! !</value>
+  </data>
+  <data name="wechat_textBlock.Text" xml:space="preserve">
+    <value>WeChat</value>
+  </data>
+  <data name="cancelMultiple_textBlock.Text" xml:space="preserve">
+    <value>एकाधिक चयन रद्द करें</value>
+  </data>
+  <data name="clearAll_item.Text" xml:space="preserve">
+    <value>सभी प्रगति को साफ़ करें</value>
+  </data>
+  <data name="clearProgress_item.Text" xml:space="preserve">
+    <value>पार्श्व प्रगति को साफ़ करें</value>
+  </data>
+  <data name="clearProgress_textBlock.Text" xml:space="preserve">
+    <value>पार्श्व प्रगति को साफ़ करें</value>
+  </data>
+  <data name="clear_item.Text" xml:space="preserve">
+    <value>स्पष्ट प्रगति</value>
+  </data>
+  <data name="frombin_item.Content" xml:space="preserve">
+    <value>कचरा हटाने के लिए</value>
+  </data>
+  <data name="fromlist_item.Content" xml:space="preserve">
+    <value>सूची से निकालें</value>
+  </data>
+  <data name="multiple_item.Text" xml:space="preserve">
+    <value>एकाधिक चयन</value>
+  </data>
+  <data name="remove_item.Content" xml:space="preserve">
+    <value>स्थायी विलोपन</value>
+  </data>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>M-खिलाड़ी</value>
+  </data>
+  <data name="AppShortName" xml:space="preserve">
+    <value>M-खिलाड़ी</value>
+  </data>
+  <data name="hideListStr_no" xml:space="preserve">
+    <value>प्रदर्शन देखें</value>
+  </data>
+  <data name="hideListStr_yes" xml:space="preserve">
+    <value>छिपा हुआ दृश्य</value>
+  </data>
+  <data name="hideViewStr_no" xml:space="preserve">
+    <value>साइडबार दिखाओ</value>
+  </data>
+  <data name="hideViewStr_yes" xml:space="preserve">
+    <value>साइडबार छिपाएं</value>
+  </data>
+  <data name="item_1_0.Text" xml:space="preserve">
+    <value>1.0x (सामान्य)</value>
+  </data>
+  <data name="playModeStr_default" xml:space="preserve">
+    <value>चूक</value>
+  </data>
+  <data name="playModeStr_list" xml:space="preserve">
+    <value>सूची का नाटक</value>
+  </data>
+  <data name="playModeStr_listRecycle" xml:space="preserve">
+    <value>सूची पाश</value>
+  </data>
+  <data name="playModeStr_recycle" xml:space="preserve">
+    <value>एकल चक्र</value>
+  </data>
+  <data name="playRate_str" xml:space="preserve">
+    <value>दोहरी गति</value>
+  </data>
+  <data name="audioLanguage_str" xml:space="preserve">
+    <value>ऑडियो ट्रैक</value>
+  </data>
+  <data name="fillMode_str" xml:space="preserve">
+    <value>वीडियो पैडिंग</value>
+  </data>
+  <data name="Fill_item.Content" xml:space="preserve">
+    <value>खिड़की भरें (खिंचाव)</value>
+  </data>
+  <data name="None_item.Content" xml:space="preserve">
+    <value>मूल आकार</value>
+  </data>
+  <data name="UniformToFill_item.Content" xml:space="preserve">
+    <value>पूर्ण स्क्रीन (पहलू अनुपात बनाए रखें)</value>
+  </data>
+  <data name="Uniform_item.Content" xml:space="preserve">
+    <value>वाइडस्क्रीन (पहलू अनुपात बनाए रखें)</value>
+  </data>
+  <data name="addFolderLibrary_textBlock.Text" xml:space="preserve">
+    <value>अगली बार जब आप शुरू करेंगे, तो निम्नलिखित फ़ोल्डरों के सभी वीडियो स्वचालित रूप से लोड हो जाएंगे।</value>
+  </data>
+  <data name="CloseMessageDialog_str" xml:space="preserve">
+    <value>पास</value>
+  </data>
+  <data name="GetVideoAccessError_str" xml:space="preserve">
+    <value>यदि वीडियो लाइब्रेरी में फ़ोल्डर जोड़ने से कोई त्रुटि उत्पन्न होती है, तो स्थानीय वीडियो अनुमतियां प्राप्त करने के लिए ऐप खोलें।</value>
+  </data>
+  <data name="OpenLocalSetting_str" xml:space="preserve">
+    <value>सेटिंग्स खोलें</value>
+  </data>
+  <data name="OffContent_str" xml:space="preserve">
+    <value>बंद</value>
+  </data>
+  <data name="OnContent_str" xml:space="preserve">
+    <value>खुला है</value>
+  </data>
+  <data name="soundPlayerVolume_textBlock.Text" xml:space="preserve">
+    <value>ध्वनि की मात्रा</value>
+  </data>
+  <data name="useSoundPlayer_textBlock.Text" xml:space="preserve">
+    <value>ऐप साउंड सक्षम करें</value>
+  </data>
+  <data name="allSelect_checkBox.Content" xml:space="preserve">
+    <value>सभी का चयन करें</value>
+  </data>
+  <data name="mediaTrack_str" xml:space="preserve">
+    <value>वीडियो ट्रैक</value>
+  </data>
+  <data name="metadata_str" xml:space="preserve">
+    <value>समयबद्ध मेटाडाटा ट्रैक</value>
+  </data>
+  <data name="metadata_textBlock.Text" xml:space="preserve">
+    <value>पुनर्प्राप्त भाषा पाठ</value>
+  </data>
+  <data name="screenShot_item.Text" xml:space="preserve">
+    <value>अवरोधक स्क्रीन</value>
+  </data>
+  <data name="ClearData_button.Content" xml:space="preserve">
+    <value>कैशे साफ़ करें</value>
+  </data>
+  <data name="clearData_textBlock.Text" xml:space="preserve">
+    <value>(स्थानीय कैश को साफ़ करने के बाद, ऐतिहासिक वॉच हिस्ट्री को सिंक्रोनाइज़ किया जाएगा)</value>
+  </data>
+  <data name="closeDialog_Button.Content" xml:space="preserve">
+    <value>पास</value>
+  </data>
+  <data name="close_button.Content" xml:space="preserve">
+    <value>पास</value>
+  </data>
+  <data name="run_1.Text" xml:space="preserve">
+    <value>स्थानीय वीडियो प्लेयर मुख्यधारा के वीडियो प्रारूपों का समर्थन करता है</value>
+  </data>
+  <data name="run_2.Text" xml:space="preserve">
+    <value>यदि उपयोग के दौरान कोई समस्या है, तो प्रतिक्रिया का स्वागत करें</value>
+  </data>
+  <data name="currentPlayTitle_str" xml:space="preserve">
+    <value>वर्तमान नाटक:</value>
+  </data>
+  <data name="editPhoto_str" xml:space="preserve">
+    <value>चित्र संपादित करें</value>
+  </data>
+  <data name="openAdress_str" xml:space="preserve">
+    <value>फ़ोल्डर खोलें</value>
+  </data>
+  <data name="saveSucceed_str" xml:space="preserve">
+    <value>सफलतापूर्वक सहेजा गया:  </value>
+  </data>
+</root>

@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="addFolder_str" xml:space="preserve">
+    <value>添加文件夹</value>
+  </data>
+  <data name="videoFolder_str" xml:space="preserve">
+    <value>刷新视频列表</value>
+  </data>
+  <data name="wait_content" xml:space="preserve">
+    <value>请等待加载完成</value>
+  </data>
+  <data name="bin_item.Text" xml:space="preserve">
+    <value>放入回收站</value>
+  </data>
+  <data name="cancel_menuItem.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="dark_memuItem.Text" xml:space="preserve">
+    <value>暗</value>
+  </data>
+  <data name="deleteLocal_menuItem.Text" xml:space="preserve">
+    <value>从本地删除</value>
+  </data>
+  <data name="delete_menuItem.Text" xml:space="preserve">
+    <value>从列表删除</value>
+  </data>
+  <data name="directly_item.Text" xml:space="preserve">
+    <value>永久删除</value>
+  </data>
+  <data name="light_menuItem.Text" xml:space="preserve">
+    <value>亮</value>
+  </data>
+  <data name="pause_menuItem.Text" xml:space="preserve">
+    <value>暂停</value>
+  </data>
+  <data name="play_menuItem.Text" xml:space="preserve">
+    <value>播放</value>
+  </data>
+  <data name="theme_menuItem.Text" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="autoPlay_menuItem.Text" xml:space="preserve">
+    <value>自动播放</value>
+  </data>
+  <data name="default_item.Text" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="listScyle_item.Text" xml:space="preserve">
+    <value>列表循环</value>
+  </data>
+  <data name="list_item.Text" xml:space="preserve">
+    <value>列表播放</value>
+  </data>
+  <data name="single_item.Text" xml:space="preserve">
+    <value>单项循环</value>
+  </data>
+  <data name="isHaveVideo_content" xml:space="preserve">
+    <value>获取视频为空，请执行添加文件夹操作！！！</value>
+  </data>
+  <data name="playError_str" xml:space="preserve">
+    <value>视频源文件被删除或移动，播放失败，将自动从列表中移除该项。</value>
+  </data>
+  <data name="searchResult_str" xml:space="preserve">
+    <value>无结果</value>
+  </data>
+  <data name="setting_str" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="about_button.Content" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="comment_button.Content" xml:space="preserve">
+    <value>商店评分</value>
+  </data>
+  <data name="email_button.Content" xml:space="preserve">
+    <value>发送邮件</value>
+  </data>
+  <data name="setting_textBlock.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Cancel.Content" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="EnableMrfCrf444.Content" xml:space="preserve">
+    <value>质量优先(MRFCRF444S媒体视频处理算法)</value>
+  </data>
+  <data name="ouput_textBlock.Text" xml:space="preserve">
+    <value>输出位置：</value>
+  </data>
+  <data name="OutputPath.Text" xml:space="preserve">
+    <value>输出路径：</value>
+  </data>
+  <data name="PickFileButton.Content" xml:space="preserve">
+    <value>选取文件</value>
+  </data>
+  <data name="profile_textBlock.Text" xml:space="preserve">
+    <value>目标像素：</value>
+  </data>
+  <data name="select_textBlock.Text" xml:space="preserve">
+    <value>选取文件：</value>
+  </data>
+  <data name="SetOutputButton.Content" xml:space="preserve">
+    <value>选择输出路径</value>
+  </data>
+  <data name="targetFormat_textBloc.Text" xml:space="preserve">
+    <value>选择格式：</value>
+  </data>
+  <data name="Transcode.Content" xml:space="preserve">
+    <value>开始转换</value>
+  </data>
+  <data name="input_textBlock.Text" xml:space="preserve">
+    <value>输入路径：</value>
+  </data>
+  <data name="cancel_str" xml:space="preserve">
+    <value>转换取消！</value>
+  </data>
+  <data name="CodecNotFound_str" xml:space="preserve">
+    <value>找不到编解码器！</value>
+  </data>
+  <data name="complete_str" xml:space="preserve">
+    <value>转换完成！</value>
+  </data>
+  <data name="InvalidProfile_str" xml:space="preserve">
+    <value>配置文件无效！</value>
+  </data>
+  <data name="output_str" xml:space="preserve">
+    <value>输出路径：</value>
+  </data>
+  <data name="progress_str" xml:space="preserve">
+    <value>进度：</value>
+  </data>
+  <data name="transcode_str" xml:space="preserve">
+    <value>转换格式</value>
+  </data>
+  <data name="unknowError_str" xml:space="preserve">
+    <value>未知原因导致失败！</value>
+  </data>
+  <data name="alipay_textBlock.Text" xml:space="preserve">
+    <value>支付宝</value>
+  </data>
+  <data name="pay_textBlock.Text" xml:space="preserve">
+    <value>若该应用对您有所帮助的话，可以投喂下作者哦！！！不甚感激！！！</value>
+  </data>
+  <data name="wechat_textBlock.Text" xml:space="preserve">
+    <value>微信</value>
+  </data>
+  <data name="cancelMultiple_textBlock.Text" xml:space="preserve">
+    <value>取消多选</value>
+  </data>
+  <data name="clearAll_item.Text" xml:space="preserve">
+    <value>清除所有进度</value>
+  </data>
+  <data name="clearProgress_item.Text" xml:space="preserve">
+    <value>清除播放进度</value>
+  </data>
+  <data name="clearProgress_textBlock.Text" xml:space="preserve">
+    <value>清除播放进度</value>
+  </data>
+  <data name="clear_item.Text" xml:space="preserve">
+    <value>清除进度</value>
+  </data>
+  <data name="frombin_item.Content" xml:space="preserve">
+    <value>删除到回收站</value>
+  </data>
+  <data name="fromlist_item.Content" xml:space="preserve">
+    <value>从列表移除</value>
+  </data>
+  <data name="multiple_item.Text" xml:space="preserve">
+    <value>多选</value>
+  </data>
+  <data name="remove_item.Content" xml:space="preserve">
+    <value>永久删除</value>
+  </data>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>M-播放器</value>
+  </data>
+  <data name="AppShortName" xml:space="preserve">
+    <value>M-播放器</value>
+  </data>
+  <data name="hideListStr_no" xml:space="preserve">
+    <value>显示视图</value>
+  </data>
+  <data name="hideListStr_yes" xml:space="preserve">
+    <value>隐藏视图</value>
+  </data>
+  <data name="hideViewStr_no" xml:space="preserve">
+    <value>显示侧边栏</value>
+  </data>
+  <data name="hideViewStr_yes" xml:space="preserve">
+    <value>隐藏侧边栏</value>
+  </data>
+  <data name="item_1_0.Text" xml:space="preserve">
+    <value>1.0x(正常)</value>
+  </data>
+  <data name="playModeStr_default" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="playModeStr_list" xml:space="preserve">
+    <value>列表播放</value>
+  </data>
+  <data name="playModeStr_listRecycle" xml:space="preserve">
+    <value>列表循环</value>
+  </data>
+  <data name="playModeStr_recycle" xml:space="preserve">
+    <value>单项循环</value>
+  </data>
+  <data name="playRate_str" xml:space="preserve">
+    <value>倍速</value>
+  </data>
+  <data name="audioLanguage_str" xml:space="preserve">
+    <value>音轨</value>
+  </data>
+  <data name="fillMode_str" xml:space="preserve">
+    <value>视频填充</value>
+  </data>
+  <data name="Fill_item.Content" xml:space="preserve">
+    <value>填充窗口(拉伸)</value>
+  </data>
+  <data name="None_item.Content" xml:space="preserve">
+    <value>原始尺寸</value>
+  </data>
+  <data name="UniformToFill_item.Content" xml:space="preserve">
+    <value>全屏(保持纵横比)</value>
+  </data>
+  <data name="Uniform_item.Content" xml:space="preserve">
+    <value>宽屏(保持纵横比)</value>
+  </data>
+  <data name="addFolderLibrary_textBlock.Text" xml:space="preserve">
+    <value>下次启动，将自动加载下列文件夹中的所有视频</value>
+  </data>
+  <data name="CloseMessageDialog_str" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="GetVideoAccessError_str" xml:space="preserve">
+    <value>若添加文件夹到视频库弹出错误提示，请打开应用获取本地视频权限</value>
+  </data>
+  <data name="OpenLocalSetting_str" xml:space="preserve">
+    <value>打开设置</value>
+  </data>
+  <data name="OffContent_str" xml:space="preserve">
+    <value>关</value>
+  </data>
+  <data name="OnContent_str" xml:space="preserve">
+    <value>开</value>
+  </data>
+  <data name="soundPlayerVolume_textBlock.Text" xml:space="preserve">
+    <value>音效音量</value>
+  </data>
+  <data name="useSoundPlayer_textBlock.Text" xml:space="preserve">
+    <value>启用应用音效</value>
+  </data>
+  <data name="allSelect_checkBox.Content" xml:space="preserve">
+    <value>全选</value>
+  </data>
+  <data name="mediaTrack_str" xml:space="preserve">
+    <value>频轨</value>
+  </data>
+  <data name="metadata_str" xml:space="preserve">
+    <value>语言文本</value>
+  </data>
+  <data name="metadata_textBlock.Text" xml:space="preserve">
+    <value>检索出来的语言文本</value>
+  </data>
+  <data name="ClearData_button.Content" xml:space="preserve">
+    <value>清除本地播放历史缓存</value>
+  </data>
+  <data name="clearData_textBlock.Text" xml:space="preserve">
+    <value>( 清空本地缓存后，历史观看记录会同步清除 )</value>
+  </data>
+  <data name="closeDialog_Button.Content" xml:space="preserve">
+    <value>关  闭</value>
+  </data>
+  <data name="close_button.Content" xml:space="preserve">
+    <value>关  闭</value>
+  </data>
+  <data name="currentPlayTitle_str" xml:space="preserve">
+    <value>当前播放:  </value>
+  </data>
+  <data name="editPhoto_str" xml:space="preserve">
+    <value>编辑图片</value>
+  </data>
+  <data name="openAdress_str" xml:space="preserve">
+    <value>打开位置</value>
+  </data>
+  <data name="run_1.Text" xml:space="preserve">
+    <value>本地视频播放器UWP版，支持主流视频格式</value>
+  </data>
+  <data name="run_2.Text" xml:space="preserve">
+    <value>使用过程中，出现问题，欢迎反馈</value>
+  </data>
+  <data name="saveSucceed_str" xml:space="preserve">
+    <value>保存截图成功:  </value>
+  </data>
+  <data name="screenShot_item.Text" xml:space="preserve">
+    <value>截取屏幕</value>
+  </data>
+</root>

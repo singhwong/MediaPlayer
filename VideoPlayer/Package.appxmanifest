@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10" xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6" IgnorableNamespaces="uap mp uap3 iot uap6">
+  <Identity Name="14523wongsoft.M-Player" Publisher="CN=142C2F57-E79D-408C-83F9-E14BC50B8D43" Version="1.1.61.0" />
+  <mp:PhoneIdentity PhoneProductId="8ffb6abc-1b58-4c69-b328-0b657c521a58" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>M-Player</DisplayName>
+    <PublisherDisplayName>singhwong</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="VideoPlayer.App">
+      <uap:VisualElements DisplayName="ms-resource:AppDisplayName" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="M-Player" BackgroundColor="steelBlue">
+        <uap:LockScreen Notification="badge" BadgeLogo="Assets\BadgeLogo.png" />
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png" ShortName="ms-resource:AppShortName">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="steelBlue" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="portraitFlipped" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <uap:Capability Name="videosLibrary" />
+    <uap3:Capability Name="backgroundMediaPlayback" />
+    <uap:Capability Name="picturesLibrary" />
+    <uap6:Capability Name="graphicsCapture" />
+  </Capabilities>
+</Package>

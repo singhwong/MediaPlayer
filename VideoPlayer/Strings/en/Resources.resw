@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="addFolder_str" xml:space="preserve">
+    <value>Add folder</value>
+  </data>
+  <data name="videoFolder_str" xml:space="preserve">
+    <value>Refresh videos</value>
+  </data>
+  <data name="wait_content" xml:space="preserve">
+    <value>Please wait for the loading to complete</value>
+  </data>
+  <data name="bin_item.Text" xml:space="preserve">
+    <value>Put in the recycle bin</value>
+  </data>
+  <data name="cancel_menuItem.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="dark_memuItem.Text" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="deleteLocal_menuItem.Text" xml:space="preserve">
+    <value>Remove from local</value>
+  </data>
+  <data name="delete_menuItem.Text" xml:space="preserve">
+    <value>Remove from list</value>
+  </data>
+  <data name="directly_item.Text" xml:space="preserve">
+    <value>delete permanently</value>
+  </data>
+  <data name="light_menuItem.Text" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="pause_menuItem.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="play_menuItem.Text" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="theme_menuItem.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="autoPlay_menuItem.Text" xml:space="preserve">
+    <value>Autoplay</value>
+  </data>
+  <data name="default_item.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="listScyle_item.Text" xml:space="preserve">
+    <value>List loop</value>
+  </data>
+  <data name="list_item.Text" xml:space="preserve">
+    <value>List play</value>
+  </data>
+  <data name="single_item.Text" xml:space="preserve">
+    <value>Single cycle</value>
+  </data>
+  <data name="isHaveVideo_content" xml:space="preserve">
+    <value>Get videos failed, please perform the add folder operation! ! !</value>
+  </data>
+  <data name="playError_str" xml:space="preserve">
+    <value>The video source file is deleted or moved. If the playback fails, the item will be automatically removed from the list.</value>
+  </data>
+  <data name="searchResult_str" xml:space="preserve">
+    <value>No result</value>
+  </data>
+  <data name="setting_str" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="about_button.Content" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="comment_button.Content" xml:space="preserve">
+    <value>Reviews </value>
+  </data>
+  <data name="email_button.Content" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="setting_textBlock.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Cancel.Content" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="EnableMrfCrf444.Content" xml:space="preserve">
+    <value>Enable MRFCRF444 video processing algorithm (disables hardware acceleration)</value>
+  </data>
+  <data name="ouput_textBlock.Text" xml:space="preserve">
+    <value>Set output:</value>
+  </data>
+  <data name="OutputPath.Text" xml:space="preserve">
+    <value>Output:</value>
+  </data>
+  <data name="PickFileButton.Content" xml:space="preserve">
+    <value>Pick Video File</value>
+  </data>
+  <data name="profile_textBlock.Text" xml:space="preserve">
+    <value>Transcode profile:</value>
+  </data>
+  <data name="select_textBlock.Text" xml:space="preserve">
+    <value>Select source</value>
+  </data>
+  <data name="SetOutputButton.Content" xml:space="preserve">
+    <value>Set Output File</value>
+  </data>
+  <data name="targetFormat_textBloc.Text" xml:space="preserve">
+    <value>Target format:</value>
+  </data>
+  <data name="Transcode.Content" xml:space="preserve">
+    <value>Transcode</value>
+  </data>
+  <data name="input_textBlock.Text" xml:space="preserve">
+    <value>Input:</value>
+  </data>
+  <data name="cancel_str" xml:space="preserve">
+    <value>Transcode Canceled.</value>
+  </data>
+  <data name="CodecNotFound_str" xml:space="preserve">
+    <value>Codec not found.</value>
+  </data>
+  <data name="complete_str" xml:space="preserve">
+    <value>Transcode completed.</value>
+  </data>
+  <data name="InvalidProfile_str" xml:space="preserve">
+    <value>Invalid profile.</value>
+  </data>
+  <data name="output_str" xml:space="preserve">
+    <value>Output:</value>
+  </data>
+  <data name="progress_str" xml:space="preserve">
+    <value>Progress:</value>
+  </data>
+  <data name="transcode_str" xml:space="preserve">
+    <value>Media Transcode</value>
+  </data>
+  <data name="unknowError_str" xml:space="preserve">
+    <value>Unknown failure.</value>
+  </data>
+  <data name="alipay_textBlock.Text" xml:space="preserve">
+    <value>AliPay</value>
+  </data>
+  <data name="pay_textBlock.Text" xml:space="preserve">
+    <value>If the application is helpful to you, you can support the author!!! Thank you very much!!!</value>
+  </data>
+  <data name="wechat_textBlock.Text" xml:space="preserve">
+    <value>WeChat</value>
+  </data>
+  <data name="cancelMultiple_textBlock.Text" xml:space="preserve">
+    <value>Cancel multiple selection</value>
+  </data>
+  <data name="clearAll_item.Text" xml:space="preserve">
+    <value>Clear all progress</value>
+  </data>
+  <data name="clearProgress_item.Text" xml:space="preserve">
+    <value>Clear play progress</value>
+  </data>
+  <data name="clearProgress_textBlock.Text" xml:space="preserve">
+    <value>Clear play progress</value>
+  </data>
+  <data name="clear_item.Text" xml:space="preserve">
+    <value>Clear progress</value>
+  </data>
+  <data name="frombin_item.Content" xml:space="preserve">
+    <value>Delete to Recycle Bin</value>
+  </data>
+  <data name="fromlist_item.Content" xml:space="preserve">
+    <value>Remove from list</value>
+  </data>
+  <data name="multiple_item.Text" xml:space="preserve">
+    <value>Multiple selection</value>
+  </data>
+  <data name="remove_item.Content" xml:space="preserve">
+    <value>Permanently delete</value>
+  </data>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>M-Player</value>
+  </data>
+  <data name="AppShortName" xml:space="preserve">
+    <value>M-Player</value>
+  </data>
+  <data name="hideListStr_no" xml:space="preserve">
+    <value>Display View</value>
+  </data>
+  <data name="hideListStr_yes" xml:space="preserve">
+    <value>Hide View</value>
+  </data>
+  <data name="hideViewStr_no" xml:space="preserve">
+    <value>Display Sidebar</value>
+  </data>
+  <data name="hideViewStr_yes" xml:space="preserve">
+    <value>Hide Sidebar</value>
+  </data>
+  <data name="item_1_0.Text" xml:space="preserve">
+    <value>1.0x(Normal)</value>
+  </data>
+  <data name="playModeStr_default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="playModeStr_list" xml:space="preserve">
+    <value>List Pay</value>
+  </data>
+  <data name="playModeStr_listRecycle" xml:space="preserve">
+    <value>List Loop </value>
+  </data>
+  <data name="playModeStr_recycle" xml:space="preserve">
+    <value>Single Cycle</value>
+  </data>
+  <data name="playRate_str" xml:space="preserve">
+    <value>PlayRate</value>
+  </data>
+  <data name="audioLanguage_str" xml:space="preserve">
+    <value>Audio Tracks</value>
+  </data>
+  <data name="fillMode_str" xml:space="preserve">
+    <value>Resize Video</value>
+  </data>
+  <data name="Fill_item.Content" xml:space="preserve">
+    <value>Fill</value>
+  </data>
+  <data name="None_item.Content" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="UniformToFill_item.Content" xml:space="preserve">
+    <value>UniformToFill</value>
+  </data>
+  <data name="Uniform_item.Content" xml:space="preserve">
+    <value>Uniform</value>
+  </data>
+  <data name="addFolderLibrary_textBlock.Text" xml:space="preserve">
+    <value>Next time you start, all videos in the following folders will be loaded automatically</value>
+  </data>
+  <data name="CloseMessageDialog_str" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="GetVideoAccessError_str" xml:space="preserve">
+    <value>If you add a folder to the video library and pop up an error prompt, open the application to get local video privileges</value>
+  </data>
+  <data name="OpenLocalSetting_str" xml:space="preserve">
+    <value>Open Settings</value>
+  </data>
+  <data name="OffContent_str" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="OnContent_str" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="soundPlayerVolume_textBlock.Text" xml:space="preserve">
+    <value>Sound volume</value>
+  </data>
+  <data name="useSoundPlayer_textBlock.Text" xml:space="preserve">
+    <value>Enable app sound</value>
+  </data>
+  <data name="allSelect_checkBox.Content" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="mediaTrack_str" xml:space="preserve">
+    <value>Video Tracks</value>
+  </data>
+  <data name="metadata_str" xml:space="preserve">
+    <value>Timed Metadata Track</value>
+  </data>
+  <data name="metadata_textBlock.Text" xml:space="preserve">
+    <value>Retrieved language text</value>
+  </data>
+  <data name="screenShot_item.Text" xml:space="preserve">
+    <value>Intercept screen</value>
+  </data>
+  <data name="ClearData_button.Content" xml:space="preserve">
+    <value>clear cache</value>
+  </data>
+  <data name="clearData_textBlock.Text" xml:space="preserve">
+    <value>(After clearing the local cache, historical watch history will be cleared synchronously)</value>
+  </data>
+  <data name="closeDialog_Button.Content" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="close_button.Content" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="run_1.Text" xml:space="preserve">
+    <value>Local video player UWP, supporting mainstream video formats</value>
+  </data>
+  <data name="run_2.Text" xml:space="preserve">
+    <value>If there is a problem during use, welcome feedback</value>
+  </data>
+  <data name="currentPlayTitle_str" xml:space="preserve">
+    <value>Current Playing:</value>
+  </data>
+  <data name="editPhoto_str" xml:space="preserve">
+    <value>Edit picture</value>
+  </data>
+  <data name="openAdress_str" xml:space="preserve">
+    <value>Open the folder</value>
+  </data>
+  <data name="saveSucceed_str" xml:space="preserve">
+    <value>Save succeed:  </value>
+  </data>
+</root>

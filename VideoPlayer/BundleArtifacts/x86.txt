@@ -1,0 +1,2 @@
+MainPackage=D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Release\VideoPlayer_1.1.61.0_x86.msix
+SymbolPackage=D:\gitUWP\UWP-VideoPlayer\VideoPlayer\AppPackages\VideoPlayer_1.1.61.0_Test\VideoPlayer_1.1.61.0_x86.appxsym

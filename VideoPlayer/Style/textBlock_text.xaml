@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VideoPlayer">
+    <Style x:Name="textblock_Text" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Margin" Value="10,0,0,0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Thin"/>
+    </Style>
+</ResourceDictionary>

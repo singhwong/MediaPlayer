@@ -1,0 +1,1 @@
+D:\gitUWP\UWP-VideoPlayer\VideoPlayer\VideoPlayer.csproj;x86

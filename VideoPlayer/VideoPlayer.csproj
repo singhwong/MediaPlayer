@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{9808B8C8-0EEB-4372-95C7-8599E68F5D4A}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VideoPlayer</RootNamespace>
+    <AssemblyName>VideoPlayer</AssemblyName>
+    <DefaultLanguage>zh-CN</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>VideoPlayer_StoreKey.pfx</PackageCertificateKeyFile>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>9BDD3930F6DBA61EEAA155CEED3FD915C3338FB8</PackageCertificateThumbprint>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>zh-CN</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modles\MenuItem.cs" />
+    <Compile Include="Modles\PlayingTime.cs" />
+    <Compile Include="Modles\Progress.cs" />
+    <Compile Include="Modles\ProgressConvert.cs" />
+    <Compile Include="Modles\VideoLibrary.cs" />
+    <Compile Include="ViewModle\AudioLanguageVM.cs" />
+    <Compile Include="ViewModle\ContentDialogVM.cs" />
+    <Compile Include="ViewModle\CutScreen.cs" />
+    <Compile Include="ViewModle\SaveProgressVM.cs" />
+    <Compile Include="ViewModle\SetFeedBackClass.cs" />
+    <Compile Include="View\ConversionPage.xaml.cs">
+      <DependentUpon>ConversionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListViewControl.xaml.cs">
+      <DependentUpon>ListViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModle\GetFiles.cs" />
+    <Compile Include="ViewModle\SetVideoByPath.cs" />
+    <Compile Include="Modles\Video.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <PRIResource Include="Strings\zh-CN\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
+    <PRIResource Include="Strings\zh-Hant\Resources.resw" />
+    <PRIResource Include="Strings\ja\Resources.resw" />
+    <PRIResource Include="Strings\ko-KR\Resources.resw" />
+    <PRIResource Include="Strings\hi\Resources.resw" />
+    <PRIResource Include="Strings\ru\Resources.resw" />
+    <PRIResource Include="Strings\de\Resources.resw" />
+    <PRIResource Include="Strings\en\Resources.resw" />
+    <None Include="VideoPlayer_StoreKey.pfx" />
+    <None Include="VideoPlayer_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\alipay.png" />
+    <Content Include="Assets\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\BadgeLogo.scale-125.png" />
+    <Content Include="Assets\BadgeLogo.scale-150.png" />
+    <Content Include="Assets\BadgeLogo.scale-200.png" />
+    <Content Include="Assets\BadgeLogo.scale-400.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\wechat.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Style\acrylic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\buttonStyle_2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\buttonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\listViewStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\sliderStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ConversionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\progressRingStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\textBlock_icon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\textBlock_text.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\transportControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Json.Net">
+      <Version>1.0.16</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Advertising.XAML">
+      <Version>10.1811.22001</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Services.Store.Engagement">
+      <Version>10.1810.16002</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
+      <Version>5.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.Advertising.Xaml, Version=10.0">
+      <Name>Microsoft Advertising SDK for XAML</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\VideoPlayer.de.xlf" />
+    <XliffResource Include="MultilingualResources\VideoPlayer.en-US.xlf" />
+    <XliffResource Include="MultilingualResources\VideoPlayer.en.xlf" />
+    <XliffResource Include="MultilingualResources\VideoPlayer.hi.xlf" />
+    <XliffResource Include="MultilingualResources\VideoPlayer.ja.xlf" />
+    <XliffResource Include="MultilingualResources\VideoPlayer.ko-KR.xlf" />
+    <XliffResource Include="MultilingualResources\VideoPlayer.ru.xlf" />
+    <XliffResource Include="MultilingualResources\VideoPlayer.zh-Hant.xlf" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.PriResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
