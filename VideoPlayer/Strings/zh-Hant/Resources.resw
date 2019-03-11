@@ -189,12 +189,6 @@
   <data name="fillMode_str" xml:space="preserve">
     <value>視頻填充</value>
   </data>
-  <data name="UniformToFill_item.Content" xml:space="preserve">
-    <value>全屏(保持縱橫比)</value>
-  </data>
-  <data name="Uniform_item.Content" xml:space="preserve">
-    <value>寬屏(保持縱橫比)</value>
-  </data>
   <data name="addFolderLibrary_textBlock.Text" xml:space="preserve">
     <value>下次啟動，將自動加載下列文件夾中的所有視頻</value>
   </data>

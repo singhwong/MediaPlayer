@@ -253,38 +253,11 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="RequestedTheme" />
       <RootProperty Name="Name" />
       <RootProperty Name="IsTapEnabled" />
       <RootProperty Name="ContextFlyout" />
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="RightTapped" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Border">
-      <RootProperty Name="BorderBrush" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Child" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="Opacity" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Visibility" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.MediaElement">
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="AutoPlay" />
-      <RootProperty Name="PosterSource" />
-      <RootProperty Name="AreTransportControlsEnabled" />
-      <RootProperty Name="TransportControls" />
-      <RootProperty Name="Name" />
-      <RootProperty Name="ContextFlyout" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.MediaTransportControls">
-      <RootProperty Name="IsCompact" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Width" />
@@ -373,6 +346,12 @@
       <RootProperty Name="To" />
       <RootProperty Name="Duration" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.MediaElement">
+      <RootProperty Name="Name" />
+      <RootProperty Name="AutoPlay" />
+      <RootProperty Name="AreTransportControlsEnabled" />
+      <RootProperty Name="ContextFlyout" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ContentDialog">
       <RootProperty Name="Background" />
       <RootProperty Name="CornerRadius" />
@@ -386,6 +365,17 @@
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.TranslateTransform" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Opacity" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Child" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Visibility" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="Children" />
       <RootMethod Name="GetAlignHorizontalCenterWithPanel" />
@@ -432,15 +422,8 @@
       <RootEvent Name="QuerySubmitted" />
       <RootEvent Name="TextChanged" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="AllowFocusOnInteraction" />
+    <RootType FullName="Windows.UI.Xaml.Controls.MenuBarItemFlyout">
       <RootProperty Name="Items" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="ItemsPanel" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ListBoxItem">
-      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="Name" />
@@ -472,8 +455,17 @@
       <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyoutSeparator" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
+      <RootProperty Name="AllowFocusOnInteraction" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="ItemsPanel" />
+      <RootProperty Name="Items" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.VirtualizingStackPanel">
       <RootProperty Name="Orientation" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListBoxItem">
+      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="VideoPlayer.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Data.RelativeSource" />
@@ -514,6 +506,7 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="VideoPlayer.View.SettingPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.MediaTransportControls" />
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="Width" />
       <RootProperty Name="Flyout" />

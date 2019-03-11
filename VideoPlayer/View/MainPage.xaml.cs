@@ -88,10 +88,6 @@ namespace VideoPlayer
         private ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
         private SystemMediaTransportControls systemMedia_TransportControls = SystemMediaTransportControls.GetForCurrentView();
         private ApplicationDataContainer history_volume = ApplicationData.Current.LocalSettings;
-
-        private SetMenuItemData mainMenuItem = new SetMenuItemData();
-        private ObservableCollection<MenuItem> main_data = new ObservableCollection<MenuItem>();
-        private List<MenuItem> setting_data = new List<MenuItem>();
         public static MainPage page;
         private DispatcherTimer tmr = new DispatcherTimer();
         private DispatcherTimer progress_tmr = new DispatcherTimer();
@@ -105,8 +101,6 @@ namespace VideoPlayer
             this.InitializeComponent();
             this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
             SetIsElementSoundPlayerIsOn();
-            main_data = mainMenuItem.GetMenuItemData;
-            setting_data = mainMenuItem.GetSettingMneuData;
             page = this;
             #region  设置计时器，自动隐藏cursor   
             tmr.Interval = TimeSpan.FromSeconds(5);
@@ -155,14 +149,21 @@ namespace VideoPlayer
             item_2_0.Tapped += new TappedEventHandler(Item_2_0Tapped);
             item_2_5.Tapped += new TappedEventHandler(Item_2_5Tapped);
             item_3_0.Tapped += new TappedEventHandler(Item_3_0Tapped);
-            audioLanguage_listBox.SelectionChanged += new SelectionChangedEventHandler(AudioLanguage_listBoxSelectionChanged);
-            resizeVideo_listBox.SelectionChanged += new SelectionChangedEventHandler(ResizeVideo_listBoxSelectionChanged);
+            //audioLanguage_listBox.SelectionChanged += new SelectionChangedEventHandler(AudioLanguage_listBoxSelectionChanged);
+            //resizeVideo_listBox.SelectionChanged += new SelectionChangedEventHandler(ResizeVideo_listBoxSelectionChanged);
             addFolder_button.Click += new RoutedEventHandler(AddFolder_buttonClick);
             content_gridView.ItemClick += new ItemClickEventHandler(Content_gridViewItemClick);
             allSelect_checkBox.Click += new RoutedEventHandler(AllSelect_checkBoxClick);
-            videoTracks_listbox.SelectionChanged += new SelectionChangedEventHandler(VideoTracks_listboxSelectionChanged);
+            //videoTracks_listbox.SelectionChanged += new SelectionChangedEventHandler(VideoTracks_listboxSelectionChanged);
             metadata_button.Click += new RoutedEventHandler(Metadata_buttonClick);
-            metadata_gird.PointerEntered += new PointerEventHandler(Metadata_girdPointerEntered);
+            //metadata_gird.PointerEntered += new PointerEventHandler(Metadata_girdPointerEntered);
+
+
+
+            //mediaPlayBack_List.ItemOpened += MediaPlaybackList_ItemOpened;
+            //mediaPlayBack_List.ItemFailed += MediaPlaybackList_ItemFailed;
+
+           
         }
 
         private void SetIsElementSoundPlayerIsOn()
@@ -239,11 +240,9 @@ namespace VideoPlayer
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             await GetVideoLibrary();
-            //media_capture.Failed += mediaCapture_Failed;
             ReadLocalStr();
             ButtonTipText();
             GetHistoryVlumeValue();
-
             #region 启用后台播放控件
             systemMedia_TransportControls.IsPlayEnabled = true;
             systemMedia_TransportControls.IsPauseEnabled = true;
@@ -269,7 +268,6 @@ namespace VideoPlayer
             }
             #endregion
             ExtendAcrylicIntoTitleBar();
-            //await GetVideoLibrary();
         }
 
         private async void SystemControls_ButtonPressed(SystemMediaTransportControls sender,
@@ -378,15 +376,13 @@ namespace VideoPlayer
                 newMenuItem.Text = "屏幕捕获";
                 newMenuItem.Click += (s, e1) =>
                 {
-                    //SetScreenCapture();
                 };
 
             }
             else if (temp.Properties.IsLeftButtonPressed)
-            {          
+            {
                 if (IsBottomShow)
                 {
-
                     show_bottom.Begin();
                     show_bottom_2.Stop();
                     hideBottom_tmr.Stop();
@@ -395,41 +391,15 @@ namespace VideoPlayer
                 else
                 {
 
-                    //show_bottom_2.Begin();
-                    //show_bottom.Stop();
-                    //hideBottom_tmr.Start();
-                    //IsBottomShow = true;
                 }
             }
         }
 
         private async Task GetVideoLibrary()
         {
-                ToolTipService.SetToolTip(hideList_button, hideListStr_yes);
-
-            //if (IsVideoListShow)
-            //{
-                await GetLocalVideo();
-            //}               
-
+            ToolTipService.SetToolTip(hideList_button, hideListStr_yes);
+            await GetLocalVideo();
         }
-
-        //private async Task GetAllVideos(ObservableCollection<StorageFile> list, StorageFolder folder)
-        //{
-        //    string[] fileTypes = new string[] { ".mp4",".wmv",".mkv",".avi",".3gp",".flv",".mpg",".webm",".mov",".Ogg",".swf",".rmvb"};
-        //    foreach (var video in await folder.GetFilesAsync())
-        //    {
-        //        if (fileTypes.Contains(video.FileType))
-        //        {
-        //            list.Add(video);
-        //        }
-        //    }
-        //    foreach (var item in await folder.GetFoldersAsync())
-        //    {
-        //        await GetAllMedias(list, item);
-        //    }
-        //}
-
 
         private async Task GetAllMedias(ObservableCollection<StorageFile> list, StorageFolder folder)
         {
@@ -451,11 +421,14 @@ namespace VideoPlayer
             }
         }
 
+        //private MediaPlaybackList mediaPlayBack_List = new MediaPlaybackList();
         private async Task GridView_Videos(ObservableCollection<StorageFile> files)
         {
             foreach (var video in files)
             {
+                //var mediaPlaybackItem = new MediaPlaybackItem(MediaSource.CreateFromStorageFile(video));
                 Video this_video = new Video();
+                //this_video.MediaItem = mediaPlaybackItem;
                 VideoProperties video_Properties = await video.Properties.GetVideoPropertiesAsync();
                 try//防止专辑图片为空
                 {
@@ -481,7 +454,7 @@ namespace VideoPlayer
                 this_video.IsSelected = false;
                 //this_video.Progress_duration = new TimeSpan(0);
                 SetDefaultForeGround(this_video);
-                SaveProgressVM.ReadProgressData(this_video, progresslist.progress_list,filePath);
+                SaveProgressVM.ReadProgressData(this_video, progresslist.progress_list, filePath);
                 //if (IsFolderVideoHaveCount_bool == false)
                 //{
                 //    GetCurrentTheme();//设置启动时，视频列表文本foreGround
@@ -502,12 +475,12 @@ namespace VideoPlayer
                             item.Video_Color = Color.FromArgb(50, 70, 0, 70);
                         }
                     }
-                }             
+                }
             }
             SetProgressList();
         }
 
-       
+
         private async Task GetLocalVideo()
         {
             all_video.Clear();
@@ -757,7 +730,7 @@ namespace VideoPlayer
         private async void RemoveTo(StorageDeleteOption value)
         {
             RemoveItemSameCode();
-            StorageFile file = video_value.VideoFile;            
+            StorageFile file = video_value.VideoFile;
             try
             {
                 await file.DeleteAsync(value);
@@ -807,7 +780,7 @@ namespace VideoPlayer
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
             Window.Current.CoreWindow.PointerWheelChanged += main_mediaElement_PointerWheelChanged;
         }
-       
+
         private void CoreWindow_KeyDown(CoreWindow sender, KeyEventArgs args)
         {
             if (args.VirtualKey == Windows.System.VirtualKey.Space)
@@ -1012,10 +985,12 @@ namespace VideoPlayer
 
         private void SetMediaItemMethod()
         {
-            metadata_stackPanel.Children.Clear();
-            metadata_gird.Visibility = Visibility.Collapsed;
-            IsMetadataShow_bool = false;
+            //metadata_stackPanel.Children.Clear();
+            metadata_StackPanel.Children.Clear();
+            //metadata_gird.Visibility = Visibility.Collapsed;
+            //IsMetadataShow_bool = false;
             mediaitem = new MediaPlaybackItem(MediaSource.CreateFromStorageFile(main_video.VideoFile));
+            //mediaitem = main_video.MediaItem;
             mediaitem.AudioTracksChanged += PlaybackItem_AudioTracksChanged;
             mediaitem.VideoTracksChanged += MediaPlaybackItem_VideoTracksChanged;
             mediaitem.TimedMetadataTracksChanged += MediaPlaybackItem_TimedMetadataTracksChanged;
@@ -1034,7 +1009,7 @@ namespace VideoPlayer
                 SetVideoRemovedContentDialog();//正在播放视频文件被删除，再次点击播放该视频引发的异常
             }
             main_mediaElement.Play();
-                main_video.Video_Color = Color.FromArgb(50, 70, 0, 70);
+            main_video.Video_Color = Color.FromArgb(50, 70, 0, 70);
             #endregion
         }
 
@@ -1078,7 +1053,7 @@ namespace VideoPlayer
         }
 
         private void SetSelectedVideoSameCode()
-        {            
+        {
             //video_stream = main_video.Video_Stream;
             try
             {
@@ -1162,17 +1137,6 @@ namespace VideoPlayer
         {
             await addFolder_contentDialog.ShowAsync();
         }
-        private void SetRectangleIsCollapsed()
-        {
-            foreach (var selected_value in main_data)
-            {
-                selected_value.Selected = Visibility.Collapsed;
-            }
-            foreach (var setting_item in setting_data)
-            {
-                setting_item.Selected = Visibility.Collapsed;
-            }
-        }
 
         private void OnTimerTick(object sender, object args)
         {
@@ -1207,7 +1171,7 @@ namespace VideoPlayer
         private void Main_mediaElementPointerExited(object sender, PointerRoutedEventArgs e)
         {
             tmr.Stop();
-            IsMediaElementPointEnter_bool = false;   
+            IsMediaElementPointEnter_bool = false;
         }
 
         public void SetProgressTimerTick()
@@ -1250,7 +1214,7 @@ namespace VideoPlayer
             }
             FilmsName_textBlock.Text = currentPlayTitle_str + main_video.Video_Path;
         }
-       
+
         private ProgressList progresslist = new ProgressList();
         private void SetProgressList()
         {
@@ -1298,7 +1262,7 @@ namespace VideoPlayer
         {
             switch (multiple_listBox.SelectedIndex)
             {
-                case 0:break;
+                case 0: break;
                 case 1: break;
                 case 2: ClearSelectedItemProgress(); break;
                 case 3:
@@ -1391,7 +1355,7 @@ namespace VideoPlayer
                     catch (System.IO.FileNotFoundException)
                     {
                     }
-                    
+
                 }
             }
             remove_comboBox.SelectedIndex = -1;
@@ -1486,7 +1450,6 @@ namespace VideoPlayer
             {
                 SameCodeMethod();
             }
-            
         }
 
         private void Previous_buttonClick(object sender, RoutedEventArgs e)
@@ -1498,7 +1461,7 @@ namespace VideoPlayer
             else
             {
                 NextPlaySameMethod();
-            }           
+            }
         }
 
         private void PlayMode_buttonClick(object sender, RoutedEventArgs e)
@@ -1701,13 +1664,13 @@ namespace VideoPlayer
             {
                 ToolTipService.SetToolTip(hideList_button, hideListStr_no);
             }
-            
+
             ToolTipService.SetToolTip(hideView_button, hideViewStr_yes);
             ToolTipService.SetToolTip(playRate_button, playRate_str);
             ToolTipService.SetToolTip(audioLanguage_button, audioLanguage_str);
             ToolTipService.SetToolTip(fillMode_button, fillMode_str);
-            ToolTipService.SetToolTip(videoTracks_button,mediaTrack_str);
-            ToolTipService.SetToolTip(metadata_button,metadata_str);
+            ToolTipService.SetToolTip(videoTracks_button, mediaTrack_str);
+            ToolTipService.SetToolTip(metadata_button, metadata_str);
             ToolTipService.SetToolTip(addFolders_button, addFolder_str);
             ToolTipService.SetToolTip(refreshVideos_button, videoFolder_str);
             ToolTipService.SetToolTip(settings_button, setting_str);
@@ -1778,43 +1741,43 @@ namespace VideoPlayer
 
         private void AudioLanguage_listBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            audioLanguage_flyout.Hide();
-            try
-            {
-                int trackIndex = (int)((ListBoxItem)((ListBox)sender).SelectedItem).Tag;
-                mediaitem.AudioTracks.SelectedIndex = trackIndex;
-            }
-            catch
-            {
-            }
-            
+            //audioLanguage_flyout.Hide();
+            //try
+            //{
+            //    int trackIndex = (int)((ListBoxItem)((ListBox)sender).SelectedItem).Tag;
+            //    mediaitem.AudioTracks.SelectedIndex = trackIndex;
+            //}
+            //catch
+            //{
+            //}
+
         }
 
-        private void ResizeVideo_listBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            resizeVideo_flyout.Hide();
-            switch (resizeVideo_listBox.SelectedIndex)
-            {
-                case 0:
-                    main_mediaElement.Stretch = Stretch.None;
-                    break;
-                case 1:
-                    main_mediaElement.Stretch = Stretch.Uniform;
-                    break;
-                case 2:
-                    main_mediaElement.Stretch = Stretch.UniformToFill;
-                    break;
-                case 3:
-                    main_mediaElement.Stretch = Stretch.Fill;
-                    break;
-                default:
-                    break;
-            }
-        }
+        //private void ResizeVideo_listBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    resizeVideo_flyout.Hide();
+        //    switch (resizeVideo_listBox.SelectedIndex)
+        //    {
+        //        case 0:
+        //            main_mediaElement.Stretch = Stretch.None;
+        //            break;
+        //        case 1:
+        //            main_mediaElement.Stretch = Stretch.Uniform;
+        //            break;
+        //        case 2:
+        //            main_mediaElement.Stretch = Stretch.UniformToFill;
+        //            break;
+        //        case 3:
+        //            main_mediaElement.Stretch = Stretch.Fill;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
 
         private StorageLibrary myVideos;
         private async void AddFolder_buttonClick(object sender, RoutedEventArgs e)
-        {       
+        {
             try
             {
                 Windows.Storage.StorageFolder newFolder = await myVideos.RequestAddFolderAsync();
@@ -1826,14 +1789,14 @@ namespace VideoPlayer
                     library.FolderPath = newFolder.Path;
                     videoLibrary_collection.Add(library);
                     await GetVideoLibrary();
-                }              
+                }
             }
             catch
             {
 
             }
-
         }
+
 
         private async void DeleteFolder_button_Click(object sender, RoutedEventArgs e)
         {
@@ -1841,7 +1804,7 @@ namespace VideoPlayer
             var remove_library = (VideoLibrary)sender_value.DataContext;
             foreach (var folder in myVideos.Folders)
             {
-          
+
                 if (folder.Path == remove_library.FolderPath)
                 {
                     bool result = await myVideos.RequestRemoveFolderAsync(folder);
@@ -1900,7 +1863,7 @@ namespace VideoPlayer
                 {
                     video.IsSelected = false;
                 }
-                content_gridView.SelectedItem = null;              
+                content_gridView.SelectedItem = null;
             }
             multiple_listBox.SelectedIndex = -1;
         }
@@ -1909,14 +1872,17 @@ namespace VideoPlayer
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                videoTracks_listbox.Items.Clear();
+                videoTracks_flyout.Items.Clear();
                 for (int index = 0; index < sender.VideoTracks.Count; index++)
                 {
                     var videoTrack = sender.VideoTracks[index];
-                    ListBoxItem item = new ListBoxItem();
-                    item.Content = String.IsNullOrEmpty(videoTrack.Language) ? $"Track {index}" : videoTrack.Name + "(" + videoTrack.Language + ")";
-                    item.Tag = index;
-                    videoTracks_listbox.Items.Add(item);
+                    MenuFlyoutItem flyout_item = new MenuFlyoutItem()
+                    {
+                        Text = String.IsNullOrEmpty(videoTrack.Language) ? playModeStr_default : videoTrack.Name + "(" + videoTrack.Language + ")",
+                        Tag = index
+                    };
+                    flyout_item.Click += new RoutedEventHandler(MenuFlyoutVideoItemClick);
+                    videoTracks_flyout.Items.Add(flyout_item);
                 }
             });
         }
@@ -1925,14 +1891,17 @@ namespace VideoPlayer
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                audioLanguage_listBox.Items.Clear();
+                audioLanguage_flyout.Items.Clear();
                 for (int index = 0; index < sender.AudioTracks.Count; index++)
                 {
                     var audioTrack = sender.AudioTracks[index];
-                    ListBoxItem item = new ListBoxItem();
-                    item.Content = String.IsNullOrEmpty(audioTrack.Language) ? $"Track {index}" : audioTrack.Name+"("+audioTrack.Language+")";
-                    item.Tag = index;
-                    audioLanguage_listBox.Items.Add(item);
+                    MenuFlyoutItem flyout_item = new MenuFlyoutItem()
+                    {
+                        Text = String.IsNullOrEmpty(audioTrack.Language) ? playModeStr_default : audioTrack.Name + "(" + audioTrack.Language + ")",
+                        Tag = index
+                    };
+                    flyout_item.Click += new RoutedEventHandler(MenuFlyoutAudioItemClick);
+                    audioLanguage_flyout.Items.Add(flyout_item);
                 }
             });
             //string messageDialog_str;
@@ -1965,10 +1934,12 @@ namespace VideoPlayer
         }
 
         private async void MediaPlaybackItem_TimedMetadataTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
-        {        
+        {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                metadata_stackPanel.Children.Clear();
+                //metadata_stackPanel.Children.Clear();
+                //metadata_flyout.Items.Clear();
+                metadata_StackPanel.Children.Clear();
                 for (int index = 0; index < sender.TimedMetadataTracks.Count; index++)
                 {
                     var timedMetadataTrack = sender.TimedMetadataTracks[index];
@@ -1978,14 +1949,57 @@ namespace VideoPlayer
                         Content = String.IsNullOrEmpty(timedMetadataTrack.Language) ? $"Track {index}" : timedMetadataTrack.Name + " " + timedMetadataTrack.Language,
                         Tag = (uint)index
                     };
-                    toggle.Foreground = whiteSmoke;
-                    toggle.Background = transParent;
+                    //toggle.Foreground = whiteSmoke;
+                    //toggle.Background = transParent;
                     toggle.Checked += Toggle_Checked;
                     toggle.Unchecked += Toggle_Unchecked;
 
-                    metadata_stackPanel.Children.Add(toggle);
+                    //metadata_stackPanel.Children.Add(toggle);
+                    metadata_StackPanel.Children.Add(toggle);
+
+                    //MenuFlyoutItem flyoutItem = new MenuFlyoutItem()
+                    //{
+                    //    Text = String.IsNullOrEmpty(timedMetadataTrack.Language) ? $"Track {index}" : timedMetadataTrack.Name + " " + timedMetadataTrack.Language,
+                    //    Tag = (uint)index
+                    //};
+                    //flyoutItem.Click += new RoutedEventHandler(MenuFlyoutItemClick);
+                    //metadata_flyout.Items.Add(flyoutItem);
                 }
             });
+        }
+
+        private void MenuFlyoutAudioItemClick(object sender, RoutedEventArgs e)
+        {
+
+            //    foreach (var flyout_item in metadata_flyout.Items)
+            //    {
+            //        mediaitem.TimedMetadataTracks.SetPresentationMode((uint)flyout_item.Tag, TimedMetadataTrackPresentationMode.Disabled);
+            //        flyout_item.Foreground = black;
+            //    }
+            //    var item = (MenuFlyoutItem)sender;
+            //    item.Foreground = skyblue;
+            //    mediaitem.TimedMetadataTracks.SetPresentationMode((uint)((MenuFlyoutItem)sender).Tag,
+            //TimedMetadataTrackPresentationMode.PlatformPresented);
+
+            int trackIndex = (int)(((MenuFlyoutItem)sender).Tag);
+            mediaitem.AudioTracks.SelectedIndex = trackIndex;
+        }
+
+        private void MenuFlyoutVideoItemClick(object sender, RoutedEventArgs e)
+        {
+
+            //    foreach (var flyout_item in metadata_flyout.Items)
+            //    {
+            //        mediaitem.TimedMetadataTracks.SetPresentationMode((uint)flyout_item.Tag, TimedMetadataTrackPresentationMode.Disabled);
+            //        flyout_item.Foreground = black;
+            //    }
+            //    var item = (MenuFlyoutItem)sender;
+            //    item.Foreground = skyblue;
+            //    mediaitem.TimedMetadataTracks.SetPresentationMode((uint)((MenuFlyoutItem)sender).Tag,
+            //TimedMetadataTrackPresentationMode.PlatformPresented);
+
+            int trackIndex = (int)(((MenuFlyoutItem)sender).Tag);
+            mediaitem.VideoTracks.SelectedIndex = trackIndex;
         }
 
         private void VideoTracks_listboxSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -1999,7 +2013,7 @@ namespace VideoPlayer
             catch
             {
             }
-            
+
         }
 
         private void Toggle_Checked(object sender, RoutedEventArgs e) =>
@@ -2010,23 +2024,23 @@ namespace VideoPlayer
     mediaitem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
         TimedMetadataTrackPresentationMode.Disabled);
 
-        private bool IsMetadataShow_bool = false;
+        //private bool IsMetadataShow_bool = false;
         private void Metadata_buttonClick(object sender, RoutedEventArgs e)
         {
-            metadata_gird.Visibility = Visibility.Visible;
-            if (IsMetadataShow_bool)
-            {
-                show_metadataGrid.Stop();
-                hide_metadataGrid.Begin();
-                IsMetadataShow_bool = false;
-            }
-            else
-            {
-                hide_metadataGrid.Stop();
-                show_metadataGrid.Begin();
-                IsMetadataShow_bool = true;
-            }
-            
+            //metadata_gird.Visibility = Visibility.Visible;
+            //if (IsMetadataShow_bool)
+            //{
+            //    show_metadataGrid.Stop();
+            //    hide_metadataGrid.Begin();
+            //    IsMetadataShow_bool = false;
+            //}
+            //else
+            //{
+            //    hide_metadataGrid.Stop();
+            //    show_metadataGrid.Begin();
+            //    IsMetadataShow_bool = true;
+            //}
+
         }
 
         private void Metadata_girdPointerEntered(object sender, PointerRoutedEventArgs e)
@@ -2037,7 +2051,7 @@ namespace VideoPlayer
         private void AddFolders_button_Click(object sender, RoutedEventArgs e)
         {
             GetFolderLibraryListViewItems();
-            
+
         }
 
         private async void RefreshVideos_button_Click(object sender, RoutedEventArgs e)
@@ -2059,7 +2073,7 @@ namespace VideoPlayer
 
         private void Settings_button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SettingPage),main_video);
+            Frame.Navigate(typeof(SettingPage), main_video);
             main_mediaElement.AutoPlay = false;
             progress_tmr.Stop();
         }
@@ -2113,9 +2127,9 @@ namespace VideoPlayer
 
         private void CloseMetadata_buttton_Click(object sender, RoutedEventArgs e)
         {
-            show_metadataGrid.Stop();
-            hide_metadataGrid.Begin();
-            IsMetadataShow_bool = false;
+            //show_metadataGrid.Stop();
+            //hide_metadataGrid.Begin();
+            //IsMetadataShow_bool = false;
         }
 
         private void CloseSettings_button_Click(object sender, RoutedEventArgs e)
@@ -2124,7 +2138,7 @@ namespace VideoPlayer
             show_settingsGrid.Stop();
             hideView_button.Content = "\uE70E";
             ToolTipService.SetToolTip(hideView_button, hideViewStr_no);
-            IsSettingsGridShow_bool = false;          
+            IsSettingsGridShow_bool = false;
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -2149,6 +2163,26 @@ namespace VideoPlayer
         private void CloseDialog_Button_Click(object sender, RoutedEventArgs e)
         {
             addFolder_contentDialog.Hide();
+        }
+
+        private void None_item_Click(object sender, RoutedEventArgs e)
+        {
+            main_mediaElement.Stretch = Stretch.None;
+        }
+
+        private void Uniform_item_Click(object sender, RoutedEventArgs e)
+        {
+            main_mediaElement.Stretch = Stretch.Uniform;
+        }
+
+        private void UniformToFill_item_Click(object sender, RoutedEventArgs e)
+        {
+            main_mediaElement.Stretch = Stretch.UniformToFill;
+        }
+
+        private void Fill_item_Click(object sender, RoutedEventArgs e)
+        {
+            main_mediaElement.Stretch = Stretch.Fill;
         }
     }
 }

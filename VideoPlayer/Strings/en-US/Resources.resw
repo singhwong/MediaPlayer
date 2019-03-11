@@ -219,18 +219,6 @@
   <data name="playRate_str" xml:space="preserve">
     <value>PlayRate</value>
   </data>
-  <data name="Fill_item.Content" xml:space="preserve">
-    <value>Fill</value>
-  </data>
-  <data name="None_item.Content" xml:space="preserve">
-    <value>None</value>
-  </data>
-  <data name="UniformToFill_item.Content" xml:space="preserve">
-    <value>UniformToFill</value>
-  </data>
-  <data name="Uniform_item.Content" xml:space="preserve">
-    <value>Uniform</value>
-  </data>
   <data name="audioLanguage_str" xml:space="preserve">
     <value>Audio Tracks</value>
   </data>

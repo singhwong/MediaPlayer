@@ -225,18 +225,6 @@
   <data name="fillMode_str" xml:space="preserve">
     <value>비디오 패딩</value>
   </data>
-  <data name="Fill_item.Content" xml:space="preserve">
-    <value>창 채우기 (늘이기)</value>
-  </data>
-  <data name="None_item.Content" xml:space="preserve">
-    <value>원래 크기</value>
-  </data>
-  <data name="UniformToFill_item.Content" xml:space="preserve">
-    <value>전체 화면 (가로 세로 비율 유지)</value>
-  </data>
-  <data name="Uniform_item.Content" xml:space="preserve">
-    <value>와이드 스크린 (가로 세로 비율 유지)</value>
-  </data>
   <data name="GetVideoAccessError_str" xml:space="preserve">
     <value>비디오 라이브러리에 폴더를 추가하면 오류가 발생하므로 앱을 열어 로컬 비디오 권한을 얻으십시오.</value>
   </data>

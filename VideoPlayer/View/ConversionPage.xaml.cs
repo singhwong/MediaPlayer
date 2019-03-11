@@ -213,7 +213,7 @@ namespace VideoPlayer.View
             IRandomAccessStream stream = await _OutputFile.OpenAsync(FileAccessMode.Read);
             await _dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                OutputVideo.SetSource(stream, _OutputFile.ContentType);
+                //OutputVideo.SetSource(stream, _OutputFile.ContentType);
             });
 
             EnableButtons();
@@ -292,8 +292,8 @@ namespace VideoPlayer.View
                 IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read);
 
                 _InputFile = file;
-                InputVideo.SetSource(stream, file.ContentType);
-                InputVideo.Play();
+                //InputVideo.SetSource(stream, file.ContentType);
+                //InputVideo.Play();
 
                 // Enable buttons
                 EnableButtons();
@@ -354,7 +354,7 @@ namespace VideoPlayer.View
 
         void InputStopButton_Click(Object sender, RoutedEventArgs e)
         {
-            InputVideo.Stop();
+            //InputVideo.Stop();
         }
 
         //void InputPauseButton_Click(Object sender, RoutedEventArgs e)
@@ -466,14 +466,14 @@ namespace VideoPlayer.View
         {
             await _dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                if (InputVideo.CurrentState != MediaElementState.Paused)
-                {
-                    InputVideo.Pause();
-                }
-                if (OutputVideo.CurrentState != MediaElementState.Paused)
-                {
-                    OutputVideo.Pause();
-                }
+                //if (InputVideo.CurrentState != MediaElementState.Paused)
+                //{
+                //    InputVideo.Pause();
+                //}
+                //if (OutputVideo.CurrentState != MediaElementState.Paused)
+                //{
+                //    OutputVideo.Pause();
+                //}
             });
         }
 
@@ -484,8 +484,8 @@ namespace VideoPlayer.View
                 try
                 {
                     IRandomAccessStream stream = await MediaFile.OpenAsync(FileAccessMode.Read);
-                    OutputVideo.SetSource(stream, MediaFile.ContentType);
-                    OutputVideo.Play();
+                    //OutputVideo.SetSource(stream, MediaFile.ContentType);
+                    //OutputVideo.Play();
                 }
                 catch
                 {

@@ -290,22 +290,6 @@
           <source>视频填充</source>
           <target state="translated">비디오 패딩</target>
         </trans-unit>
-        <trans-unit id="Fill_item.Content" translate="yes" xml:space="preserve">
-          <source>填充窗口(拉伸)</source>
-          <target state="translated">창 채우기 (늘이기)</target>
-        </trans-unit>
-        <trans-unit id="None_item.Content" translate="yes" xml:space="preserve">
-          <source>原始尺寸</source>
-          <target state="translated">원래 크기</target>
-        </trans-unit>
-        <trans-unit id="UniformToFill_item.Content" translate="yes" xml:space="preserve">
-          <source>全屏(保持纵横比)</source>
-          <target state="translated">전체 화면 (가로 세로 비율 유지)</target>
-        </trans-unit>
-        <trans-unit id="Uniform_item.Content" translate="yes" xml:space="preserve">
-          <source>宽屏(保持纵横比)</source>
-          <target state="translated">와이드 스크린 (가로 세로 비율 유지)</target>
-        </trans-unit>
         <trans-unit id="addFolderLibrary_textBlock.Text" translate="yes" xml:space="preserve">
           <source>下次启动，将自动加载下列文件夹中的所有视频</source>
           <target state="new">下次启动，将自动加载下列文件夹中的所有视频</target>
@@ -397,6 +381,22 @@
         <trans-unit id="saveSucceed_str" translate="yes" xml:space="preserve">
           <source>保存截图成功:  </source>
           <target state="translated">성공적으로 저장되었습니다:  </target>
+        </trans-unit>
+        <trans-unit id="Fill_item.Text" translate="yes" xml:space="preserve">
+          <source>填充窗口(拉伸)</source>
+          <target state="new">填充窗口(拉伸)</target>
+        </trans-unit>
+        <trans-unit id="None_item.Text" translate="yes" xml:space="preserve">
+          <source>原始尺寸</source>
+          <target state="new">原始尺寸</target>
+        </trans-unit>
+        <trans-unit id="UniformToFill_item.Text" translate="yes" xml:space="preserve">
+          <source>全屏(保持纵横比)</source>
+          <target state="new">全屏(保持纵横比)</target>
+        </trans-unit>
+        <trans-unit id="Uniform_item.Text" translate="yes" xml:space="preserve">
+          <source>宽屏(保持纵横比)</source>
+          <target state="new">宽屏(保持纵横比)</target>
         </trans-unit>
       </group>
     </body>

@@ -48,7 +48,7 @@
                            VerticalAlignment="Center"
                            x:Name="select_textBlock"
                            x:Uid="select_textBlock"/>-->
-                <Button x:ConnectionId='13' Grid.Row="3" 
+                <Button x:ConnectionId='11' Grid.Row="3" 
                         Grid.ColumnSpan="2"
                         Style="{StaticResource ButtonRevealStyle}"
                         x:Name="PickFileButton"
@@ -60,7 +60,7 @@
                            VerticalAlignment="Center"
                            x:Name="targetFormat_textBlock"
                            x:Uid="targetFormat_textBloc"></TextBlock>-->
-                <ComboBox x:ConnectionId='14' Grid.Row="4" 
+                <ComboBox x:ConnectionId='12' Grid.Row="4" 
                           Grid.ColumnSpan="2"
                           Margin="0,2" 
                           x:Name="TargetFormat"
@@ -77,7 +77,7 @@
                            x:Name="profile_textBlock"
                            VerticalAlignment="Center"
                            x:Uid="profile_textBlock"></TextBlock>-->
-                <ComboBox x:ConnectionId='15' Grid.Row="5" 
+                <ComboBox x:ConnectionId='13' Grid.Row="5" 
                           Grid.ColumnSpan="2"
                           Margin="0,2"
                           x:Name="ProfileSelect" 
@@ -85,19 +85,19 @@
                           Height="Auto"
                           SelectedIndex="2" 
                           HorizontalContentAlignment="Center">
-                    <ComboBoxItem x:ConnectionId='20' Name="ComboBoxItem_1080p"
+                    <ComboBoxItem x:ConnectionId='18' Name="ComboBoxItem_1080p"
                                   Content="1080p (1920x1080)"/>
-                    <ComboBoxItem x:ConnectionId='21' Name="ComboBoxItem_720p" 
+                    <ComboBoxItem x:ConnectionId='19' Name="ComboBoxItem_720p" 
                                   Content="720p (1280x720)"/>
-                    <ComboBoxItem x:ConnectionId='22' Name="ComboBoxItem_WVGA" 
+                    <ComboBoxItem x:ConnectionId='20' Name="ComboBoxItem_WVGA" 
                                   Content="WVGA (800x480)"/>
-                    <ComboBoxItem x:ConnectionId='23' Name="ComboBoxItem_NTSC"
+                    <ComboBoxItem x:ConnectionId='21' Name="ComboBoxItem_NTSC"
                                   Content="NTSC (720x480)"/>
-                    <ComboBoxItem x:ConnectionId='24' Name="ComboBoxItem_PAL" 
+                    <ComboBoxItem x:ConnectionId='22' Name="ComboBoxItem_PAL" 
                                   Content="PAL (720x576)"/>
-                    <ComboBoxItem x:ConnectionId='25' Name="ComboBoxItem_VGA"
+                    <ComboBoxItem x:ConnectionId='23' Name="ComboBoxItem_VGA"
                                   Content="VGA (640x480)"/>
-                    <ComboBoxItem x:ConnectionId='26' Name="ComboBoxItem_QVGA"
+                    <ComboBoxItem x:ConnectionId='24' Name="ComboBoxItem_QVGA"
                                   Content="QVGA (320x240)"/>
                 </ComboBox>
                 <!--<TextBlock Grid.Row="6"
@@ -105,28 +105,28 @@
                            VerticalAlignment="Center"
                            x:Name="ouput_textBlock"
                            x:Uid="ouput_textBlock" />-->
-                <Button x:ConnectionId='16' Grid.Row="6" 
+                <Button x:ConnectionId='14' Grid.Row="6" 
                         Grid.ColumnSpan="2"
                         x:Name="SetOutputButton"
                         x:Uid="SetOutputButton"
                         Margin="0,2"
                         Width="200"
                         Style="{StaticResource ButtonRevealStyle}"/>
-                <Button x:ConnectionId='17' Grid.Row="7"
+                <Button x:ConnectionId='15' Grid.Row="7"
                         Grid.Column="0"
                         x:Name="Transcode"
                         x:Uid="Transcode"
                         Margin="0,2,10,2"
                         Width="95"
                         Style="{StaticResource ButtonRevealStyle}"/>
-                <Button x:ConnectionId='18' Grid.Row="7"
+                <Button x:ConnectionId='16' Grid.Row="7"
                         Grid.Column="1"
                         x:Name="Cancel"
                         x:Uid="Cancel"
                         Margin="0,2"
                         Width="95"
                         Style="{StaticResource ButtonRevealStyle}"/>
-                <CheckBox x:ConnectionId='19' Grid.Row="8" 
+                <CheckBox x:ConnectionId='17' Grid.Row="8" 
                           Grid.Column="0"
                           Grid.ColumnSpan="2"
                           x:Name="EnableMrfCrf444"
@@ -143,12 +143,12 @@
                                 Margin="2,0,2,0"
                                 Height="50">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:ConnectionId='11' x:Name="OutputMsg" 
+                            <TextBlock x:ConnectionId='9' x:Name="OutputMsg" 
                                    Text=""
                                        Width="150"
                                        VerticalAlignment="Center"
                                    FontWeight="Bold"></TextBlock>
-                            <ProgressBar x:ConnectionId='12' x:Name="progress_progressBar"
+                            <ProgressBar x:ConnectionId='10' x:Name="progress_progressBar"
                                      Height="30"
                                      Width="265"
                                      Minimum="0"
@@ -165,7 +165,7 @@
                                 </ProgressBar.Foreground>
                             </ProgressBar>
                         </StackPanel>
-                        <TextBlock x:ConnectionId='10' x:Name="StatusMessage"
+                        <TextBlock x:ConnectionId='8' x:Name="StatusMessage"
                                    Text=""
                                    FontWeight="Bold"></TextBlock>
                     </StackPanel>
@@ -173,7 +173,7 @@
                         <StackPanel Orientation="Vertical" 
                                     Margin="2,0,2,0">
                             <ScrollViewer Height="70">
-                                <TextBlock x:ConnectionId='9' x:Name="input_textBlock"
+                                <TextBlock x:ConnectionId='7' x:Name="input_textBlock"
                                        Width="320"
                                        FontSize="12"
                                        TextWrapping="Wrap"
@@ -181,11 +181,11 @@
                                        x:Uid="input_textBlock"></TextBlock>
                             </ScrollViewer>
 
-                            <Border BorderBrush="Black" 
+                            <!--<Border BorderBrush="Black" 
                                     BorderThickness="1" 
                                     Width="322" 
                                     HorizontalAlignment="Left">
-                                <MediaElement x:ConnectionId='8' x:Name="InputVideo" 
+                                <MediaElement x:Name="InputVideo" 
                                               Width="320"
                                               Height="240" 
                                               AutoPlay="true" 
@@ -195,7 +195,7 @@
                                         <MediaTransportControls IsCompact="True"/>
                                     </MediaElement.TransportControls>
                                 </MediaElement>
-                            </Border>
+                            </Border>-->
                             <!--<StackPanel x:Name="InputTransportControlStackPanel" Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Left" Grid.Column="0" VerticalAlignment="Center">
                                 <Button x:Name="InputPlayButton"  Content="Play" Margin="10,0"/>
                                 <Button x:Name="InputPauseButton" Content="Pause" Margin="10,0"/>
@@ -205,18 +205,18 @@
                         <StackPanel Orientation="Vertical"
                                     Margin="0,0,2,0">
                             <ScrollViewer Height="70">
-                                <TextBlock x:ConnectionId='7' x:Name="OutputPath"
+                                <TextBlock x:ConnectionId='6' x:Name="OutputPath"
                                        x:Uid="OutputPath"
                                        Width="320"
                                        FontSize="12"
                                            TextWrapping="Wrap"
                                        IsTextSelectionEnabled="True"></TextBlock>
                             </ScrollViewer>
-                            <Border BorderBrush="Black"
+                            <!--<Border BorderBrush="Black"
                                     BorderThickness="1"
                                     Width="322" 
                                     HorizontalAlignment="Left">
-                                <MediaElement x:ConnectionId='6' x:Name="OutputVideo"
+                                <MediaElement x:Name="OutputVideo"
                                               Width="320"
                                               Height="240" 
                                               AutoPlay="true"
@@ -226,7 +226,7 @@
                                         <MediaTransportControls IsCompact="True"/>
                                     </MediaElement.TransportControls>
                                 </MediaElement>
-                            </Border>
+                            </Border>-->
                             <!--<StackPanel x:Name="OutputTransportControlStackPanel" Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Left" Grid.Column="0" VerticalAlignment="Center">
                                 <Button x:Name="OutputPlayButton"  Content="Play" Margin="10,0"/>
                                 <Button x:Name="OutputPauseButton" Content="Pause" Margin="10,0"/>

@@ -181,7 +181,7 @@
                                        x:Uid="input_textBlock"></TextBlock>
                             </ScrollViewer>
 
-                            <Border BorderBrush="Black" 
+                            <!--<Border BorderBrush="Black" 
                                     BorderThickness="1" 
                                     Width="322" 
                                     HorizontalAlignment="Left">
@@ -195,7 +195,7 @@
                                         <MediaTransportControls IsCompact="True"/>
                                     </MediaElement.TransportControls>
                                 </MediaElement>
-                            </Border>
+                            </Border>-->
                             <!--<StackPanel x:Name="InputTransportControlStackPanel" Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Left" Grid.Column="0" VerticalAlignment="Center">
                                 <Button x:Name="InputPlayButton"  Content="Play" Margin="10,0"/>
                                 <Button x:Name="InputPauseButton" Content="Pause" Margin="10,0"/>
@@ -212,7 +212,7 @@
                                            TextWrapping="Wrap"
                                        IsTextSelectionEnabled="True"></TextBlock>
                             </ScrollViewer>
-                            <Border BorderBrush="Black"
+                            <!--<Border BorderBrush="Black"
                                     BorderThickness="1"
                                     Width="322" 
                                     HorizontalAlignment="Left">
@@ -226,7 +226,7 @@
                                         <MediaTransportControls IsCompact="True"/>
                                     </MediaElement.TransportControls>
                                 </MediaElement>
-                            </Border>
+                            </Border>-->
                             <!--<StackPanel x:Name="OutputTransportControlStackPanel" Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Left" Grid.Column="0" VerticalAlignment="Center">
                                 <Button x:Name="OutputPlayButton"  Content="Play" Margin="10,0"/>
                                 <Button x:Name="OutputPauseButton" Content="Pause" Margin="10,0"/>

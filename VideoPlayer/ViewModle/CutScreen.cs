@@ -26,7 +26,7 @@ namespace VideoPlayer.ViewModle
         {
             try
             {
-                string desiredName = video.VideoFile.DisplayName + ".jpg";
+                string desiredName = video.Title + ".jpg";
                 StorageFolder folder = await KnownFolders.PicturesLibrary.CreateFolderAsync("M-Player", CreationCollisionOption.OpenIfExists);
                 StorageFile saveFile = await folder.CreateFileAsync(desiredName, CreationCollisionOption.GenerateUniqueName);
                 RenderTargetBitmap bitmap = new RenderTargetBitmap();
@@ -62,7 +62,7 @@ namespace VideoPlayer.ViewModle
             catch
             {
             }
-            
+
         }
     }
 }

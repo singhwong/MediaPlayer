@@ -2,120 +2,120 @@
 <ArrayOfCacheFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <CacheFile>
     <FileName>Strings\zh-CN\Resources.resw</FileName>
-    <Checksum>101229341578924247281372513114106123238214</Checksum>
-    <ModifiedTime>2019-03-09T13:50:30.9792668</ModifiedTime>
+    <Checksum>242082032228615611327221198159146169254241135</Checksum>
+    <ModifiedTime>2019-03-11T11:28:27.6224242</ModifiedTime>
     <CacheFileType>NeutralResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>MultilingualResources\VideoPlayer.en-US.xlf</FileName>
-    <Checksum>154106941615613121243721939597228146128242</Checksum>
-    <ModifiedTime>2019-03-09T13:55:34.0204892+08:00</ModifiedTime>
+    <Checksum>142143856221211612092301585914713613623376</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.27507+08:00</ModifiedTime>
     <CacheFileType>XliffResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>Strings\en-US\Resources.resw</FileName>
-    <Checksum>2161807916564392271381609819775240215246128</Checksum>
-    <ModifiedTime>2019-03-09T14:05:16.1319641+08:00</ModifiedTime>
+    <Checksum>463160166441162161442072222310011517920673</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.2760673+08:00</ModifiedTime>
     <CacheFileType>LanguageResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>MultilingualResources\VideoPlayer.zh-Hant.xlf</FileName>
-    <Checksum>902240311111301741451051001096133164149233</Checksum>
-    <ModifiedTime>2019-03-09T14:00:55.9963838+08:00</ModifiedTime>
+    <Checksum>7019211319217473845922223612187202213148188</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.3566898+08:00</ModifiedTime>
     <CacheFileType>XliffResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>Strings\zh-Hant\Resources.resw</FileName>
-    <Checksum>15223511924547162121669693594119111723190</Checksum>
-    <ModifiedTime>2019-03-09T14:05:16.1784391+08:00</ModifiedTime>
+    <Checksum>261032171811701913418686251114191152224123184</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.3586584+08:00</ModifiedTime>
     <CacheFileType>LanguageResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>MultilingualResources\VideoPlayer.ja.xlf</FileName>
-    <Checksum>7895250192412121861761091059113623818859240</Checksum>
-    <ModifiedTime>2019-03-09T13:58:18.3973283+08:00</ModifiedTime>
+    <Checksum>17414719215671186420023289209114220804717</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.3119989+08:00</ModifiedTime>
     <CacheFileType>XliffResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>Strings\ja\Resources.resw</FileName>
-    <Checksum>821331233812145253342171927673566568100</Checksum>
-    <ModifiedTime>2019-03-09T14:05:16.1545428+08:00</ModifiedTime>
+    <Checksum>1402051432511022051962998225103198197131213232</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.3129685+08:00</ModifiedTime>
     <CacheFileType>LanguageResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>MultilingualResources\VideoPlayer.ko-KR.xlf</FileName>
-    <Checksum>1012718323624301791821176914415687559519</Checksum>
-    <ModifiedTime>2019-03-09T13:59:16.9981185+08:00</ModifiedTime>
+    <Checksum>17114710781772361611061991981132202272493983</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.332221+08:00</ModifiedTime>
     <CacheFileType>XliffResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>Strings\ko-KR\Resources.resw</FileName>
-    <Checksum>251424811513917925211119719921324883253265</Checksum>
-    <ModifiedTime>2019-03-09T14:05:16.1625097+08:00</ModifiedTime>
+    <Checksum>249194191761481911591201432074413641123196</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.3342443+08:00</ModifiedTime>
     <CacheFileType>LanguageResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>MultilingualResources\VideoPlayer.hi.xlf</FileName>
-    <Checksum>10102186242204902312312361948310220917739163</Checksum>
-    <ModifiedTime>2019-03-09T13:56:58.7795125+08:00</ModifiedTime>
+    <Checksum>13623536259225672222412024912724480220187</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.3010283+08:00</ModifiedTime>
     <CacheFileType>XliffResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>Strings\hi\Resources.resw</FileName>
-    <Checksum>671243124322112799271941092118721290220181</Checksum>
-    <ModifiedTime>2019-03-09T14:05:16.1479518+08:00</ModifiedTime>
+    <Checksum>16624891192001438622433988533755188</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.3019985+08:00</ModifiedTime>
     <CacheFileType>LanguageResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>MultilingualResources\VideoPlayer.ru.xlf</FileName>
-    <Checksum>1151233118477192691847933148194158187197161</Checksum>
-    <ModifiedTime>2019-03-09T14:00:13.2045159+08:00</ModifiedTime>
+    <Checksum>223901145511399235134715118732942206215</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.3446964+08:00</ModifiedTime>
     <CacheFileType>XliffResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>Strings\ru\Resources.resw</FileName>
-    <Checksum>16118617161463412966157107183152178150234202</Checksum>
-    <ModifiedTime>2019-03-09T14:05:16.169494+08:00</ModifiedTime>
+    <Checksum>195237542719622510293149611824964107255</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.3456906+08:00</ModifiedTime>
     <CacheFileType>LanguageResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>MultilingualResources\VideoPlayer.de.xlf</FileName>
-    <Checksum>13819112119614489181200317313541185172151</Checksum>
-    <ModifiedTime>2019-03-09T13:55:50.8099612+08:00</ModifiedTime>
+    <Checksum>232190422461383221524524020617223911510011113</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.2336047+08:00</ModifiedTime>
     <CacheFileType>XliffResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>Strings\de\Resources.resw</FileName>
-    <Checksum>192170516496512503112810214324365217222235</Checksum>
-    <ModifiedTime>2019-03-09T14:05:16.1240135+08:00</ModifiedTime>
+    <Checksum>75178276021377156170245154254361006496111</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.2547225+08:00</ModifiedTime>
     <CacheFileType>LanguageResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>MultilingualResources\VideoPlayer.en.xlf</FileName>
-    <Checksum>3411024613312522010746204101161288423125070</Checksum>
-    <ModifiedTime>2019-03-09T13:55:11.9698524+08:00</ModifiedTime>
+    <Checksum>13175139521302401011291031311622162397825424</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.2890332+08:00</ModifiedTime>
     <CacheFileType>XliffResource</CacheFileType>
     <WarningMessage />
   </CacheFile>
   <CacheFile>
     <FileName>Strings\en\Resources.resw</FileName>
-    <Checksum>189842910721848120173241251361081937915338</Checksum>
-    <ModifiedTime>2019-03-09T14:05:16.139942+08:00</ModifiedTime>
+    <Checksum>15411129514031962853215146425515132191</Checksum>
+    <ModifiedTime>2019-03-11T11:29:40.2910279+08:00</ModifiedTime>
     <CacheFileType>LanguageResource</CacheFileType>
     <WarningMessage />
   </CacheFile>

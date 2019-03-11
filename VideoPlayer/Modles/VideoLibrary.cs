@@ -10,6 +10,6 @@ namespace VideoPlayer.Modle
     public class VideoLibrary
     {
         public string FolderName { get; set; }
-        public string FolderPath { get; set; }       
+        public string FolderPath { get; set; }
     }
 }

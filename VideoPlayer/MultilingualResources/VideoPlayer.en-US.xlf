@@ -282,22 +282,6 @@
           <source>倍速</source>
           <target state="translated">PlayRate</target>
         </trans-unit>
-        <trans-unit id="Fill_item.Content" translate="yes" xml:space="preserve">
-          <source>填充窗口(拉伸)</source>
-          <target state="translated">Fill</target>
-        </trans-unit>
-        <trans-unit id="None_item.Content" translate="yes" xml:space="preserve">
-          <source>原始尺寸</source>
-          <target state="translated">None</target>
-        </trans-unit>
-        <trans-unit id="UniformToFill_item.Content" translate="yes" xml:space="preserve">
-          <source>全屏(保持纵横比)</source>
-          <target state="translated">UniformToFill</target>
-        </trans-unit>
-        <trans-unit id="Uniform_item.Content" translate="yes" xml:space="preserve">
-          <source>宽屏(保持纵横比)</source>
-          <target state="translated">Uniform</target>
-        </trans-unit>
         <trans-unit id="audioLanguage_str" translate="yes" xml:space="preserve">
           <source>音轨</source>
           <target state="translated">Audio Tracks</target>
@@ -397,6 +381,22 @@
         <trans-unit id="saveSucceed_str" translate="yes" xml:space="preserve">
           <source>保存截图成功:  </source>
           <target state="translated">Save succeed:  </target>
+        </trans-unit>
+        <trans-unit id="Fill_item.Text" translate="yes" xml:space="preserve">
+          <source>填充窗口(拉伸)</source>
+          <target state="new">填充窗口(拉伸)</target>
+        </trans-unit>
+        <trans-unit id="None_item.Text" translate="yes" xml:space="preserve">
+          <source>原始尺寸</source>
+          <target state="new">原始尺寸</target>
+        </trans-unit>
+        <trans-unit id="UniformToFill_item.Text" translate="yes" xml:space="preserve">
+          <source>全屏(保持纵横比)</source>
+          <target state="new">全屏(保持纵横比)</target>
+        </trans-unit>
+        <trans-unit id="Uniform_item.Text" translate="yes" xml:space="preserve">
+          <source>宽屏(保持纵横比)</source>
+          <target state="new">宽屏(保持纵横比)</target>
         </trans-unit>
       </group>
     </body>

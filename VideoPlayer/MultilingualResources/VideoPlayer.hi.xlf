@@ -290,22 +290,6 @@
           <source>视频填充</source>
           <target state="translated">वीडियो पैडिंग</target>
         </trans-unit>
-        <trans-unit id="Fill_item.Content" translate="yes" xml:space="preserve">
-          <source>填充窗口(拉伸)</source>
-          <target state="translated">खिड़की भरें (खिंचाव)</target>
-        </trans-unit>
-        <trans-unit id="None_item.Content" translate="yes" xml:space="preserve">
-          <source>原始尺寸</source>
-          <target state="translated">मूल आकार</target>
-        </trans-unit>
-        <trans-unit id="UniformToFill_item.Content" translate="yes" xml:space="preserve">
-          <source>全屏(保持纵横比)</source>
-          <target state="translated">पूर्ण स्क्रीन (पहलू अनुपात बनाए रखें)</target>
-        </trans-unit>
-        <trans-unit id="Uniform_item.Content" translate="yes" xml:space="preserve">
-          <source>宽屏(保持纵横比)</source>
-          <target state="translated">वाइडस्क्रीन (पहलू अनुपात बनाए रखें)</target>
-        </trans-unit>
         <trans-unit id="addFolderLibrary_textBlock.Text" translate="yes" xml:space="preserve">
           <source>下次启动，将自动加载下列文件夹中的所有视频</source>
           <target state="translated">अगली बार जब आप शुरू करेंगे, तो निम्नलिखित फ़ोल्डरों के सभी वीडियो स्वचालित रूप से लोड हो जाएंगे।</target>
@@ -397,6 +381,22 @@
         <trans-unit id="saveSucceed_str" translate="yes" xml:space="preserve">
           <source>保存截图成功:  </source>
           <target state="translated">सफलतापूर्वक सहेजा गया:  </target>
+        </trans-unit>
+        <trans-unit id="Fill_item.Text" translate="yes" xml:space="preserve">
+          <source>填充窗口(拉伸)</source>
+          <target state="new">填充窗口(拉伸)</target>
+        </trans-unit>
+        <trans-unit id="None_item.Text" translate="yes" xml:space="preserve">
+          <source>原始尺寸</source>
+          <target state="new">原始尺寸</target>
+        </trans-unit>
+        <trans-unit id="UniformToFill_item.Text" translate="yes" xml:space="preserve">
+          <source>全屏(保持纵横比)</source>
+          <target state="new">全屏(保持纵横比)</target>
+        </trans-unit>
+        <trans-unit id="Uniform_item.Text" translate="yes" xml:space="preserve">
+          <source>宽屏(保持纵横比)</source>
+          <target state="new">宽屏(保持纵横比)</target>
         </trans-unit>
       </group>
     </body>

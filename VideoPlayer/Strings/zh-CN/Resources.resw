@@ -330,16 +330,16 @@
   <data name="fillMode_str" xml:space="preserve">
     <value>视频填充</value>
   </data>
-  <data name="Fill_item.Content" xml:space="preserve">
+  <data name="Fill_item.Text" xml:space="preserve">
     <value>填充窗口(拉伸)</value>
   </data>
-  <data name="None_item.Content" xml:space="preserve">
+  <data name="None_item.Text" xml:space="preserve">
     <value>原始尺寸</value>
   </data>
-  <data name="UniformToFill_item.Content" xml:space="preserve">
+  <data name="UniformToFill_item.Text" xml:space="preserve">
     <value>全屏(保持纵横比)</value>
   </data>
-  <data name="Uniform_item.Content" xml:space="preserve">
+  <data name="Uniform_item.Text" xml:space="preserve">
     <value>宽屏(保持纵横比)</value>
   </data>
   <data name="addFolderLibrary_textBlock.Text" xml:space="preserve">

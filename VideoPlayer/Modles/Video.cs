@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Media.Playback;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI;
@@ -29,6 +30,7 @@ namespace VideoPlayer.Modles
         public double History_progress { get; set; }
         public bool IsSelected { get; set; }
         //public int Progress_num { get; set; }
+        //public MediaPlaybackItem MediaItem { get; set; }
     }
     //main_video.History_progress = History_Progress.GetHistroyProgress(main_mediaElement.Position, main_video.Duration);
     public class History_Progress

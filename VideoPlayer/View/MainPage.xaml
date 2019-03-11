@@ -30,7 +30,7 @@
                                  Duration="0:0:0.3"/>
             </Storyboard>
 
-            <Storyboard x:Name="hide_metadataGrid">
+            <!--<Storyboard x:Name="hide_metadataGrid">
                 <DoubleAnimation Storyboard.TargetName="metadata_Grid" 
                                  Storyboard.TargetProperty="X" 
                                  From="10" 
@@ -43,7 +43,7 @@
                                  From="310" 
                                  To="10"
                                  Duration="0:0:0.2"/>
-            </Storyboard>
+            </Storyboard>-->
 
             <Storyboard x:Name="hide_settingsGrid">
                 <DoubleAnimation Storyboard.TargetName="settings_Grid" 
@@ -338,7 +338,7 @@
                 </MenuFlyout>
             </MediaElement.ContextFlyout>
         </MediaElement>
-        <Grid x:Name="metadata_gird"
+        <!--<Grid x:Name="metadata_gird"
               Visibility="Collapsed"
               Grid.Row="3"
               Grid.RowSpan="2"
@@ -377,7 +377,7 @@
                     </ScrollViewer>
                 </Grid>
             </controls:DropShadowPanel>
-        </Grid>
+        </Grid>-->
         <Grid x:Name="settings_gird"
               Visibility="Collapsed"
               Grid.Row="3"
@@ -405,31 +405,37 @@
                                     Style="{StaticResource button_Style}"
                                     Content="&#xED1F;">
                                 <Button.Flyout>
-                                    <Flyout x:Name="audioLanguage_flyout">
+                                    <!--<Flyout x:Name="audioLanguage_flyout">
                                         <ListBox x:Name="audioLanguage_listBox"
                                                  Margin="-9"
                                                  AllowFocusOnInteraction="True">
                                         </ListBox>
-                                    </Flyout>
+                                    </Flyout>-->
+                                    <MenuFlyout x:Name="audioLanguage_flyout">
+                                        
+                                    </MenuFlyout>
                                 </Button.Flyout>
                             </Button>
                             <Button x:Name="videoTracks_button"
                                     Style="{StaticResource button_Style}"
                                     Content="&#xE8AA;">
                                 <Button.Flyout>
-                                    <Flyout x:Name="videoTracks_flyout">
+                                    <!--<Flyout x:Name="videoTracks_flyout">
                                         <ListBox x:Name="videoTracks_listbox"
                                                  Margin="-9"
                                                  AllowFocusOnInteraction="True">
                                         </ListBox>
-                                    </Flyout>
+                                    </Flyout>-->
+                                    <MenuFlyout x:Name="videoTracks_flyout">
+                                        
+                                    </MenuFlyout>
                                 </Button.Flyout>
                             </Button>
                             <Button x:Name="fillMode_button"
                                     Style="{StaticResource button_Style}"
                                     Content="&#xE8B2;">
                                 <Button.Flyout>
-                                    <Flyout x:Name="resizeVideo_flyout">
+                                    <!--<Flyout x:Name="resizeVideo_flyout">
                                         <ListBox x:Name="resizeVideo_listBox"
                                                  Margin="-10"
                                                  AllowFocusOnInteraction="True">
@@ -442,7 +448,21 @@
                                             <ListBoxItem x:Name="Fill_item"
                                                          x:Uid="Fill_item"/>
                                         </ListBox>
-                                    </Flyout>
+                                    </Flyout>-->
+                                    <MenuBarItemFlyout>
+                                        <MenuFlyoutItem x:Name="None_item"
+                                                        x:Uid="None_item"
+                                                        Click="None_item_Click"/>
+                                        <MenuFlyoutItem x:Name="Uniform_item"
+                                                        x:Uid="Uniform_item"
+                                                        Click="Uniform_item_Click"/>
+                                        <MenuFlyoutItem x:Name="UniformToFill_item"
+                                                        x:Uid="UniformToFill_item"
+                                                        Click="UniformToFill_item_Click"/>
+                                        <MenuFlyoutItem x:Name="Fill_item"
+                                                        x:Uid="Fill_item"
+                                                        Click="Fill_item_Click"/>
+                                    </MenuBarItemFlyout>
                                 </Button.Flyout>
                             </Button>
                         </StackPanel>
@@ -602,7 +622,21 @@
                         Style="{StaticResource button_Style}"
                         Content="&#xE775;"
                         RelativePanel.LeftOf="fullScreen_button"
-                        RelativePanel.AlignBottomWithPanel="True"/>
+                        RelativePanel.AlignBottomWithPanel="True">
+                    <Button.Flyout>
+                        <Flyout>
+                            <StackPanel>
+                                <TextBlock x:Uid="metadata_textBlock"
+                                           FontSize="13"
+                                           Margin="0,-10,0,10"
+                                           HorizontalAlignment="Center"/>
+                                <StackPanel x:Name="metadata_StackPanel"
+                                        Margin="-10"/>
+                            </StackPanel>
+                            
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
                 <Button x:Name="volume_button"    
                         Style="{StaticResource button_Style}"
                         Content="&#xE767;"

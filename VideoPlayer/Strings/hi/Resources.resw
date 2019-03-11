@@ -225,18 +225,6 @@
   <data name="fillMode_str" xml:space="preserve">
     <value>वीडियो पैडिंग</value>
   </data>
-  <data name="Fill_item.Content" xml:space="preserve">
-    <value>खिड़की भरें (खिंचाव)</value>
-  </data>
-  <data name="None_item.Content" xml:space="preserve">
-    <value>मूल आकार</value>
-  </data>
-  <data name="UniformToFill_item.Content" xml:space="preserve">
-    <value>पूर्ण स्क्रीन (पहलू अनुपात बनाए रखें)</value>
-  </data>
-  <data name="Uniform_item.Content" xml:space="preserve">
-    <value>वाइडस्क्रीन (पहलू अनुपात बनाए रखें)</value>
-  </data>
   <data name="addFolderLibrary_textBlock.Text" xml:space="preserve">
     <value>अगली बार जब आप शुरू करेंगे, तो निम्नलिखित फ़ोल्डरों के सभी वीडियो स्वचालित रूप से लोड हो जाएंगे।</value>
   </data>
