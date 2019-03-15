@@ -6,25 +6,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    Background="WhiteSmoke"
     mc:Ignorable="d"
-    Background="{ThemeResource grid_themeAcrylicBrush}">
-
+    Loaded="Page_Loaded">
     <ScrollViewer>
         <Grid x:Name="LayoutRoot">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <UI:AdControl x:Name="ad_control6"
-                          Grid.RowSpan="2"
-                          ApplicationId="9n6jvkjh4ffl"
-                          AdUnitId="1100039418"
-                          Height="600"
-                          Width="160"
-                          VerticalAlignment="Center"
-                          HorizontalAlignment="Right"/>
-            <Grid x:Name="Input" 
-                  Margin="30,50,0,0">
+            <TextBlock x:Name="transCodeTitle_textBlock" x:Uid="transCodeTitle_textBlock" Margin="30,30,0,0" FontSize="20" FontWeight="Bold"/>
+            <UI:AdControl x:Name="ad_control6" Grid.Row="2" ApplicationId="9n6jvkjh4ffl" AdUnitId="1100039418" Height="250" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            <Grid x:Name="Input" HorizontalAlignment="Center" Margin="0,70,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -40,122 +34,33 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <!--<TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="This scenario demonstrates how the transcode API can be used to convert a video file to MP4 at a given resolution, utilizing the API's default presets." Margin="0,0,20,0"></TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="For this scenario video files can be converted to H.264/MP4 at 1080p, 720p, WVGA, NTSC, PAL, VGA, or QVGA resolutions." Margin="0,0,20,0"></TextBlock>
-                <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text=" "></TextBlock>-->
-                <!--<TextBlock Grid.Row="3" 
-                           Grid.Column="0"
-                           VerticalAlignment="Center"
-                           x:Name="select_textBlock"
-                           x:Uid="select_textBlock"/>-->
-                <Button Grid.Row="3" 
-                        Grid.ColumnSpan="2"
-                        Style="{StaticResource ButtonRevealStyle}"
-                        x:Name="PickFileButton"
-                        x:Uid="PickFileButton"
-                         Margin="0,2"
-                        Width="200"/>
-                <!--<TextBlock Grid.Row="4" 
-                           Grid.Column="0"
-                           VerticalAlignment="Center"
-                           x:Name="targetFormat_textBlock"
-                           x:Uid="targetFormat_textBloc"></TextBlock>-->
-                <ComboBox Grid.Row="4" 
-                          Grid.ColumnSpan="2"
-                          Margin="0,2" 
-                          x:Name="TargetFormat"
-                          Width="200"
-                          Height="Auto"
-                          SelectedIndex="0" 
-                          HorizontalContentAlignment="Center">
+                <Button Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" Style="{StaticResource ButtonRevealStyle}" x:Name="PickFileButton" x:Uid="PickFileButton" Margin="0,2" Width="200"/>
+                <ComboBox Grid.Row="4" Grid.ColumnSpan="2" Margin="0,2"  HorizontalAlignment="Center" x:Name="TargetFormat" Width="200" Height="Auto" SelectedIndex="0"  HorizontalContentAlignment="Center">
                     <ComboBoxItem Content="H.264/MP4"/>
                     <ComboBoxItem Content="VC-1/WMV"/>
                     <ComboBoxItem Content="Uncompressed/AVI"/>
                 </ComboBox>
-                <!--<TextBlock Grid.Row="5"
-                           Grid.Column="0"
-                           x:Name="profile_textBlock"
-                           VerticalAlignment="Center"
-                           x:Uid="profile_textBlock"></TextBlock>-->
-                <ComboBox Grid.Row="5" 
-                          Grid.ColumnSpan="2"
-                          Margin="0,2"
-                          x:Name="ProfileSelect" 
-                          Width="200"
-                          Height="Auto"
-                          SelectedIndex="2" 
-                          HorizontalContentAlignment="Center">
-                    <ComboBoxItem Name="ComboBoxItem_1080p"
-                                  Content="1080p (1920x1080)"/>
-                    <ComboBoxItem Name="ComboBoxItem_720p" 
-                                  Content="720p (1280x720)"/>
-                    <ComboBoxItem Name="ComboBoxItem_WVGA" 
-                                  Content="WVGA (800x480)"/>
-                    <ComboBoxItem Name="ComboBoxItem_NTSC"
-                                  Content="NTSC (720x480)"/>
-                    <ComboBoxItem Name="ComboBoxItem_PAL" 
-                                  Content="PAL (720x576)"/>
-                    <ComboBoxItem Name="ComboBoxItem_VGA"
-                                  Content="VGA (640x480)"/>
-                    <ComboBoxItem Name="ComboBoxItem_QVGA"
-                                  Content="QVGA (320x240)"/>
+                <ComboBox Grid.Row="5" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0,2" x:Name="ProfileSelect"  Width="200" Height="Auto" SelectedIndex="2" HorizontalContentAlignment="Center">
+                    <ComboBoxItem Name="ComboBoxItem_1080p" Content="1080p (1920x1080)"/>
+                    <ComboBoxItem Name="ComboBoxItem_720p" Content="720p (1280x720)"/>
+                    <ComboBoxItem Name="ComboBoxItem_WVGA" Content="WVGA (800x480)"/>
+                    <ComboBoxItem Name="ComboBoxItem_NTSC" Content="NTSC (720x480)"/>
+                    <ComboBoxItem Name="ComboBoxItem_PAL" Content="PAL (720x576)"/>
+                    <ComboBoxItem Name="ComboBoxItem_VGA" Content="VGA (640x480)"/>
+                    <ComboBoxItem Name="ComboBoxItem_QVGA" Content="QVGA (320x240)"/>
                 </ComboBox>
-                <!--<TextBlock Grid.Row="6"
-                           Grid.Column="0"
-                           VerticalAlignment="Center"
-                           x:Name="ouput_textBlock"
-                           x:Uid="ouput_textBlock" />-->
-                <Button Grid.Row="6" 
-                        Grid.ColumnSpan="2"
-                        x:Name="SetOutputButton"
-                        x:Uid="SetOutputButton"
-                        Margin="0,2"
-                        Width="200"
-                        Style="{StaticResource ButtonRevealStyle}"/>
-                <Button Grid.Row="7"
-                        Grid.Column="0"
-                        x:Name="Transcode"
-                        x:Uid="Transcode"
-                        Margin="0,2,10,2"
-                        Width="95"
-                        Style="{StaticResource ButtonRevealStyle}"/>
-                <Button Grid.Row="7"
-                        Grid.Column="1"
-                        x:Name="Cancel"
-                        x:Uid="Cancel"
-                        Margin="0,2"
-                        Width="95"
-                        Style="{StaticResource ButtonRevealStyle}"/>
-                <CheckBox Grid.Row="8" 
-                          Grid.Column="0"
-                          Grid.ColumnSpan="2"
-                          x:Name="EnableMrfCrf444"
-                          x:Uid="EnableMrfCrf444"/>
+                <Button Grid.Row="6" Grid.ColumnSpan="2" x:Name="SetOutputButton" x:Uid="SetOutputButton" Margin="0,2" Width="200" HorizontalAlignment="Center" Style="{StaticResource ButtonRevealStyle}"/>
+                <Button Grid.Row="7" Grid.Column="0" x:Name="Transcode" x:Uid="Transcode" Margin="43,2,10,2" Width="95" HorizontalAlignment="Left" Style="{StaticResource ButtonRevealStyle}"/>
+                <Button Grid.Row="7" Grid.Column="1" x:Name="Cancel" x:Uid="Cancel" Margin="0,2,43,2" Width="95" HorizontalAlignment="Right" Style="{StaticResource ButtonRevealStyle}"/>
+                <CheckBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" x:Name="EnableMrfCrf444" x:Uid="EnableMrfCrf444"/>
             </Grid>
 
-            <Grid x:Name="Output" 
-                  HorizontalAlignment="Left" 
-                  VerticalAlignment="Top" 
-                  Grid.Row="1"
-                  Margin="30,10,0,0">
+            <Grid x:Name="Output" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1"      >
                 <StackPanel>
-                    <StackPanel Orientation="Vertical"
-                                Margin="2,0,2,0"
-                                Height="50">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock x:Name="OutputMsg" 
-                                   Text=""
-                                       Width="150"
-                                       VerticalAlignment="Center"
-                                   FontWeight="Bold"></TextBlock>
-                            <ProgressBar x:Name="progress_progressBar"
-                                     Height="30"
-                                     Width="265"
-                                     Minimum="0"
-                                     Maximum="100"
-                                     Value="0"
-                                     Visibility="Collapsed"
-                                     HorizontalAlignment="Left">
+                    <StackPanel Orientation="Vertical" Margin="0,0,2,0" Height="50">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock x:Name="OutputMsg" Text="" HorizontalAlignment="Center" FontWeight="Bold"></TextBlock>
+                            <ProgressBar x:Name="progress_progressBar" Height="30" Width="265" Minimum="0" Maximum="100" Value="0" Visibility="Collapsed">
                                 <ProgressBar.Foreground>
                                     <LinearGradientBrush>
                                         <GradientStop Color="SkyBlue" Offset="0"/>
@@ -165,22 +70,13 @@
                                 </ProgressBar.Foreground>
                             </ProgressBar>
                         </StackPanel>
-                        <TextBlock x:Name="StatusMessage"
-                                   Text=""
-                                   FontWeight="Bold"></TextBlock>
+                        <TextBlock x:Name="StatusMessage" HorizontalAlignment="Center" Text="" FontWeight="Bold"></TextBlock>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <StackPanel Orientation="Vertical" 
-                                    Margin="2,0,2,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Vertical" >
                             <ScrollViewer Height="70">
-                                <TextBlock x:Name="input_textBlock"
-                                       Width="320"
-                                       FontSize="12"
-                                       TextWrapping="Wrap"
-                                       IsTextSelectionEnabled="True"
-                                       x:Uid="input_textBlock"></TextBlock>
+                                <TextBlock x:Name="input_textBlock" Width="320" FontSize="12" TextWrapping="Wrap" IsTextSelectionEnabled="True" x:Uid="input_textBlock"></TextBlock>
                             </ScrollViewer>
-
                             <!--<Border BorderBrush="Black" 
                                     BorderThickness="1" 
                                     Width="322" 
@@ -202,15 +98,9 @@
                                 <Button x:Name="InputStopButton"  Content="Stop" Margin="10,0"/>
                             </StackPanel>-->
                         </StackPanel>
-                        <StackPanel Orientation="Vertical"
-                                    Margin="0,0,2,0">
+                        <StackPanel Orientation="Vertical">
                             <ScrollViewer Height="70">
-                                <TextBlock x:Name="OutputPath"
-                                       x:Uid="OutputPath"
-                                       Width="320"
-                                       FontSize="12"
-                                           TextWrapping="Wrap"
-                                       IsTextSelectionEnabled="True"></TextBlock>
+                                <TextBlock x:Name="OutputPath" x:Uid="OutputPath" Width="320" FontSize="12" TextWrapping="Wrap" IsTextSelectionEnabled="True"></TextBlock>
                             </ScrollViewer>
                             <!--<Border BorderBrush="Black"
                                     BorderThickness="1"

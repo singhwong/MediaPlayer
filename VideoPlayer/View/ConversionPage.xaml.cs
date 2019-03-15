@@ -93,11 +93,13 @@ namespace VideoPlayer.View
 
         async void TranscodePreset(Object sender, RoutedEventArgs e)
         {
+            input_textBlock.Text = "";
+            OutputPath.Text = "";
             StopPlayers();
             DisableButtons();
             GetPresetProfile(ProfileSelect);
 
-            // Clear messages
+            // Clear messagesz
             StatusMessage.Text = "";
             await _dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
@@ -529,6 +531,12 @@ namespace VideoPlayer.View
             {
                 input_textBlock.Text += text;
             });
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Background = MainPage.page.Background;
+            this.RequestedTheme = ElementTheme.Dark;
         }
         // void InputPathClick(object sender, RoutedEventArgs e)
         //{

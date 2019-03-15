@@ -108,10 +108,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AddFoldersAccessDialog.xaml.cs">
+      <DependentUpon>AddFoldersAccessDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modles\PlayingTime.cs" />
     <Compile Include="Modles\Progress.cs" />
     <Compile Include="Modles\ProgressConvert.cs" />
     <Compile Include="Modles\VideoLibrary.cs" />
+    <Compile Include="Controls\Notification.xaml.cs">
+      <DependentUpon>Notification.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModle\AudioLanguageVM.cs" />
     <Compile Include="ViewModle\ContentDialogVM.cs" />
     <Compile Include="ViewModle\CutScreen.cs" />
@@ -130,6 +136,9 @@
     <Compile Include="ViewModle\SetVideoByPath.cs" />
     <Compile Include="Modles\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\SecondPage.xaml.cs">
+      <DependentUpon>SecondPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
@@ -140,12 +149,6 @@
     </AppxManifest>
     <PRIResource Include="Strings\zh-CN\Resources.resw" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
-    <PRIResource Include="Strings\zh-Hant\Resources.resw" />
-    <PRIResource Include="Strings\ja\Resources.resw" />
-    <PRIResource Include="Strings\ko-KR\Resources.resw" />
-    <PRIResource Include="Strings\hi\Resources.resw" />
-    <PRIResource Include="Strings\ru\Resources.resw" />
-    <PRIResource Include="Strings\de\Resources.resw" />
     <PRIResource Include="Strings\en\Resources.resw" />
     <None Include="VideoPlayer_StoreKey.pfx" />
     <None Include="VideoPlayer_TemporaryKey.pfx" />
@@ -212,6 +215,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\AddFoldersAccessDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Notification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Style\acrylic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -256,6 +267,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\SecondPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SettingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -292,16 +307,13 @@
     <SDKReference Include="Microsoft.VCLibs, Version=14.0">
       <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
     </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.17763.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <XliffResource Include="MultilingualResources\VideoPlayer.de.xlf" />
     <XliffResource Include="MultilingualResources\VideoPlayer.en-US.xlf" />
     <XliffResource Include="MultilingualResources\VideoPlayer.en.xlf" />
-    <XliffResource Include="MultilingualResources\VideoPlayer.hi.xlf" />
-    <XliffResource Include="MultilingualResources\VideoPlayer.ja.xlf" />
-    <XliffResource Include="MultilingualResources\VideoPlayer.ko-KR.xlf" />
-    <XliffResource Include="MultilingualResources\VideoPlayer.ru.xlf" />
-    <XliffResource Include="MultilingualResources\VideoPlayer.zh-Hant.xlf" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

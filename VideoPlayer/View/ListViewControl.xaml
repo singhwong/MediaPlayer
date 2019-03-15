@@ -8,89 +8,25 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
-    <!--<UserControl.Resources>
-        <ResourceDictionary>
-            <Storyboard x:Name="main_storyBoard" 
-                        Completed="main_storyBoard_Completed">
-                <DoubleAnimationUsingKeyFrames EnableDependentAnimation="True"
-                                               Storyboard.TargetName="control_progressBar"
-                                               Storyboard.TargetProperty="(RangeBase.Value)">
-                    <DiscreteDoubleKeyFrame KeyTime="0:0:0.1"
-                                            Value="0"/>
-                </DoubleAnimationUsingKeyFrames>
-            </Storyboard>
-        </ResourceDictionary>
-    </UserControl.Resources>-->
     <Grid  x:Name="videoList_grid">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <!--<VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="0"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="video_image.Visibility" Value="Collapsed"/>
-                    </VisualState.Setters>
-                </VisualState>-->
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="500"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="video_image.Visibility" Value="Visible"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-        <!--<Grid.Projection>
-            <PlaneProjection RotationY="-35"
-                             CenterOfRotationX="0.5"/>
-        </Grid.Projection>-->
-        <controls:DropShadowPanel BlurRadius="8.45"
-                                  ShadowOpacity="0.7"
-                                  OffsetX="0"
-                                  OffsetY="7"
-                                  Color="Black"
-                                  VerticalAlignment="Center"
-                                  HorizontalAlignment="Center">
-        <StackPanel Orientation="Vertical">
-            <Grid>
-                <Image Name="video_image"
-                       Height="103"
-                       Visibility="Collapsed"
-                       Source="{x:Bind this_video.Cover}"/>
-                <TextBlock Name="duration_textblock"
-                           HorizontalAlignment="Right"
-                           VerticalAlignment="Bottom"
-                           Margin="0,0,5,0"
-                           Foreground="WhiteSmoke"
-                           Text="{x:Bind this_video.Video_Duration}"/>
-            </Grid>
-            <Grid Background="{ThemeResource grid_themeAcrylicBrush}">
-                <ProgressBar x:Name="video_progressBar"
-                             Width="151"
-                             Height="60"
-                             Maximum="100"
-                             Minimum="0"
-                             Value="0">
-                    <ProgressBar.Foreground>
-                        <LinearGradientBrush>
-                            <GradientStop x:Name="gradient_stop1" Color="LightBlue" Offset="0"/>
-                            <GradientStop Color="DarkGray" Offset="1"/>
-                        </LinearGradientBrush>
-                    </ProgressBar.Foreground>
-                </ProgressBar>
-
-                <TextBlock Name="video_textblock"
-                       FontSize="15"
-                       TextWrapping="Wrap"
-                       Width="150"
-                       Height="60"
-                       Text="{x:Bind this_video.Video_Path}"/>
-            </Grid>
-        </StackPanel>
+        <controls:DropShadowPanel BlurRadius="10" ShadowOpacity="1" Color="WhiteSmoke" OffsetY="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" CornerRadius="5">
+                <Grid>
+                    <Image Name="video_image" Height="60" Source="{x:Bind this_video.Cover}"/>
+                    <TextBlock Name="duration_textblock" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,5,0" Foreground="WhiteSmoke" Text="{x:Bind this_video.Video_Duration}"/>
+                </Grid>
+                <Grid Background="WhiteSmoke">
+                    <ProgressBar x:Name="video_progressBar" Width="151" Height="60" Maximum="100" Minimum="0" Value="0">
+                        <ProgressBar.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop x:Name="gradient_stop1" Color="LightBlue" Offset="0"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ProgressBar.Foreground>
+                    </ProgressBar>
+                    <TextBlock Name="video_textblock" FontSize="13" TextWrapping="Wrap" Width="150" Height="60" Text="{x:Bind this_video.Video_Path}"/>
+                </Grid>
+            </StackPanel>
         </controls:DropShadowPanel>
-        <!--<ProgressBar Name="control_progressBar"
-                     Visibility="Collapsed"/>-->
     </Grid>
 </UserControl>

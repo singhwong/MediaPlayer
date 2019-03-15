@@ -789,6 +789,12 @@
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Controls\AddFoldersAccessDialog.xbf">
+      <PackagePath>Controls\AddFoldersAccessDialog.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Controls\Notification.xbf">
+      <PackagePath>Controls\Notification.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\acrylic.xbf">
       <PackagePath>Style\acrylic.xbf</PackagePath>
     </AppxPackagedFile>
@@ -821,6 +827,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\textBlock_text.xbf">
       <PackagePath>Style\textBlock_text.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\View\SecondPage.xbf">
+      <PackagePath>View\SecondPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\View\SettingPage.xbf">
       <PackagePath>View\SettingPage.xbf</PackagePath>

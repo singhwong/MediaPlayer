@@ -1,2 +1,2 @@
-MainPackage=D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Release\Upload\VideoPlayer_1.1.61.0_x86.msix
-SymbolPackage=D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Release\Upload\VideoPlayer_1.1.61.0\VideoPlayer_1.1.61.0_x86.appxsym
+MainPackage=D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Release\Upload\VideoPlayer_1.1.63.0_x86.msix
+SymbolPackage=D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Release\Upload\VideoPlayer_1.1.63.0\VideoPlayer_1.1.63.0_x86.appxsym

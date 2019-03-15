@@ -231,9 +231,6 @@
   <data name="CloseMessageDialog_str" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="GetVideoAccessError_str" xml:space="preserve">
-    <value>If you add a folder to the video library and pop up an error prompt, open the application to get local video privileges</value>
-  </data>
   <data name="OpenLocalSetting_str" xml:space="preserve">
     <value>Open Settings</value>
   </data>
@@ -293,5 +290,44 @@
   </data>
   <data name="saveSucceed_str" xml:space="preserve">
     <value>Save succeed:  </value>
+  </data>
+  <data name="Fill_item.Text" xml:space="preserve">
+    <value>Fill</value>
+  </data>
+  <data name="None_item.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="UniformToFill_item.Text" xml:space="preserve">
+    <value>UniformToFill</value>
+  </data>
+  <data name="Uniform_item.Text" xml:space="preserve">
+    <value>Uniform</value>
+  </data>
+  <data name="access_textBlock.Text" xml:space="preserve">
+    <value>If adding a folder to the video library pops up an error, please open the local settings to get the relevant permissions.</value>
+  </data>
+  <data name="openSettings_button.Content" xml:space="preserve">
+    <value>Open Settings</value>
+  </data>
+  <data name="closeCutDialog_button.Content" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="editPicture_button.Content" xml:space="preserve">
+    <value>Edit picture</value>
+  </data>
+  <data name="openCutAdress_button.Content" xml:space="preserve">
+    <value>Open Settings</value>
+  </data>
+  <data name="replay_menuItem.Text" xml:space="preserve">
+    <value>Replay the item</value>
+  </data>
+  <data name="noPicturesFolder_str" xml:space="preserve">
+    <value>The folder has been moved or renamed!</value>
+  </data>
+  <data name="noPicture_str" xml:space="preserve">
+    <value>The file has been moved or renamed!</value>
+  </data>
+  <data name="transCodeTitle_textBlock.Text" xml:space="preserve">
+    <value>Transcode</value>
   </data>
 </root>

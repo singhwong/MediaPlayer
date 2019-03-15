@@ -10,515 +10,122 @@
     xmlns:modles="using:VideoPlayer.Modles"
     xmlns:modle="using:VideoPlayer.Modle"
     mc:Ignorable="d"
-    Background="{ThemeResource grid_themeAcrylicBrush}"
     Loaded="Page_Loaded"
-    RequestedTheme="Light">
+    Background="DimGray">
     <Page.Resources>
         <ResourceDictionary>
             <Storyboard x:Name="show_bottom">
-                <DoubleAnimation Storyboard.TargetName="Bottom_Grid" 
-                                 Storyboard.TargetProperty="Y" 
-                                 From="0" 
-                                 To="85" 
-                                 Duration="0:0:0.7"/>
+                <DoubleAnimation Storyboard.TargetName="Bottom_Grid" Storyboard.TargetProperty="Y" From="0" To="85" Duration="0:0:0.7"/>
             </Storyboard>
             <Storyboard x:Name="show_bottom_2">
-                <DoubleAnimation Storyboard.TargetName="Bottom_Grid" 
-                                 Storyboard.TargetProperty="Y"
-                                 From="85" 
-                                 To="0"
-                                 Duration="0:0:0.3"/>
+                <DoubleAnimation Storyboard.TargetName="Bottom_Grid" Storyboard.TargetProperty="Y" From="85" To="0" Duration="0:0:0.3"/>
             </Storyboard>
-
-            <!--<Storyboard x:Name="hide_metadataGrid">
-                <DoubleAnimation Storyboard.TargetName="metadata_Grid" 
-                                 Storyboard.TargetProperty="X" 
-                                 From="10" 
-                                 To="310" 
-                                 Duration="0:0:0.2"/>
-            </Storyboard>
-            <Storyboard x:Name="show_metadataGrid">
-                <DoubleAnimation Storyboard.TargetName="metadata_Grid" 
-                                 Storyboard.TargetProperty="X"
-                                 From="310" 
-                                 To="10"
-                                 Duration="0:0:0.2"/>
-            </Storyboard>-->
-
             <Storyboard x:Name="hide_settingsGrid">
-                <DoubleAnimation Storyboard.TargetName="settings_Grid" 
-                                 Storyboard.TargetProperty="X" 
-                                 From="5" 
-                                 To="-260" 
-                                 Duration="0:0:0.2"/>
+                <DoubleAnimation Storyboard.TargetName="settings_Grid" Storyboard.TargetProperty="X" From="5" To="-260" Duration="0:0:0.5"/>
             </Storyboard>
             <Storyboard x:Name="show_settingsGrid">
-                <DoubleAnimation Storyboard.TargetName="settings_Grid" 
-                                 Storyboard.TargetProperty="X"
-                                 From="-260" 
-                                 To="5"
-                                 Duration="0:0:0.2"/>
+                <DoubleAnimation Storyboard.TargetName="settings_Grid" Storyboard.TargetProperty="X" From="-260" To="5" Duration="0:0:0.5"/>
+            </Storyboard>
+            <Storyboard x:Name="hide_multipleGrid">
+                <DoubleAnimation Storyboard.TargetName="multiple_DropShadowPanel" Storyboard.TargetProperty="Y" From="0" To="-160" Duration="0:0:0.5"/>
+            </Storyboard>
+            <Storyboard x:Name="show_multipleGrid">
+                <DoubleAnimation Storyboard.TargetName="multiple_DropShadowPanel" Storyboard.TargetProperty="Y" From="-160" To="0" Duration="0:0:0.5"/>
             </Storyboard>
             <modle:ProgressConvert x:Key="progressConvert"/>
         </ResourceDictionary>
     </Page.Resources>
-    <Grid Name="main_grid"
-          AllowFocusOnInteraction="False">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="650"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="hideView_button.(RelativePanel.AlignTopWithPanel)" Value="False"/>
-                        <Setter Target="hideView_button.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True"/>
-                        <Setter Target="volume_button.(RelativePanel.AlignTopWithPanel)" Value="False"/>
-                        <Setter Target="volume_button.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True"/>
-                        <Setter Target="playMode_button.(RelativePanel.AlignBottomWithPanel)" Value="False"/>
-                        <Setter Target="playMode_button.(RelativePanel.AlignLeftWithPanel)" Value="False"/>
-                        <Setter Target="playMode_button.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True"/>
-                        <Setter Target="playMode_button.(RelativePanel.RightOf)" Value="hideList_button"/>
-                        <Setter Target="hideList_button.(RelativePanel.AlignTopWithPanel)" Value="False"/>
-                        <Setter Target="hideList_button.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True"/>
-                        <Setter Target="showTime_textBlock.(RelativePanel.AlignTopWithPanel)" Value="False"/>
-                        <Setter Target="showTime_textBlock.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True"/>
-                        <Setter Target="fullScreen_button.(RelativePanel.AlignBottomWithPanel)" Value="False"/>
-                        <Setter Target="fullScreen_button.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True"/>
-                        <Setter Target="fullScreen_button.(RelativePanel.LeftOf)" Value="showTime_textBlock"/>
-                        <Setter Target="playRate_button.(RelativePanel.AlignRightWithPanel)" Value="False"/>
-                        <Setter Target="playRate_button.(RelativePanel.AlignBottomWithPanel)" Value="False"/>
-                        <Setter Target="playRate_button.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True"/>
-                        <Setter Target="playRate_button.(RelativePanel.RightOf)" Value="next_button"/>
-                        <Setter Target="metadata_button.(RelativePanel.AlignBottomWithPanel)" Value="False"/>
-                        <Setter Target="metadata_button.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True"/>
-                        <Setter Target="addFolders_button.(RelativePanel.AlignBottomWithPanel)" Value="False"/>
-                        <Setter Target="addFolders_button.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True"/>
-                        <Setter Target="addFolders_button.(RelativePanel.RightOf)" Value="playMode_button"/>
-                        <Setter Target="refreshVideos_button.(RelativePanel.RightOf)" Value="addFolders_button"/>
-                        <Setter Target="refreshVideos_button.(RelativePanel.AlignBottomWithPanel)" Value="False"/>
-                        <Setter Target="refreshVideos_button.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <TextBlock x:Name="FilmsName_textBlock" 
-                   FontSize="20" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Top"/>
-        <Grid x:Name="multiple_grid"
-              Grid.Row="1"
-              Visibility="Collapsed">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1"
-                        Orientation="Horizontal">
-                <ListBox x:Name="multiple_listBox"
-                         AllowFocusOnInteraction="True"
-                         Background="Transparent">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <ListBoxItem x:Name="allSelect_item">
-                        <CheckBox x:Name="allSelect_checkBox"
-                                  x:Uid="allSelect_checkBox"/>
-                    </ListBoxItem>
-                    <ListBoxItem x:Name="removeLisbox_item">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets"
-                                       FontSize="20"
-                                       Text="&#xE74D;"
-                                       VerticalAlignment="Center"/>
-                            <ComboBox x:Name="remove_comboBox"
-                                      Width="150"
-                                      Margin="5,0,0,0">
-                                <ComboBoxItem x:Name="fromlist_item"
-                                              x:Uid="fromlist_item"/>
-                                <ComboBoxItem x:Name="frombin_item"
-                                              x:Uid="frombin_item"/>
-                                <ComboBoxItem x:Name="remove_item"
-                                              x:Uid="remove_item"/>
-                            </ComboBox>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem x:Name="progressLisbox_item">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets"
-                                       FontSize="20"
-                                       Text="&#xED62;"/>
-                            <TextBlock x:Name="clearProgress_textBlock"
-                                       x:Uid="clearProgress_textBlock"
-                                       Margin="5,0,0,0"/>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem x:Name="multipleLisbox_item">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets"
-                                       FontSize="20"
-                                       Text="&#xE947;"/>
-                            <TextBlock x:Name="cancelMultiple_textBlock"
-                                       x:Uid="cancelMultiple_textBlock"
-                                       Margin="5,0,0,0"/>
-                        </StackPanel>
-                    </ListBoxItem>
-                </ListBox>
-            </StackPanel>
-        </Grid>
-        <ScrollViewer x:Name="ads_scrollViewer"
-                      Grid.Row="2"
-                      ScrollViewer.HorizontalScrollMode="Auto"
-                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                      ScrollViewer.VerticalScrollMode="Disabled"
-                      ScrollViewer.VerticalScrollBarVisibility="Disabled">
-            <StackPanel x:Name="ads_stackPanel"
-                        Grid.Row="2"
-                        Orientation="Horizontal"
-                        Margin="0,0,0,15">
-                <UI:AdControl x:Name="ad_control"
-                              ApplicationId="9n6jvkjh4ffl"
-                              AdUnitId="1100039270"
-                              Height="50"
-                              Width="300"
-                              Margin="0,0,5,0"/>
-                <UI:AdControl x:Name="ad_control2"
-                              ApplicationId="9n6jvkjh4ffl"
-                              AdUnitId="1100039414"
-                              Height="50"
-                              Width="320"
-                              Margin="0,0,5,0"/>
-                <UI:AdControl x:Name="ad_control3"
-                              ApplicationId="9n6jvkjh4ffl"
-                              AdUnitId="1100039415"
-                              Height="50"
-                              Width="300"
-                              Margin="0,0,5,0"/>
-                <UI:AdControl x:Name="ad_control4"
-                              ApplicationId="9n6jvkjh4ffl"
-                              AdUnitId="1100039416"
-                              Height="50"
-                              Width="320"
-                              Margin="0,0,5,0"/>
-                <UI:AdControl x:Name="ad_control7"
-                              ApplicationId="9n6jvkjh4ffl"
-                              AdUnitId="1100039417"
-                              Height="50"
-                              Width="320"
-                              Margin="0,0,5,0"/>
-                <UI:AdControl x:Name="ad_control8"
-                              ApplicationId="9n6jvkjh4ffl"
-                              AdUnitId="1100039418"
-                              Height="50"
-                              Width="320"/>
-            </StackPanel>
-        </ScrollViewer>
-        <Grid x:Name="view_grid"
-              Grid.Row="3">
-            <GridView Name="content_gridView"        
-                      ItemsSource="{x:Bind use_video}"
-                      AllowDrop="True"
-                      CanReorderItems="True"
-                      IsSwipeEnabled="True"
-                      IsItemClickEnabled="True"
-                      ScrollViewer.HorizontalScrollMode="Auto" 
-                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                      ScrollViewer.VerticalScrollMode="Disabled"
-                      ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                <GridView.Header>
-                    <Grid Name="progressRing_grid"
-                          Width="200"
-                          Visibility="Collapsed">
-                        <ProgressRing Name="content_progressRing"
-                                      Height="50"
-                                      Width="50"                                          
-                                      Foreground="DodgerBlue"
-                                      VerticalAlignment="Center"
-                                      Style="{StaticResource progressRing_style}"/>
-                    </Grid>
-                </GridView.Header>
-                <GridView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <ItemsStackPanel Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </GridView.ItemsPanel>
-                <GridView.ItemTemplate>
-                    <DataTemplate x:DataType="modles:Video">
-                        <StackPanel Name="videoList_stackPanle"    
-                                    IsTapEnabled="False"
-                                    RightTapped="VideoList_stackPanle_RightTapped">
-                            <local:ListViewControl/>
-                            <StackPanel.ContextFlyout>
-                                <MenuFlyout x:Name="listView_menu">
-                                    <MenuFlyoutItem Name="play_menuItem"
-                                                    x:Uid="play_menuItem"
-                                                    Click="play_menuItem_Click"/>
-                                    <MenuFlyoutItem Name="pause_menuItem"
-                                                    x:Uid="pause_menuItem"
-                                                    Click="pause_menuItem_Click"/>
-                                    <MenuFlyoutSubItem Name="autoPlay_menuItem"
-                                                       x:Uid="autoPlay_menuItem">
-                                        <MenuFlyoutItem Name="single_item"
-                                                        x:Uid="single_item"
-                                                        Click="Scyle_item_Click"/>
-                                        <MenuFlyoutItem Name="list_item"
-                                                        x:Uid="list_item"
-                                                        Click="List_item_Click"/>
-                                        <MenuFlyoutItem Name="listScyle_item"
-                                                        x:Uid="listScyle_item"
-                                                        Click="ListScyle_item_Click"/>
-                                        <MenuFlyoutItem Name="default_item"
-                                                        x:Uid="default_item"
-                                                        Click="Default_item_Click"/>
-                                    </MenuFlyoutSubItem>
-                                    <MenuFlyoutSeparator/>
-                                    <MenuFlyoutSubItem x:Name="clearProgress_item"
-                                                       x:Uid="clearProgress_item">
-                                        <MenuFlyoutItem x:Name="clear_item"
-                                                        x:Uid="clear_item"
-                                                        Click="Clear_item_Click"/>
-                                        <MenuFlyoutItem x:Name="clearAll_item"
-                                                        x:Uid="clearAll_item"
-                                                        Click="ClearAll_item_Click"/>
-                                    </MenuFlyoutSubItem>
-                                    <MenuFlyoutSeparator/>
-                                    <MenuFlyoutItem Name="delete_menuItem"
-                                                    x:Uid="delete_menuItem"
-                                                    Click="delete_menuItem_Click"/>
-                                    <MenuFlyoutSubItem Name="deleteLocal_menuItem"
-                                                       x:Uid="deleteLocal_menuItem">
-                                        <MenuFlyoutItem Name="bin_item"
-                                                        x:Uid="bin_item"
-                                                        Click="bin_item_Click"/>
-                                        <MenuFlyoutItem Name="directly_item"
-                                                        x:Uid="directly_item"
-                                                        Click="directly_item_Click"/>
-                                    </MenuFlyoutSubItem>
-                                    <MenuFlyoutSeparator/>
-                                    <MenuFlyoutItem x:Name="multiple_item"
-                                                    x:Uid="multiple_item"
-                                                    Click="Multiple_item_Click"/>
-                                    <MenuFlyoutSeparator/>
-                                    <MenuFlyoutItem Name="cancel_menuItem"
-                                                    x:Uid="cancel_menuItem"/>
-                                </MenuFlyout>
-                            </StackPanel.ContextFlyout>
-                        </StackPanel>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
-        </Grid>
-        <MediaElement Name="main_mediaElement"
-                      AutoPlay="False"
-                      Grid.Row="4"                                  
-                      AreTransportControlsEnabled="False">
-            <MediaElement.ContextFlyout>
-                <MenuFlyout>
-                    <MenuFlyoutItem x:Name="screenShot_item"
-                                    x:Uid="screenShot_item"
-                                    Click="ScreenShot_item_Click"/>
-                </MenuFlyout>
-            </MediaElement.ContextFlyout>
-        </MediaElement>
-        <!--<Grid x:Name="metadata_gird"
-              Visibility="Collapsed"
-              Grid.Row="3"
-              Grid.RowSpan="2"
-              HorizontalAlignment="Right"
-              VerticalAlignment="Bottom"
-              Margin="0,0,0,85"
-              Height="200">
-            <Grid.RenderTransform>
-                <TranslateTransform x:Name="metadata_Grid"/>
-            </Grid.RenderTransform>
-            <controls:DropShadowPanel BlurRadius="8.45"
-                                      ShadowOpacity="0.3"
-                                      OffsetX="-5"
-                                      OffsetY="5">
-                <Grid Width="200">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock x:Name="metadata_textBlock"
-                               Foreground="WhiteSmoke"
-                               x:Uid="metadata_textBlock"
-                               HorizontalAlignment="Center"/>
-                    <Button x:Name="closeMetadata_buttton"
-                            FontFamily="Segoe MDL2 Assets"
-                            Content="&#xE8BB;"                                
-                            Style="{StaticResource button_Style}"
-                            FontSize="10"
-                            HorizontalAlignment="Left"
-                            Click="CloseMetadata_buttton_Click"/>
-                    <ScrollViewer Grid.Row="1"
-                                  ScrollViewer.HorizontalScrollMode="Auto"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
-                        <StackPanel x:Name="metadata_stackPanel"
-                                    RequestedTheme="Dark"/>
-                    </ScrollViewer>
-                </Grid>
-            </controls:DropShadowPanel>
-        </Grid>-->
-        <Grid x:Name="settings_gird"
-              Visibility="Collapsed"
-              Grid.Row="3"
-              Grid.RowSpan="2"
-              HorizontalAlignment="Left"
-              VerticalAlignment="Bottom"
-              Height="150"
-              Margin="0,0,0,85">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition x:Name="second_colume" MinWidth="0" Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Name="main_grid" AllowFocusOnInteraction="False">
+            <MediaElement Name="main_mediaElement" AutoPlay="False" AreTransportControlsEnabled="False">
+                <MediaElement.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem x:Name="screenShot_item" x:Uid="screenShot_item"/>
+                    </MenuFlyout>
+                </MediaElement.ContextFlyout>
+            </MediaElement>
+            <Grid x:Name="settings_gird" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="255" Margin="0,0,0,65">
             <Grid.RenderTransform>
                 <TranslateTransform x:Name="settings_Grid"/>
             </Grid.RenderTransform>
-            <controls:DropShadowPanel BlurRadius="8.45"
-                                      ShadowOpacity="0.3"
-                                      OffsetX="-5"
-                                      OffsetY="5">
-                <Grid Width="260">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <StackPanel>
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="0,10">
-                            <Button x:Name="audioLanguage_button"
-                                    Style="{StaticResource button_Style}"
-                                    Content="&#xED1F;">
+                <controls:DropShadowPanel x:Name="settings_dropShadowPanel" BlurRadius="8.45" ShadowOpacity="0.3" OffsetX="-5" OffsetY="5" Width="100">
+                    <StackPanel x:Name="settings_panels">
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <Button x:Name="audioLanguage_button" Style="{StaticResource button_Style}" Content="&#xED1F;">
                                 <Button.Flyout>
-                                    <!--<Flyout x:Name="audioLanguage_flyout">
-                                        <ListBox x:Name="audioLanguage_listBox"
-                                                 Margin="-9"
-                                                 AllowFocusOnInteraction="True">
-                                        </ListBox>
-                                    </Flyout>-->
                                     <MenuFlyout x:Name="audioLanguage_flyout">
-                                        
                                     </MenuFlyout>
                                 </Button.Flyout>
                             </Button>
-                            <Button x:Name="videoTracks_button"
-                                    Style="{StaticResource button_Style}"
-                                    Content="&#xE8AA;">
+                            <Button x:Name="videoTracks_button" Style="{StaticResource button_Style}" Content="&#xE8AA;">
                                 <Button.Flyout>
-                                    <!--<Flyout x:Name="videoTracks_flyout">
-                                        <ListBox x:Name="videoTracks_listbox"
-                                                 Margin="-9"
-                                                 AllowFocusOnInteraction="True">
-                                        </ListBox>
-                                    </Flyout>-->
                                     <MenuFlyout x:Name="videoTracks_flyout">
-                                        
                                     </MenuFlyout>
                                 </Button.Flyout>
                             </Button>
-                            <Button x:Name="fillMode_button"
-                                    Style="{StaticResource button_Style}"
-                                    Content="&#xE8B2;">
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <Button x:Name="metadata_button" Style="{StaticResource button_Style}" Content="&#xE775;">
                                 <Button.Flyout>
-                                    <!--<Flyout x:Name="resizeVideo_flyout">
-                                        <ListBox x:Name="resizeVideo_listBox"
-                                                 Margin="-10"
-                                                 AllowFocusOnInteraction="True">
-                                            <ListBoxItem x:Name="None_item"
-                                                         x:Uid="None_item"/>
-                                            <ListBoxItem x:Name="Uniform_item"
-                                                         x:Uid="Uniform_item"/>
-                                            <ListBoxItem x:Name="UniformToFill_item"
-                                                         x:Uid="UniformToFill_item"/>
-                                            <ListBoxItem x:Name="Fill_item"
-                                                         x:Uid="Fill_item"/>
-                                        </ListBox>
-                                    </Flyout>-->
+                                    <Flyout>
+                                        <StackPanel>
+                                            <TextBlock x:Uid="metadata_textBlock" FontSize="13" Margin="0,-10,0,10" HorizontalAlignment="Center"/>
+                                            <StackPanel x:Name="metadata_StackPanel" Margin="-10"/>
+                                        </StackPanel>
+                                    </Flyout>
+                                </Button.Flyout>
+                            </Button>
+                            <Button x:Name="fillMode_button" Style="{StaticResource button_Style}" Content="&#xE9A6;">
+                                <Button.Flyout>
                                     <MenuBarItemFlyout>
-                                        <MenuFlyoutItem x:Name="None_item"
-                                                        x:Uid="None_item"
-                                                        Click="None_item_Click"/>
-                                        <MenuFlyoutItem x:Name="Uniform_item"
-                                                        x:Uid="Uniform_item"
-                                                        Click="Uniform_item_Click"/>
-                                        <MenuFlyoutItem x:Name="UniformToFill_item"
-                                                        x:Uid="UniformToFill_item"
-                                                        Click="UniformToFill_item_Click"/>
-                                        <MenuFlyoutItem x:Name="Fill_item"
-                                                        x:Uid="Fill_item"
-                                                        Click="Fill_item_Click"/>
+                                        <MenuFlyoutItem x:Name="None_item" x:Uid="None_item"/>
+                                        <MenuFlyoutItem x:Name="Uniform_item" x:Uid="Uniform_item"/>
+                                        <MenuFlyoutItem x:Name="UniformToFill_item" x:Uid="UniformToFill_item"/>
+                                        <MenuFlyoutItem x:Name="Fill_item" x:Uid="Fill_item"/>
                                     </MenuBarItemFlyout>
                                 </Button.Flyout>
                             </Button>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="0,10">
-                            <Button x:Name="settings_button"
-                                    Style="{StaticResource button_Style}"
-                                    Content="&#xE713;"
-                                    Click="Settings_button_Click"/>
-                            <!--<Button x:Name="theme_button"
-                                                Style="{StaticResource button_Style}"
-                                                Content="&#xE793;"
-                                                Click="Theme_button_Click"/>-->
-                            <Button x:Name="transCode_button"
-                                    Style="{StaticResource button_Style}"
-                                    Content="&#xE8AB;"
-                                    Click="TransCode_button_Click"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <Button x:Name="playRate_button"  Style="{StaticResource button_Style}" Content="&#xEC57;">
+                                <Button.Flyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem x:Name="item_0_1" Text="0.1x"/>
+                                        <MenuFlyoutItem x:Name="item_0_2" Text="0.2x"/>
+                                        <MenuFlyoutItem x:Name="item_0_3" Text="0.3x"/>
+                                        <MenuFlyoutItem x:Name="item_0_4" Text="0.4x"/>
+                                        <MenuFlyoutItem x:Name="item_0_5" Text="0.5x"/>
+                                        <MenuFlyoutItem x:Name="item_1_0" x:Uid="item_1_0"/>
+                                        <MenuFlyoutItem x:Name="item_1_5" Text="1.5x"/>
+                                        <MenuFlyoutItem x:Name="item_2_0" Text="2.0x"/>
+                                        <MenuFlyoutItem x:Name="item_2_5" Text="2.5x"/>
+                                        <MenuFlyoutItem x:Name="item_3_0" Text="3.0x"/>
+                                    </MenuFlyout>
+                                </Button.Flyout>
+                            </Button>
+                            <Button x:Name="playMode_button" Style="{StaticResource button_Style}" Content="&#xE8D8;"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,10">
+                            <Button x:Name="fullScreen_button" Style="{StaticResource button_Style}" Content="&#xE740;"/>
+                            <Button x:Name="refreshVideos_button" Style="{StaticResource button_Style}" Content="&#xE72C;"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,10">
+                            <Button x:Name="addFolders_button" Style="{StaticResource button_Style}" Content="&#xE8F4;"/>
+                            <Button x:Name="hideList_button" Style="{StaticResource button_Style}" Content="&#xEA37;"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <Button x:Name="settings_button" Style="{StaticResource button_Style}" Content="&#xE713;"/>
                         </StackPanel>
                     </StackPanel>
-                    <Button x:Name="closeSettings_button"
-                            FontFamily="Segoe MDL2 Assets"
-                            Content="&#xE8BB;"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Top"
-                            Style="{StaticResource button_Style}"
-                            FontSize="10"
-                            Click="CloseSettings_button_Click"/>
-                    <AutoSuggestBox x:Name="search_autoSuggestBox"
-                                    Grid.Row="1"
-                                    AllowFocusOnInteraction="True"
-                                    QueryIcon="Find"
-                                    PlaceholderText="Search"
-                                    Margin="5,0,5,0"
-                                    QuerySubmitted="Search_autoSuggestBox_QuerySubmitted"
-                                    TextChanged="Search_autoSuggestBox_TextChanged"/>
-                </Grid>
-            </controls:DropShadowPanel>
-        </Grid>
-        <TextBlock x:Name="dateTime_textBlock"
-                   Visibility="Collapsed"
-                   Grid.Row="2"
-                   Foreground="WhiteSmoke"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Right"/>
-        <Grid x:Name="click_grid"
-              Grid.Row="4"
-              VerticalAlignment="Bottom"
-              Height="50"
-              Margin="1,0,0,0"
-              Background="Transparent"
-              PointerEntered="Click_grid_PointerEntered"/>
-        <Grid x:Name="bottom_grid"
-              Grid.Row="4"
-              Height="85"
-              VerticalAlignment="Bottom"
-              BorderThickness="1">
+                </controls:DropShadowPanel>
+            </Grid>
+        <TextBlock x:Name="dateTime_textBlock" Visibility="Collapsed" Foreground="WhiteSmoke" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <Grid x:Name="click_grid" VerticalAlignment="Bottom" Height="50" Margin="1,0,0,0" Background="Transparent" PointerEntered="Click_grid_PointerEntered"/>
+        <Grid x:Name="bottom_grid" Height="60" VerticalAlignment="Bottom" BorderThickness="1">
             <Grid.RenderTransform>
                 <TranslateTransform x:Name="Bottom_Grid"/>
             </Grid.RenderTransform>
@@ -526,249 +133,176 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Border x:Name="bottom_border"
-                    Grid.RowSpan="2"
-                    Background="Black"
-                   Opacity="0.3"/>
-            <Slider x:Name="progress_slider"
-                    Margin="0,0,0,-25"
-                    Grid.Row="1"
-                    Style="{StaticResource customSliderStyle}"
-                    Minimum="0"
-                    IsThumbToolTipEnabled="False"
-                    Foreground="WhiteSmoke"
-                    Value="{Binding ElementName=main_mediaElement,Path=Position,Converter={StaticResource progressConvert},Mode=TwoWay}"/>
-            <!--<controls:DropShadowPanel BlurRadius="8.45"
-                                  ShadowOpacity="0.5"
-                                  OffsetX="0"
-                                  OffsetY="6.61"
-                                  Color="Black">-->
+            <Border x:Name="bottom_border" Grid.RowSpan="2" Background="Black" Opacity="0.3"/>
+            <Slider x:Name="progress_slider" Margin="0,0,0,-25" Grid.Row="1" Style="{StaticResource customSliderStyle}" Minimum="0" IsThumbToolTipEnabled="False" Foreground="WhiteSmoke" Value="{Binding ElementName=main_mediaElement,Path=Position,Converter={StaticResource progressConvert},Mode=TwoWay}"/>
             <RelativePanel>
-                <Button x:Name="play_button"  
-                        Style="{StaticResource button_Style}"
-                        Content="&#xE768;"
-                        RelativePanel.AlignHorizontalCenterWithPanel="True"
-                        RelativePanel.AlignVerticalCenterWithPanel="True"/>
-                <Button x:Name="previous_button"    
-                        IsEnabled="False"
-                        Style="{StaticResource button_Style}"
-                        Content="&#xE892;"
-                        RelativePanel.LeftOf="play_button"
-                        RelativePanel.AlignVerticalCenterWithPanel="True"/>
-                <Button x:Name="playMode_button"
-                        Style="{StaticResource button_Style}"
-                        Content="&#xE8D8;"
-                        RelativePanel.AlignLeftWithPanel="True"
-                        RelativePanel.AlignBottomWithPanel="True"/>
-                <Button x:Name="hideList_button"
-                        Style="{StaticResource button_Style}"
-                        Content="&#xEA37;"
-                        RelativePanel.RightOf="volume_button"
-                        RelativePanel.AlignTopWithPanel="True"/>
-                <Button x:Name="addFolders_button"
-                        Style="{StaticResource button_Style}"
-                        Content="&#xE8F4;"
-                        RelativePanel.RightOf="playMode_button"
-                        RelativePanel.AlignBottomWithPanel="True"
-                        Click="AddFolders_button_Click"/>
-                <Button x:Name="refreshVideos_button"
-                        Style="{StaticResource button_Style}"
-                        Content="&#xE72C;"
-                        RelativePanel.RightOf="addFolders_button"
-                        RelativePanel.AlignBottomWithPanel="True"
-                        Click="RefreshVideos_button_Click"/>
-                <Button x:Name="hideView_button"
-                        Style="{StaticResource button_Style}"
-                        Content="&#xE70E;"
-                        RelativePanel.AlignLeftWithPanel="True"
-                        RelativePanel.AlignTopWithPanel="True"/>
-                <Button x:Name="next_button" 
-                        IsEnabled="False"
-                        Style="{StaticResource button_Style}"
-                        Content="&#xE893;"
-                        RelativePanel.RightOf="play_button"
-                        RelativePanel.AlignVerticalCenterWithPanel="True"/>
-                <Button x:Name="playRate_button" 
-                        Style="{StaticResource button_Style}"
-                        Content="&#xEC57;"
-                        RelativePanel.AlignRightWithPanel="True"
-                        RelativePanel.AlignBottomWithPanel="True">
-                    <Button.Flyout>
-                        <MenuFlyout>
-                            <MenuFlyoutItem x:Name="item_0_1"
-                                            Text="0.1x"/>
-                            <MenuFlyoutItem x:Name="item_0_2"
-                                            Text="0.2x"/>
-                            <MenuFlyoutItem x:Name="item_0_3"
-                                            Text="0.3x"/>
-                            <MenuFlyoutItem x:Name="item_0_4"
-                                            Text="0.4x"/>
-                            <MenuFlyoutItem x:Name="item_0_5"
-                                            Text="0.5x"/>
-                            <MenuFlyoutItem x:Name="item_1_0"
-                                            x:Uid="item_1_0"/>
-                            <MenuFlyoutItem x:Name="item_1_5"
-                                            Text="1.5x"/>
-                            <MenuFlyoutItem x:Name="item_2_0"
-                                            Text="2.0x"/>
-                            <MenuFlyoutItem x:Name="item_2_5"
-                                            Text="2.5x"/>
-                            <MenuFlyoutItem x:Name="item_3_0"
-                                            Text="3.0x"/>
-                        </MenuFlyout>
-                    </Button.Flyout>
-                </Button>
-                <Button x:Name="metadata_button" 
-                        Style="{StaticResource button_Style}"
-                        Content="&#xE775;"
-                        RelativePanel.LeftOf="fullScreen_button"
-                        RelativePanel.AlignBottomWithPanel="True">
-                    <Button.Flyout>
-                        <Flyout>
-                            <StackPanel>
-                                <TextBlock x:Uid="metadata_textBlock"
-                                           FontSize="13"
-                                           Margin="0,-10,0,10"
-                                           HorizontalAlignment="Center"/>
-                                <StackPanel x:Name="metadata_StackPanel"
-                                        Margin="-10"/>
-                            </StackPanel>
-                            
-                        </Flyout>
-                    </Button.Flyout>
-                </Button>
-                <Button x:Name="volume_button"    
-                        Style="{StaticResource button_Style}"
-                        Content="&#xE767;"
-                        RelativePanel.RightOf="hideView_button"
-                        RelativePanel.AlignTopWithPanel="True">
+                <Button x:Name="play_button" Style="{StaticResource button_Style}" Content="&#xE768;" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                    <Button x:Name="previous_button" IsEnabled="False" Style="{StaticResource button_Style}"  Content="&#xE892;" RelativePanel.LeftOf="play_button" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                    <Button x:Name="hideView_button" Style="{StaticResource button_Style}" Content="&#xE70E;" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Button x:Name="next_button" IsEnabled="False" Style="{StaticResource button_Style}" Content="&#xE893;" RelativePanel.RightOf="play_button" RelativePanel.AlignVerticalCenterWithPanel="True"/>                            
+                <Button x:Name="volume_button" Style="{StaticResource button_Style}" Content="&#xE767;" RelativePanel.RightOf="hideView_button" RelativePanel.AlignVerticalCenterWithPanel="True">
                     <Button.Flyout>
                         <Flyout>
                             <Grid>
-                                <Button x:Name="volumeIcon_button"
-                                        Margin="-10,0,0,0"
-                                        Style="{StaticResource button_Style_2}"       
-                                        FontSize="15"
-                                        HorizontalAlignment="Left"
-                                        Content="&#xE767;"/>
-                                <Slider x:Name="volume_slider"
-                                        Margin="20,0,20,0"
-                                        Width="150"
-                                        Minimum="0"
-                                        Maximum="100"
-                                        Value="30"                                                 
-                                        HorizontalAlignment="Center"/>
-                                <TextBlock x:Name="volume_textBlock"
-                                           HorizontalAlignment="Right"
-                                           VerticalAlignment="Center"
-                                           Margin="0,0,-5,3"
-                                           Text="{Binding ElementName=volume_slider,Path=Value}"/>
+                                <Button x:Name="volumeIcon_button" Margin="-10,0,0,0" Style="{StaticResource button_Style_2}" FontSize="15" HorizontalAlignment="Left" Content="&#xE767;"/>
+                                <Slider x:Name="volume_slider" Margin="20,0,20,0" Width="150" Minimum="0" Maximum="100" Value="30" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="volume_textBlock" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,-5,3" Text="{Binding ElementName=volume_slider,Path=Value}"/>
                             </Grid>
                         </Flyout>
                     </Button.Flyout>
-                </Button>
-                <Button x:Name="fullScreen_button"
-                        Style="{StaticResource button_Style}"
-                        Content="&#xE740;"
-                        RelativePanel.LeftOf="playRate_button"
-                        RelativePanel.AlignBottomWithPanel="True"/>
-                <TextBlock x:Name="showTime_textBlock"
-                           Text="00:00:00 / 00:00:00"
-                           RelativePanel.AlignRightWithPanel="True"
-                           RelativePanel.AlignTopWithPanel="True"
-                           Foreground="WhiteSmoke"                                          
-                           FontSize="17"/>
+                </Button>              
+                <TextBlock x:Name="showTime_textBlock" Text="00:00:00 / 00:00:00" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Foreground="WhiteSmoke" FontSize="17"/>
             </RelativePanel>
         </Grid>
-        <ContentDialog x:Name="addFolder_contentDialog"
-                       Background="{ThemeResource grid_themeAcrylicBrush}"
-                       CornerRadius="10">
-            <Grid Height="400"
-                  Width="400">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <TextBlock x:Name="addFolderLibrary_textBlock"
-                           x:Uid="addFolderLibrary_textBlock"
-                           FontSize="18"
-                           TextWrapping="Wrap"
-                           HorizontalAlignment="Center"/>
-                <Button x:Name="addFolder_button"
-                        Grid.Row="1"
-                        Style="{StaticResource ButtonRevealStyle}"
-                        FontFamily="Segoe MDL2 Assets"
-                        Content="&#xE710;"
-                        Height="50"
-                        FontSize="30"     
-                        BorderThickness="0"
-                        HorizontalAlignment="Stretch"
-                        FocusVisualPrimaryThickness="2"/>
-                <ListView x:Name="FolderLibrary_gridview"
-                          Grid.Row="2"
-                          ItemsSource="{x:Bind videoLibrary_collection}">
-                    <!--<ListView.ItemsPanel>
+            <ContentDialog x:Name="addFolder_contentDialog" Background="{ThemeResource grid_themeAcrylicBrush}" CornerRadius="15">
+                <Grid Height="400" Width="400">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="addFolderLibrary_textBlock" x:Uid="addFolderLibrary_textBlock" FontSize="18" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                    <Button x:Name="addFolder_button" Grid.Row="1" Style="{StaticResource ButtonRevealStyle}" FontFamily="Segoe MDL2 Assets" Content="&#xE710;" Height="50" FontSize="30" BorderThickness="0" HorizontalAlignment="Stretch" FocusVisualPrimaryThickness="2"/>
+                    <ListView x:Name="FolderLibrary_gridview" Grid.Row="2" ItemsSource="{x:Bind videoLibrary_collection}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="modle:VideoLibrary">
+                                <controls:DropShadowPanel BlurRadius="10" ShadowOpacity="0.5" OffsetX="7" OffsetY="10" Color="Gray" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Grid Margin="10" Width="350">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button x:Name="openTheFolder_button" FontFamily="Segoe MDL2 Assets" Content="&#xE8B7;" Style="{StaticResource button_Style_2}" FontSize="30" VerticalAlignment="Center" Click="OpenTheFolder_button_Click"/>
+                                        <StackPanel Grid.Column="1" Margin="10,0,0,0" Orientation="Vertical" HorizontalAlignment="Stretch">
+                                            <TextBlock x:Name="FolderName_textBlock" FontSize="15" TextWrapping="Wrap" FontWeight="Bold" Text="{x:Bind FolderName}"/>
+                                            <TextBlock x:Name="FolderPath_textBlock" FontSize="13" TextWrapping="Wrap" Text="{x:Bind FolderPath}"/>
+                                        </StackPanel>
+                                        <Button x:Name="deleteFolder_button" Grid.Column="2" Content="&#xECC9;" Style="{StaticResource button_Style_2}" VerticalAlignment="Center" Click="DeleteFolder_button_Click"/>
+                                    </Grid>
+                                </controls:DropShadowPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button x:Name="closeDialog_Button" Grid.Row="3" x:Uid="closeDialog_Button" Style="{StaticResource ButtonRevealStyle}" Background="Transparent" HorizontalAlignment="Right"/>
+                </Grid>
+            </ContentDialog>
+            <ContentDialog x:Name="cutScreen_contentDialog" Background="{ThemeResource grid_themeAcrylicBrush}" CornerRadius="15">
+                <Grid Width="250">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="curScreen_textBlock" FontSize="13" TextWrapping="Wrap" IsTextSelectionEnabled="False" HorizontalAlignment="Center"/>
+                    <controls:DropShadowPanel BlurRadius="10" ShadowOpacity="0.5" Color="SkyBlue" OffsetY="5" OffsetX="-3" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,5">
+                        <Button x:Name="openCutAdress_button" Grid.Row="1" Style="{StaticResource ButtonRevealStyle}" x:Uid="openCutAdress_button" Width="80" BorderThickness="1"/>
+                    </controls:DropShadowPanel>
+                    <controls:DropShadowPanel BlurRadius="10" ShadowOpacity="0.7" Color="IndianRed" OffsetY="5" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,5">
+                        <Button x:Name="editPicture_button" Grid.Row="1" Style="{StaticResource ButtonRevealStyle}" x:Uid="editPicture_button" Width="80" BorderThickness="1"/>
+                    </controls:DropShadowPanel>
+                    <controls:DropShadowPanel BlurRadius="10" ShadowOpacity="0.5" Color="Yellow" OffsetY="5" OffsetX="3" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,5">
+                        <Button x:Name="closeCutDialog_button" Style="{StaticResource ButtonRevealStyle}" x:Uid="closeCutDialog_button" Width="80" BorderThickness="1"/>
+                    </controls:DropShadowPanel>
+                </Grid>
+            </ContentDialog>
+        </Grid>
+        <Grid x:Name="view_grid" Margin="20,30,0,0" Background="DimGray" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <AutoSuggestBox x:Name="search_autoSuggestBox" AllowFocusOnInteraction="True" QueryIcon="Find" PlaceholderText="Search" Margin="5,0,5,0"/>
+            <ProgressRing Name="content_progressRing" Grid.Row="1" Height="50" Width="50" Foreground="DodgerBlue" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" Style="{StaticResource progressRing_style}"/>
+            <GridView Name="content_gridView" Grid.Row="1" ItemsSource="{x:Bind use_video}" AllowDrop="True" CanReorderItems="True" IsSwipeEnabled="True" IsItemClickEnabled="True">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid Orientation="Horizontal" HorizontalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="modles:Video">
+                        <Border>
+                            <StackPanel Name="videoList_stackPanle" IsTapEnabled="False" Margin="10" RightTapped="VideoList_stackPanle_RightTapped">
+                                <local:ListViewControl/>
+                                <StackPanel.ContextFlyout>
+                                    <MenuFlyout x:Name="listView_menu">
+                                        <MenuFlyoutItem Name="play_menuItem" x:Uid="play_menuItem" Click="play_menuItem_Click"/>
+                                        <MenuFlyoutItem Name="pause_menuItem" x:Uid="pause_menuItem" Click="pause_menuItem_Click"/>
+                                        <MenuFlyoutItem x:Name="replay_menuItem" x:Uid="replay_menuItem" Click="Replay_menuItem_Click"/>
+                                        <MenuFlyoutSeparator/>
+                                        <MenuFlyoutSubItem Name="autoPlay_menuItem" x:Uid="autoPlay_menuItem">
+                                            <MenuFlyoutItem Name="single_item" x:Uid="single_item" Click="Scyle_item_Click"/>
+                                            <MenuFlyoutItem Name="list_item" x:Uid="list_item" Click="List_item_Click"/>
+                                            <MenuFlyoutItem Name="listScyle_item" x:Uid="listScyle_item" Click="ListScyle_item_Click"/>
+                                            <MenuFlyoutItem Name="default_item" x:Uid="default_item" Click="Default_item_Click"/>
+                                        </MenuFlyoutSubItem>
+                                        <MenuFlyoutSeparator/>
+                                        <MenuFlyoutSubItem x:Name="clearProgress_item" x:Uid="clearProgress_item">
+                                            <MenuFlyoutItem x:Name="clear_item" x:Uid="clear_item" Click="Clear_item_Click"/>
+                                            <MenuFlyoutItem x:Name="clearAll_item" x:Uid="clearAll_item" Click="ClearAll_item_Click"/>
+                                        </MenuFlyoutSubItem>
+                                        <MenuFlyoutSeparator/>
+                                        <MenuFlyoutItem Name="delete_menuItem" x:Uid="delete_menuItem" Click="delete_menuItem_Click"/>
+                                        <MenuFlyoutSubItem Name="deleteLocal_menuItem" x:Uid="deleteLocal_menuItem">
+                                            <MenuFlyoutItem Name="bin_item" x:Uid="bin_item" Click="bin_item_Click"/>
+                                            <MenuFlyoutItem Name="directly_item" x:Uid="directly_item" Click="directly_item_Click"/>
+                                        </MenuFlyoutSubItem>
+                                        <MenuFlyoutSeparator/>
+                                        <MenuFlyoutItem x:Name="multiple_item" x:Uid="multiple_item" Click="Multiple_item_Click"/>
+                                        <MenuFlyoutSeparator/>
+                                        <MenuFlyoutItem Name="cancel_menuItem" x:Uid="cancel_menuItem"/>
+                                    </MenuFlyout>
+                                </StackPanel.ContextFlyout>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </Grid>
+        <controls:GridSplitter x:Name="main_gridSplitter" GripperCursor="Default" HorizontalAlignment="Left" Grid.Column="1" ResizeDirection="Columns" ResizeBehavior="BasedOnAlignment" CursorBehavior="ChangeOnSplitterHover" Background="Transparent" Width="10">
+            <controls:GridSplitter.RenderTransform>
+                <TranslateTransform X="0" />
+            </controls:GridSplitter.RenderTransform>
+        </controls:GridSplitter>
+        <controls:DropShadowPanel x:Name="multiple_dropShadowPanel" Grid.ColumnSpan="2" BlurRadius="8.45" ShadowOpacity="0.3" OffsetX="0" OffsetY="5" Height="150" Color="White" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed">
+            <controls:DropShadowPanel.RenderTransform>
+                <TranslateTransform x:Name="multiple_DropShadowPanel"/>
+            </controls:DropShadowPanel.RenderTransform>
+            <Grid x:Name="multiple_grid" Background="Gray" Height="150" CornerRadius="5">
+                <ListBox x:Name="multiple_listBox" Height="50" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" AllowFocusOnInteraction="True" Background="Transparent">
+                    <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <ItemsStackPanel Margin="0,0,0,50"/>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>-->
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="modle:VideoLibrary">
-                            <controls:DropShadowPanel BlurRadius="10"
-                                                      ShadowOpacity="0.5"
-                                                      OffsetX="7"
-                                                      OffsetY="10"
-                                                      Color="SteelBlue"   
-                                                      VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center">
-                                <Grid Margin="10"
-                                      Width="350">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Button FontFamily="Segoe MDL2 Assets"
-                                            Content="&#xE8B7;"
-                                            Style="{StaticResource button_Style_2}"
-                                            FontSize="30"
-                                            VerticalAlignment="Center"
-                                            Click="Button_Click"/>
-                                    <StackPanel Grid.Column="1"
-                                                Margin="10,0,0,0"
-                                                Orientation="Vertical"
-                                                HorizontalAlignment="Stretch">
-                                        <TextBlock x:Name="FolderName_textBlock"
-                                                   FontSize="15"
-                                                   TextWrapping="Wrap"
-                                                   FontWeight="Bold"
-                                                   Text="{x:Bind FolderName}"/>
-                                        <TextBlock x:Name="FolderPath_textBlock"
-                                                   FontSize="13"
-                                                   TextWrapping="Wrap"
-                                                   Text="{x:Bind FolderPath}"/>
-                                    </StackPanel>
-                                    <Button x:Name="deleteFolder_button"
-                                            Grid.Column="2"
-                                            Content="&#xECC9;"
-                                            Style="{StaticResource button_Style_2}"
-                                            VerticalAlignment="Center"
-                                            Click="DeleteFolder_button_Click"/>
-                                </Grid>
-                            </controls:DropShadowPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <Button x:Name="closeDialog_Button"
-                        Grid.Row="3"
-                        x:Uid="closeDialog_Button"
-                        Style="{StaticResource ButtonRevealStyle}"
-                        Background="Transparent"
-                        HorizontalAlignment="Right"
-                        Click="CloseDialog_Button_Click"/>
+                    </ListBox.ItemsPanel>
+                    <ListBoxItem x:Name="allSelect_item">
+                        <CheckBox x:Name="allSelect_checkBox" x:Uid="allSelect_checkBox"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="removeLisbox_item">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xE74D;" VerticalAlignment="Center"/>
+                            <ComboBox x:Name="remove_comboBox" Width="150" Margin="5,0,0,0">
+                                <ComboBoxItem x:Name="fromlist_item" x:Uid="fromlist_item"/>
+                                <ComboBoxItem x:Name="frombin_item" x:Uid="frombin_item"/>
+                                <ComboBoxItem x:Name="remove_item" x:Uid="remove_item"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="progressLisbox_item">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xED62;"/>
+                            <TextBlock x:Name="clearProgress_textBlock" x:Uid="clearProgress_textBlock" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="multipleLisbox_item">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xE947;"/>
+                            <TextBlock x:Name="cancelMultiple_textBlock" x:Uid="cancelMultiple_textBlock" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
             </Grid>
-        </ContentDialog>
+        </controls:DropShadowPanel>
     </Grid>
 </Page>

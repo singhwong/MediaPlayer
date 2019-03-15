@@ -53,6 +53,8 @@ Assets\Wide310x150Logo.scale-150.png
 Assets\Wide310x150Logo.scale-200.png
 Assets\Wide310x150Logo.scale-400.png
 App.xbf
+Controls\AddFoldersAccessDialog.xbf
+Controls\Notification.xbf
 Style\acrylic.xbf
 Style\buttonStyle.xbf
 Style\buttonStyle_2.xbf
@@ -66,5 +68,6 @@ VideoPlayer.xr.xml
 View\ConversionPage.xbf
 View\ListViewControl.xbf
 View\MainPage.xbf
+View\SecondPage.xbf
 View\SettingPage.xbf
 Properties\Default.rd.xml

@@ -348,9 +348,6 @@
   <data name="CloseMessageDialog_str" xml:space="preserve">
     <value>关闭</value>
   </data>
-  <data name="GetVideoAccessError_str" xml:space="preserve">
-    <value>若添加文件夹到视频库弹出错误提示，请打开应用获取本地视频权限</value>
-  </data>
   <data name="OpenLocalSetting_str" xml:space="preserve">
     <value>打开设置</value>
   </data>
@@ -364,7 +361,7 @@
     <value>音效音量</value>
   </data>
   <data name="useSoundPlayer_textBlock.Text" xml:space="preserve">
-    <value>启用应用音效</value>
+    <value>应用音效</value>
   </data>
   <data name="allSelect_checkBox.Content" xml:space="preserve">
     <value>全选</value>
@@ -410,5 +407,32 @@
   </data>
   <data name="screenShot_item.Text" xml:space="preserve">
     <value>截取屏幕</value>
+  </data>
+  <data name="access_textBlock.Text" xml:space="preserve">
+    <value>若添加文件夹到视频库弹出错误提示，请打开本地设置获取相关权限</value>
+  </data>
+  <data name="openSettings_button.Content" xml:space="preserve">
+    <value>打开设置</value>
+  </data>
+  <data name="closeCutDialog_button.Content" xml:space="preserve">
+    <value>关  闭</value>
+  </data>
+  <data name="editPicture_button.Content" xml:space="preserve">
+    <value>编辑图片</value>
+  </data>
+  <data name="noPicturesFolder_str" xml:space="preserve">
+    <value>该文件夹已移动或重命名！</value>
+  </data>
+  <data name="noPicture_str" xml:space="preserve">
+    <value>该文件已移动或重命名！</value>
+  </data>
+  <data name="openCutAdress_button.Content" xml:space="preserve">
+    <value>打开位置</value>
+  </data>
+  <data name="replay_menuItem.Text" xml:space="preserve">
+    <value>重新播放该项</value>
+  </data>
+  <data name="transCodeTitle_textBlock.Text" xml:space="preserve">
+    <value>转换格式</value>
   </data>
 </root>

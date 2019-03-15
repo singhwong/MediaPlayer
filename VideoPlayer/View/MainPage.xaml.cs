@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.UI.Controls;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using VideoPlayer.Controls;
 using VideoPlayer.Modle;
 using VideoPlayer.Modles;
 using VideoPlayer.View;
@@ -56,16 +58,12 @@ namespace VideoPlayer
         private string currentPlayTitle_str;
         private DisplayRequest display_Request = null;
         private bool IsBottomShow = true;
-        //private bool IsHaveSource = false;
         private bool IsVideoListShow = false;
-        //private bool IsGetLocalMedia = false;
         private bool scylePlay_bool = false;
         private bool listPlay_bool = false;
         private bool defaultPlay_bool = true;
         private bool listScyle_bool = false;
         private bool IsMediaElementPointEnter_bool = false;
-        //private IRandomAccessStream video_stream;
-        //private IRandomAccessStream stream;
         private ObservableCollection<StorageFile> all_video = new ObservableCollection<StorageFile>();
         private ObservableCollection<Video> use_video = new ObservableCollection<Video>();
         private Video main_video = new Video();
@@ -112,16 +110,10 @@ namespace VideoPlayer
             main_mediaElement.DoubleTapped += new DoubleTappedEventHandler(main_mediaElementDoubleTapped);
             main_mediaElement.MediaEnded += new RoutedEventHandler(Main_mediaElementMediaEnded);
             main_mediaElement.VolumeChanged += new RoutedEventHandler(Main_mediaElementVolumeChanged);
-
             content_gridView.SelectionChanged += new SelectionChangedEventHandler(Content_gridViewSelectionChanged);
-
-
-
             main_mediaElement.PointerMoved += new PointerEventHandler(Main_mediaElementPointerMoved);
             main_mediaElement.PointerEntered += new PointerEventHandler(Main_mediaElementPointerEntered);
             main_mediaElement.PointerExited += new PointerEventHandler(Main_mediaElementPointerExited);
-
-
             main_mediaElement.MediaOpened += new RoutedEventHandler(Main_mediaElementMediaOpened);
             multiple_listBox.SelectionChanged += new SelectionChangedEventHandler(Multiple_listBoxSelectionChanged);
             remove_comboBox.SelectionChanged += new SelectionChangedEventHandler(Remove_comboBoxSelectionChanged);
@@ -138,7 +130,6 @@ namespace VideoPlayer
             fullScreen_button.Click += new RoutedEventHandler(FullScreen_buttonClick);
             bottom_grid.PointerEntered += new PointerEventHandler(Bottom_gridPointerEntered);
             bottom_grid.PointerExited += new PointerEventHandler(Bottom_gridPointerExited);
-
             item_0_1.Tapped += new TappedEventHandler(Item_0_1Tapped);
             item_0_2.Tapped += new TappedEventHandler(Item_0_2Tapped);
             item_0_3.Tapped += new TappedEventHandler(Item_0_3Tapped);
@@ -149,21 +140,23 @@ namespace VideoPlayer
             item_2_0.Tapped += new TappedEventHandler(Item_2_0Tapped);
             item_2_5.Tapped += new TappedEventHandler(Item_2_5Tapped);
             item_3_0.Tapped += new TappedEventHandler(Item_3_0Tapped);
-            //audioLanguage_listBox.SelectionChanged += new SelectionChangedEventHandler(AudioLanguage_listBoxSelectionChanged);
-            //resizeVideo_listBox.SelectionChanged += new SelectionChangedEventHandler(ResizeVideo_listBoxSelectionChanged);
             addFolder_button.Click += new RoutedEventHandler(AddFolder_buttonClick);
             content_gridView.ItemClick += new ItemClickEventHandler(Content_gridViewItemClick);
             allSelect_checkBox.Click += new RoutedEventHandler(AllSelect_checkBoxClick);
-            //videoTracks_listbox.SelectionChanged += new SelectionChangedEventHandler(VideoTracks_listboxSelectionChanged);
-            metadata_button.Click += new RoutedEventHandler(Metadata_buttonClick);
-            //metadata_gird.PointerEntered += new PointerEventHandler(Metadata_girdPointerEntered);
-
-
-
-            //mediaPlayBack_List.ItemOpened += MediaPlaybackList_ItemOpened;
-            //mediaPlayBack_List.ItemFailed += MediaPlaybackList_ItemFailed;
-
-           
+            settings_button.Click += new RoutedEventHandler(Settings_buttonClick);
+            openCutAdress_button.Click += new RoutedEventHandler(OpenCutAdress_buttonClick);
+            editPicture_button.Click += new RoutedEventHandler(EditPicture_buttonClick);
+            closeCutDialog_button.Click += new RoutedEventHandler(CloseCutDialog_buttonClick);
+            Fill_item.Click += new RoutedEventHandler(Fill_itemClick);
+            UniformToFill_item.Click += new RoutedEventHandler(UniformToFill_itemClick);
+            Uniform_item.Click += new RoutedEventHandler(Uniform_itemClick);
+            None_item.Click += new RoutedEventHandler(None_itemClick);
+            closeDialog_Button.Click += new RoutedEventHandler(CloseDialog_ButtonClick);
+            screenShot_item.Click += new RoutedEventHandler(ScreenShot_itemClick);
+            search_autoSuggestBox.QuerySubmitted += new TypedEventHandler<AutoSuggestBox, AutoSuggestBoxQuerySubmittedEventArgs>(Search_autoSuggestBoxQuerySubmitted);
+            search_autoSuggestBox.TextChanged += new TypedEventHandler<AutoSuggestBox, AutoSuggestBoxTextChangedEventArgs>(Search_autoSuggestBoxTextChanged);
+            refreshVideos_button.Click += new RoutedEventHandler(RefreshVideos_buttonClick);
+            addFolders_button.Click += new RoutedEventHandler(AddFolders_buttonClick);
         }
 
         private void SetIsElementSoundPlayerIsOn()
@@ -195,7 +188,6 @@ namespace VideoPlayer
                 ElementSoundPlayer.Volume = 0.3;
             }
         }
-
         private void main_mediaElement_PointerWheelChanged(CoreWindow sender, PointerEventArgs args)
         {
             if (IsMediaElementPointEnter_bool)
@@ -218,22 +210,11 @@ namespace VideoPlayer
         private void ExtendAcrylicIntoTitleBar()
         {
             CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
-
             titleBar.ButtonBackgroundColor = Colors.Transparent;
             titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-            if (this.RequestedTheme == ElementTheme.Light)
-            {
-                titleBar.ButtonForegroundColor = Colors.Black;
-                titleBar.ButtonHoverForegroundColor = Colors.Black;
-                titleBar.ButtonHoverBackgroundColor = Colors.White;
-            }
-            else
-            {
-                titleBar.ButtonForegroundColor = Colors.White;
-                titleBar.ButtonHoverForegroundColor = Colors.White;
-                titleBar.ButtonHoverBackgroundColor = Colors.Black;
-            }
-            //titleBar.ButtonForegroundColor = Colors.Transparent;
+            titleBar.ButtonForegroundColor = Colors.White;
+            titleBar.ButtonHoverForegroundColor = Colors.White;
+            titleBar.ButtonHoverBackgroundColor = Colors.Black;
         }
         #endregion
 
@@ -248,25 +229,24 @@ namespace VideoPlayer
             systemMedia_TransportControls.IsPauseEnabled = true;
             systemMedia_TransportControls.ButtonPressed += SystemControls_ButtonPressed;
             #endregion
-
-            #region 获取保存的主题(Light\Dark)设置并运行
-            try
-            {
-                string theme_value = local_theme.Values["theme"].ToString();
-                switch (theme_value)
-                {
-                    case "Light":
-                        this.RequestedTheme = ElementTheme.Light; break;
-                    case "Dark":
-                        this.RequestedTheme = ElementTheme.Dark; break;
-                    default:
-                        break;
-                }
-            }
-            catch
-            {
-            }
-            #endregion
+            //#region 获取保存的主题(Light\Dark)设置并运行
+            //try
+            //{
+            //    string theme_value = local_theme.Values["theme"].ToString();
+            //    switch (theme_value)
+            //    {
+            //        case "Light":
+            //            this.RequestedTheme = ElementTheme.Light; break;
+            //        case "Dark":
+            //            this.RequestedTheme = ElementTheme.Dark; break;
+            //        default:
+            //            break;
+            //    }
+            //}
+            //catch
+            //{
+            //}
+            //#endregion
             ExtendAcrylicIntoTitleBar();
         }
 
@@ -366,18 +346,12 @@ namespace VideoPlayer
             }
             #endregion
         }
+
         private void main_mediaElementPointerPressed(object sender, PointerRoutedEventArgs e)
         {
             var temp = e.GetCurrentPoint(sender as Button);
             if (temp.Properties.IsRightButtonPressed)
             {
-                MenuFlyout menu = new MenuFlyout();
-                var newMenuItem = new MenuFlyoutItem();
-                newMenuItem.Text = "屏幕捕获";
-                newMenuItem.Click += (s, e1) =>
-                {
-                };
-
             }
             else if (temp.Properties.IsLeftButtonPressed)
             {
@@ -388,9 +362,16 @@ namespace VideoPlayer
                     hideBottom_tmr.Stop();
                     IsBottomShow = false;
                 }
+                if (IsSettingsGridShow_bool)
+                {
+                    hide_settingsGrid.Begin();
+                    show_settingsGrid.Stop();
+                    hideView_button.Content = "\uE70E";
+                    ToolTipService.SetToolTip(hideView_button, hideViewStr_no);
+                    IsSettingsGridShow_bool = false;
+                }
                 else
                 {
-
                 }
             }
         }
@@ -406,29 +387,21 @@ namespace VideoPlayer
             string[] fileTypes = new string[] { ".mp4", ".wmv", ".mkv", ".avi", ".3gp", ".flv", ".mpg", ".webm", ".mov", ".Ogg", ".swf", ".rmvb" };
             QueryOptions queryOption = new QueryOptions
        (CommonFileQuery.OrderByTitle, fileTypes);
-
             queryOption.FolderDepth = FolderDepth.Deep;
-
             Queue<IStorageFolder> folders = new Queue<IStorageFolder>();
-
             var files = await folder.CreateFileQueryWithOptions
               (queryOption).GetFilesAsync();
-
             foreach (var file in files)
             {
-                // do something with the music files
                 list.Add(file);
             }
         }
 
-        //private MediaPlaybackList mediaPlayBack_List = new MediaPlaybackList();
         private async Task GridView_Videos(ObservableCollection<StorageFile> files)
         {
             foreach (var video in files)
             {
-                //var mediaPlaybackItem = new MediaPlaybackItem(MediaSource.CreateFromStorageFile(video));
                 Video this_video = new Video();
-                //this_video.MediaItem = mediaPlaybackItem;
                 VideoProperties video_Properties = await video.Properties.GetVideoPropertiesAsync();
                 try//防止专辑图片为空
                 {
@@ -438,27 +411,21 @@ namespace VideoPlayer
                 ThumbnailOptions.UseCurrentScale
                 );
                     BitmapImage video_cover = new BitmapImage();
-                    video_cover.SetSource(current_Thumb);
+                    await video_cover.SetSourceAsync(current_Thumb);
                     this_video.Cover = video_cover;
                 }
                 catch
                 {
                 }
                 this_video.Title = video_Properties.Title;
-                //this_video.Video_Stream = await video.OpenAsync(FileAccessMode.Read);
                 SetListTimeMethod((int)video_Properties.Duration.TotalSeconds);
                 this_video.Video_Duration = list_hh + ":" + list_mm + ":" + list_ss;
                 this_video.Duration = video_Properties.Duration;
                 this_video.Video_Path = video.Name;
                 this_video.VideoFile = video;
                 this_video.IsSelected = false;
-                //this_video.Progress_duration = new TimeSpan(0);
                 SetDefaultForeGround(this_video);
                 SaveProgressVM.ReadProgressData(this_video, progresslist.progress_list, filePath);
-                //if (IsFolderVideoHaveCount_bool == false)
-                //{
-                //    GetCurrentTheme();//设置启动时，视频列表文本foreGround
-                //}
                 //添加文件夹视频时，跳过重复文件名视频
                 var contain_videos = use_video.Where(p => p.Video_Path == this_video.Video_Path).Select(p => p.Video_Path).ToList();
                 if (contain_videos.Count == 0)
@@ -485,19 +452,16 @@ namespace VideoPlayer
         {
             all_video.Clear();
             use_video.Clear();
-            //IsGetLocalMedia = true;
             view_grid.Visibility = Visibility.Visible;
-            ads_scrollViewer.Visibility = Visibility.Visible;
-            FilmsName_textBlock.Visibility = Visibility.Visible;
             IsVideoListShow = true;
             StorageFolder folder = KnownFolders.VideosLibrary;
             try
             {
-                progressRing_grid.Visibility = Visibility.Visible;
+                content_progressRing.Visibility = Visibility.Visible;
                 content_progressRing.IsActive = true;
                 await GetAllMedias(all_video, folder);
                 await GridView_Videos(all_video);
-                progressRing_grid.Visibility = Visibility.Collapsed;
+                content_progressRing.Visibility = Visibility.Collapsed;
                 content_progressRing.IsActive = false;
             }
             catch
@@ -505,36 +469,46 @@ namespace VideoPlayer
             }
             if (use_video.Count == 0)
             {
-
-                //IsGetLocalMedia = false;
                 IsVideoListShow = false;
                 SetNoVideoContentDialog();
-                //content_gridView.Visibility = Visibility.Collapsed;
-                //ads_stackPanel.Visibility = Visibility.Collapsed;
                 view_grid.Visibility = Visibility.Collapsed;
-                ads_scrollViewer.Visibility = Visibility.Collapsed;
-                FilmsName_textBlock.Visibility = Visibility.Collapsed;
                 ToolTipService.SetToolTip(hideList_button, hideListStr_no);
                 content_progressRing.IsActive = false;
             }
         }
 
-        private async void SetNoVideoContentDialog()
+        private void SetNoVideoContentDialog()
         {
             string IsHaveVideo_str = resourceLoader.GetString("isHaveVideo_content");
-            MessageDialog content = new MessageDialog(IsHaveVideo_str);
-            await content.ShowAsync();
+            try
+            {
+                main_notify.Hide();
+            }
+            catch
+            {
+            }
+            main_notify = new NotifyShow(IsHaveVideo_str);
+            main_notify.Show();
         }
 
-        private async void SetWaitContentDialog()
+        private void SetWaitContentDialog()
         {
             string wait_str = resourceLoader.GetString("wait_content");
-            MessageDialog content = new MessageDialog(wait_str);
-            content.Commands.Add(new UICommand(CloseMessageDialog_str, (command) =>
+            //MessageDialog content = new MessageDialog(wait_str);
+            //content.Commands.Add(new UICommand(CloseMessageDialog_str, (command) =>
+            //{
+            //}));
+            //content.DefaultCommandIndex = 0;
+            //await content.ShowAsync();
+            try
             {
-            }));
-            content.DefaultCommandIndex = 0;
-            await content.ShowAsync();
+                main_notify.Hide();
+            }
+            catch
+            {
+            }
+            main_notify = new NotifyShow(wait_str);
+            main_notify.Show();
         }
 
         private void GetCurrentTheme()
@@ -562,15 +536,21 @@ namespace VideoPlayer
                 main_video = (Video)sender_value.DataContext;
                 SetSelectedVideoSameCode();
                 #endregion
-
             }
         }
 
-        private async void SetVideoRemovedContentDialog()
+        private void SetVideoRemovedContentDialog()
         {
             string playError_str = resourceLoader.GetString("playError_str");
-            MessageDialog content = new MessageDialog(playError_str);
-            await content.ShowAsync();
+            try
+            {
+                main_notify.Hide();
+            }
+            catch
+            {
+            }
+            main_notify = new NotifyShow(playError_str);
+            main_notify.Show();
             use_video.Remove(main_video);
         }
 
@@ -583,99 +563,6 @@ namespace VideoPlayer
         {
             RemoveItemSameCode();
         }
-
-        //private void light_menuItem_Click(object sender, RoutedEventArgs e)
-        //{
-        //    SetLightTheme();
-        //}
-
-        //private void dark_memuItem_Click(object sender, RoutedEventArgs e)
-        //{
-        //    SetDarkTheme();
-        //}
-
-        //private void SetLightTheme()
-        //{
-        //    this.RequestedTheme = ElementTheme.Light;
-        //    SetDefaultForeGround_SameCode();
-        //    local_theme.Values["theme"] = "Light";
-        //}
-
-        //private void SetDarkTheme()
-        //{
-        //    this.RequestedTheme = ElementTheme.Dark;
-        //    SetDefaultForeGround_SameCode();
-        //    local_theme.Values["theme"] = "Dark";
-        //}
-        //private async void GetLocalFoldelVideo()
-        //{
-        //    if (content_progressRing.IsActive)
-        //    {
-        //        SetWaitContentDialog();
-        //    }
-        //    else
-        //    {
-        //        all_video.Clear();
-        //        await GetFolderVideo();
-        //    }
-        //}
-
-        //private async Task GetFolderVideo()
-        //{
-        //    FolderPicker pick = new FolderPicker();
-        //    pick.FileTypeFilter.Add(".mp4");
-        //    pick.FileTypeFilter.Add(".wmv");
-        //    pick.FileTypeFilter.Add(".mkv");
-        //    pick.FileTypeFilter.Add(".avi");
-        //    pick.FileTypeFilter.Add(".3gp");
-        //    IAsyncOperation<StorageFolder> folderTask = pick.PickSingleFolderAsync();
-        //    StorageFolder Folder = await folderTask;
-        //    if (Folder != null)//判断是否为null，解决打开文件夹未选择文件异常
-        //    {
-        //        try
-        //        {
-        //            content_progressRing.IsActive = true;
-        //            progressRing_grid.Visibility = Visibility.Visible;
-        //            await GetAllMedias(all_video, Folder);
-        //            await GridView_Videos(all_video);
-        //        }
-        //        catch
-        //        {
-        //            IsVideoListShow = false;
-        //        }
-        //        content_progressRing.IsActive = false;
-        //        progressRing_grid.Visibility = Visibility.Collapsed;
-        //        if (use_video.Count != 0)
-        //        {
-        //            view_grid.Visibility = Visibility.Visible;
-        //            content_gridView.ItemsSource = use_video;
-        //            IsVideoListShow = true;
-        //            ToolTipService.SetToolTip(hideList_button, hideListStr_yes);
-        //        }
-        //    }
-        //    else
-        //    {
-        //    }
-        //}
-
-        //private void ClearAllVideo()
-        //{
-        //    if (content_progressRing.IsActive)
-        //    {
-        //        SetWaitContentDialog();
-        //    }
-        //    else
-        //    {
-        //        view_grid.Visibility = Visibility.Collapsed;
-        //        main_mediaElement.AutoPlay = false;
-        //        main_mediaElement.Pause();
-        //        all_video.Clear();
-        //        use_video.Clear();
-        //        search_videoCollection.Clear();
-        //        IsVideoListShow = false;
-        //        ToolTipService.SetToolTip(hideList_button, hideListStr_no);
-        //    }
-        //}
 
         private void main_mediaElementDoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
@@ -691,19 +578,14 @@ namespace VideoPlayer
                 dateTime_tmr.Stop();
                 view.ExitFullScreenMode();
                 fullScreen_button.Content = "\uE740";
+                second_colume.Width = new GridLength(15);
             }
             else
             {
                 dateTime_textBlock.Visibility = Visibility.Visible;
                 dateTime_tmr.Start();
                 view.TryEnterFullScreenMode();
-                if (IsVideoListShow)
-                {
-                    view_grid.Visibility = Visibility.Collapsed;
-                    ads_scrollViewer.Visibility = Visibility.Collapsed;
-                    FilmsName_textBlock.Visibility = Visibility.Collapsed;
-                    IsVideoListShow = false;
-                }
+                second_colume.Width = new GridLength(0);
                 fullScreen_button.Content = "\uE73F";
             }
             hideView_button.Content = "\uE76C";
@@ -762,18 +644,6 @@ namespace VideoPlayer
             main_video.Video_Color = Color.FromArgb(50, 70, 0, 70);
         }
 
-        //private void SetTheme()
-        //{
-        //    if (this.RequestedTheme == ElementTheme.Dark)
-        //    {
-        //        SetLightTheme();
-        //    }
-        //    else
-        //    {
-        //        SetDarkTheme();
-        //    }
-        //    ExtendAcrylicIntoTitleBar();
-        //}
         #region 启用 空格键、ESC键
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -797,7 +667,6 @@ namespace VideoPlayer
             if (args.VirtualKey == Windows.System.VirtualKey.Escape)
             {//启用ESC键退出全屏
                 var view = ApplicationView.GetForCurrentView();
-
                 if (view.IsFullScreenMode)
                     view.ExitFullScreenMode();
                 dateTime_textBlock.Visibility = Visibility.Collapsed;
@@ -886,12 +755,6 @@ namespace VideoPlayer
                 #region 播放模式设置
                 if (scylePlay_bool)
                 {
-                    //if (num < 0)
-                    //{
-                    //    main_mediaElement.Play();
-                    //}
-                    //else
-                    //{              
                     index = SetListPlayMusic();
                     GetCurrentTheme();
                     if (index >= 0)
@@ -903,18 +766,11 @@ namespace VideoPlayer
                     {
                         main_mediaElement.Play();
                     }
-                    //}
                     main_video.History_progress = 0;
                     ClearProgressListValueSameCode(main_video);
                 }
                 else if (listPlay_bool)
                 {
-                    //if (num < 0)
-                    //{
-                    //    main_mediaElement.Play();
-                    //}
-                    //else
-                    //{
                     if (use_video.Count == 1)
                     {
                         index = 0;
@@ -929,33 +785,17 @@ namespace VideoPlayer
                         main_video = use_video[index];
                         SameCodeHelp();
                     }
-                    // }
-
                 }
                 else if (defaultPlay_bool)
                 {
-                    //GetCurrentTheme();
                     main_mediaElement.Pause();
-                    //if (num >= 0)
-                    //{
-                    //    //main_video.ForeGround = cornFlowerBlue;
-                    //main_video.Video_Color = Color.FromArgb(50, 70, 0, 70);
-                    //}
                 }
                 else if (listScyle_bool)
                 {
-                    //if (num < 0)
-                    //{
-                    //    main_mediaElement.Play();
-                    //}
-                    //else
-                    //{
                     SameCodeMethod();
-                    // }
                 }
                 #endregion
             }
-
         }
         private int num;
         private int SetListPlayMusic()
@@ -985,12 +825,8 @@ namespace VideoPlayer
 
         private void SetMediaItemMethod()
         {
-            //metadata_stackPanel.Children.Clear();
             metadata_StackPanel.Children.Clear();
-            //metadata_gird.Visibility = Visibility.Collapsed;
-            //IsMetadataShow_bool = false;
             mediaitem = new MediaPlaybackItem(MediaSource.CreateFromStorageFile(main_video.VideoFile));
-            //mediaitem = main_video.MediaItem;
             mediaitem.AudioTracksChanged += PlaybackItem_AudioTracksChanged;
             mediaitem.VideoTracksChanged += MediaPlaybackItem_VideoTracksChanged;
             mediaitem.TimedMetadataTracksChanged += MediaPlaybackItem_TimedMetadataTracksChanged;
@@ -1054,12 +890,10 @@ namespace VideoPlayer
 
         private void SetSelectedVideoSameCode()
         {
-            //video_stream = main_video.Video_Stream;
             try
             {
                 num = 0;
                 SetMediaItemMethod();
-
             }
             catch
             {
@@ -1069,9 +903,7 @@ namespace VideoPlayer
         }
         private List<String> value = new List<string>();
         private string searchResult_str;
-
         private ObservableCollection<Video> search_videoCollection = new ObservableCollection<Video>();
-
         private bool IsMultipleClick_bool = false;
         private void Content_gridViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -1096,14 +928,13 @@ namespace VideoPlayer
 
         }
         private ObservableCollection<VideoLibrary> videoLibrary_collection = new ObservableCollection<VideoLibrary>();
-
+        private AddFoldersAccessDialog access_dialog;
         private async void GetFolderLibraryListViewItems()
         {
             try
             {
-                myVideos = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Videos);
-                IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myVideos.Folders;
-                //addFolder_listBox.Items.Clear();
+                myVideos = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
+                IObservableVector<StorageFolder> myPictureFolders = myVideos.Folders;
                 videoLibrary_collection.Clear();
                 foreach (var item in myPictureFolders)
                 {
@@ -1115,22 +946,23 @@ namespace VideoPlayer
                 }
                 ShowAddFolderContentDialog();
             }
-            catch (System.UnauthorizedAccessException)
+            catch (UnauthorizedAccessException)
             {
-                MessageDialog content = new MessageDialog(GetVideoAccessError_str);
-                content.Commands.Add(new UICommand(OpenLocalSetting_str, async (command) =>
-                 {
-                     bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-videos"));
-                 }));
-                content.Commands.Add(new UICommand(CloseMessageDialog_str, (command) =>
-                {
-                }));
-                content.DefaultCommandIndex = 0;
-                await content.ShowAsync();
+                //MessageDialog content = new MessageDialog(GetVideoAccessError_str);
+                //content.Commands.Add(new UICommand(OpenLocalSetting_str, async (command) =>
+                // {
+                //     bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-videos"));
+                // }));
+                //content.Commands.Add(new UICommand(CloseMessageDialog_str, (command) =>
+                //{
+                //}));
+                //content.DefaultCommandIndex = 0;
+                //await content.ShowAsync();
+                access_dialog = new AddFoldersAccessDialog();
+                access_dialog.ShowDialog();
             }
         }
 
-        private string GetVideoAccessError_str;
         private string OpenLocalSetting_str;
         private string CloseMessageDialog_str;
         private async void ShowAddFolderContentDialog()
@@ -1196,9 +1028,14 @@ namespace VideoPlayer
 
         private void Main_mediaElementMediaOpened(object sender, RoutedEventArgs e)
         {
-            show_bottom.Stop();
-            show_bottom_2.Begin();
+            if (IsBottomShow == false)
+            {
+                show_bottom.Stop();
+                show_bottom_2.Begin();
+                IsBottomShow = true;
+            }
             hideBottom_tmr.Start();
+            SetProgressList();//解决，清除本地缓存后，播放记录的显示未清除异常
             if (main_mediaElement.CanSeek)
             {
                 try
@@ -1212,7 +1049,6 @@ namespace VideoPlayer
                 {
                 }
             }
-            FilmsName_textBlock.Text = currentPlayTitle_str + main_video.Video_Path;
         }
 
         private ProgressList progresslist = new ProgressList();
@@ -1221,11 +1057,21 @@ namespace VideoPlayer
             if (File.Exists(filePath))
             {
                 progresslist.progress_list = SaveProgressVM.ReadData(filePath);
+                foreach (var video in use_video)
+                {
+                    var value = progresslist.progress_list.Where(p => p.Path == video.Video_Path).Select(p => p.Path).ToList();
+                    if (value.Count == 0)
+                    {
+                        Progress progress = new Progress();
+                        progress.Path = video.Video_Path;
+                        progresslist.progress_list.Add(progress);
+                    }
+                }
             }
-            foreach (var video in use_video)
+            else
             {
-                var value = progresslist.progress_list.Where(p => p.Path == video.Video_Path).Select(p => p.Path).ToList();
-                if (value.Count == 0)
+                progresslist.progress_list.Clear();
+                foreach (var video in use_video)
                 {
                     Progress progress = new Progress();
                     progress.Path = video.Video_Path;
@@ -1252,10 +1098,10 @@ namespace VideoPlayer
         {
             IsMultipleClick_bool = true;
             content_gridView.IsItemClickEnabled = false;
-            multiple_grid.Visibility = Visibility.Visible;
+            multiple_dropShadowPanel.Visibility = Visibility.Visible;
+            show_multipleGrid.Begin();
+            hide_multipleGrid.Stop();
             content_gridView.SelectionMode = ListViewSelectionMode.Multiple;
-            //content_gridView.Margin = new Thickness(0, 52, 0, 0);
-            //ads_stackPanel.Margin = new Thickness(0);
         }
 
         private void Multiple_listBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -1267,13 +1113,12 @@ namespace VideoPlayer
                 case 2: ClearSelectedItemProgress(); break;
                 case 3:
                     allSelect_checkBox.IsChecked = false;
-                    multiple_grid.Visibility = Visibility.Collapsed;
+                    hide_multipleGrid.Begin();
+                    show_multipleGrid.Stop();
                     IsMultipleClick_bool = false;
                     content_gridView.SelectionMode = ListViewSelectionMode.None;
                     multiple_listBox.SelectedIndex = -1;
                     content_gridView.IsItemClickEnabled = true;
-                    //content_gridView.Margin = new Thickness(0, 83, 0, 0);
-                    //ads_stackPanel.Margin = new Thickness(0, 31, 0, 0);
                     foreach (var item in use_video)
                     {
                         item.IsSelected = false;
@@ -1355,11 +1200,9 @@ namespace VideoPlayer
                     catch (System.IO.FileNotFoundException)
                     {
                     }
-
                 }
             }
             remove_comboBox.SelectedIndex = -1;
-
             AfterRemoveAllVideoFromLocal();
         }
 
@@ -1463,7 +1306,7 @@ namespace VideoPlayer
                 NextPlaySameMethod();
             }
         }
-
+        private NotifyShow main_notify;
         private void PlayMode_buttonClick(object sender, RoutedEventArgs e)
         {
             if (defaultPlay_bool)
@@ -1484,8 +1327,21 @@ namespace VideoPlayer
             }
         }
 
+        private void SetNotifyContent(string content_str)
+        {
+            try
+            {
+                main_notify.Hide();
+            }
+            catch
+            {
+            }
+            main_notify = new NotifyShow(content_str);
+            main_notify.Show();
+        }
         private void ScyclePlayMode()
         {
+            SetNotifyContent(playModeStr_recycle);
             playMode_button.Content = "\uE8ED";
             ToolTipService.SetToolTip(playMode_button, playModeStr_recycle);
             scylePlay_bool = true;
@@ -1500,6 +1356,7 @@ namespace VideoPlayer
 
         private void ListPlayMode()
         {
+            SetNotifyContent(playModeStr_list);
             playMode_button.Content = "\uE845";
             ToolTipService.SetToolTip(playMode_button, playModeStr_list);
             scylePlay_bool = false;
@@ -1514,6 +1371,7 @@ namespace VideoPlayer
 
         private void ListScycleMode()
         {
+            SetNotifyContent(playModeStr_listRecycle);
             playMode_button.Content = "\uE895";
             ToolTipService.SetToolTip(playMode_button, playModeStr_listRecycle);
             scylePlay_bool = false;
@@ -1528,6 +1386,7 @@ namespace VideoPlayer
 
         private void DefaultMode()
         {
+            SetNotifyContent(playModeStr_default);
             playMode_button.Content = "\uE8D8";
             ToolTipService.SetToolTip(playMode_button, playModeStr_default);
             scylePlay_bool = false;
@@ -1567,18 +1426,14 @@ namespace VideoPlayer
             {
                 if (IsVideoListShow)
                 {
-                    view_grid.Visibility = Visibility.Collapsed;
-                    ads_scrollViewer.Visibility = Visibility.Collapsed;
-                    FilmsName_textBlock.Visibility = Visibility.Collapsed;
+                    second_colume.Width = new GridLength(0, GridUnitType.Pixel);
                     IsVideoListShow = false;
                     ToolTipService.SetToolTip(hideList_button, hideListStr_no);
 
                 }
                 else
                 {
-                    view_grid.Visibility = Visibility.Visible;
-                    ads_scrollViewer.Visibility = Visibility.Visible;
-                    FilmsName_textBlock.Visibility = Visibility.Visible;
+                    second_colume.Width = new GridLength(290, GridUnitType.Pixel);
                     IsVideoListShow = true;
                     ToolTipService.SetToolTip(hideList_button, hideListStr_yes);
                 }
@@ -1674,7 +1529,6 @@ namespace VideoPlayer
             ToolTipService.SetToolTip(addFolders_button, addFolder_str);
             ToolTipService.SetToolTip(refreshVideos_button, videoFolder_str);
             ToolTipService.SetToolTip(settings_button, setting_str);
-            ToolTipService.SetToolTip(transCode_button, transcode_str);
         }
         private string audioLanguage_str;
         private string fillMode_str;
@@ -1683,7 +1537,9 @@ namespace VideoPlayer
         private string addFolder_str;
         private string videoFolder_str;
         private string setting_str;
-        private string transcode_str;
+        private string noPicture_str;
+        private string noPicturesFolder_str;
+        private string saveSucceed_str;
         private void ReadLocalStr()
         {
             playModeStr_default = resourceLoader.GetString("playModeStr_default");
@@ -1697,7 +1553,6 @@ namespace VideoPlayer
             playRate_str = resourceLoader.GetString("playRate_str");
             audioLanguage_str = resourceLoader.GetString("audioLanguage_str");
             fillMode_str = resourceLoader.GetString("fillMode_str");
-            GetVideoAccessError_str = resourceLoader.GetString("GetVideoAccessError_str");
             OpenLocalSetting_str = resourceLoader.GetString("OpenLocalSetting_str");
             CloseMessageDialog_str = resourceLoader.GetString("CloseMessageDialog_str");
             mediaTrack_str = resourceLoader.GetString("mediaTrack_str");
@@ -1705,8 +1560,10 @@ namespace VideoPlayer
             addFolder_str = resourceLoader.GetString("addFolder_str");
             videoFolder_str = resourceLoader.GetString("videoFolder_str");
             setting_str = resourceLoader.GetString("setting_str");
-            transcode_str = resourceLoader.GetString("transcode_str");
             currentPlayTitle_str = resourceLoader.GetString("currentPlayTitle_str");
+            noPicture_str = resourceLoader.GetString("noPicture_str");
+            noPicturesFolder_str = resourceLoader.GetString("noPicturesFolder_str");
+            saveSucceed_str = resourceLoader.GetString("saveSucceed_str");
         }
 
         private void Click_grid_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -1739,42 +1596,6 @@ namespace VideoPlayer
         }
         private List<String> audioLanguage_list = new List<string>();
 
-        private void AudioLanguage_listBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //audioLanguage_flyout.Hide();
-            //try
-            //{
-            //    int trackIndex = (int)((ListBoxItem)((ListBox)sender).SelectedItem).Tag;
-            //    mediaitem.AudioTracks.SelectedIndex = trackIndex;
-            //}
-            //catch
-            //{
-            //}
-
-        }
-
-        //private void ResizeVideo_listBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    resizeVideo_flyout.Hide();
-        //    switch (resizeVideo_listBox.SelectedIndex)
-        //    {
-        //        case 0:
-        //            main_mediaElement.Stretch = Stretch.None;
-        //            break;
-        //        case 1:
-        //            main_mediaElement.Stretch = Stretch.Uniform;
-        //            break;
-        //        case 2:
-        //            main_mediaElement.Stretch = Stretch.UniformToFill;
-        //            break;
-        //        case 3:
-        //            main_mediaElement.Stretch = Stretch.Fill;
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
-
         private StorageLibrary myVideos;
         private async void AddFolder_buttonClick(object sender, RoutedEventArgs e)
         {
@@ -1793,7 +1614,6 @@ namespace VideoPlayer
             }
             catch
             {
-
             }
         }
 
@@ -1820,7 +1640,6 @@ namespace VideoPlayer
             all_video.Clear();
             use_video.Clear();
             await GetVideoLibrary();
-
         }
 
         private void Bottom_gridPointerEntered(object sender, PointerRoutedEventArgs e)
@@ -1904,41 +1723,12 @@ namespace VideoPlayer
                     audioLanguage_flyout.Items.Add(flyout_item);
                 }
             });
-            //string messageDialog_str;
-            //if (args.CollectionChange == CollectionChange.ItemInserted)
-            //{
-            //    var insertedTrack = sender.AudioTracks[(int)args.Index];
-
-            //    var decoderStatus = insertedTrack.SupportInfo.DecoderStatus;
-            //    if (decoderStatus != MediaDecoderStatus.FullySupported)
-            //    {
-            //        if (decoderStatus == MediaDecoderStatus.Degraded)
-            //        {
-            //            messageDialog_str = $"Track {insertedTrack.Name} can play but playback will be degraded. {insertedTrack.SupportInfo.DegradationReason}";
-            //        }
-            //        else
-            //        {
-            //            // status is MediaDecoderStatus.UnsupportedSubtype or MediaDecoderStatus.UnsupportedEncoderProperties
-            //            messageDialog_str = $"Track {insertedTrack.Name} uses an unsupported media format.";
-            //        }
-            //        MessageDialog dialog = new MessageDialog(messageDialog_str);
-            //        await dialog.ShowAsync();
-            //        //Windows.Media.MediaProperties.AudioEncodingProperties props = insertedTrack.GetEncodingProperties();
-            //        //await HelpUserInstallCodec(props);
-            //    }
-            //    else
-            //    {
-            //        //insertedTrack.OpenFailed += InsertedTrack_OpenFailed;
-            //    }
-            //}
         }
 
         private async void MediaPlaybackItem_TimedMetadataTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                //metadata_stackPanel.Children.Clear();
-                //metadata_flyout.Items.Clear();
                 metadata_StackPanel.Children.Clear();
                 for (int index = 0; index < sender.TimedMetadataTracks.Count; index++)
                 {
@@ -1949,55 +1739,21 @@ namespace VideoPlayer
                         Content = String.IsNullOrEmpty(timedMetadataTrack.Language) ? $"Track {index}" : timedMetadataTrack.Name + " " + timedMetadataTrack.Language,
                         Tag = (uint)index
                     };
-                    //toggle.Foreground = whiteSmoke;
-                    //toggle.Background = transParent;
                     toggle.Checked += Toggle_Checked;
                     toggle.Unchecked += Toggle_Unchecked;
-
-                    //metadata_stackPanel.Children.Add(toggle);
                     metadata_StackPanel.Children.Add(toggle);
-
-                    //MenuFlyoutItem flyoutItem = new MenuFlyoutItem()
-                    //{
-                    //    Text = String.IsNullOrEmpty(timedMetadataTrack.Language) ? $"Track {index}" : timedMetadataTrack.Name + " " + timedMetadataTrack.Language,
-                    //    Tag = (uint)index
-                    //};
-                    //flyoutItem.Click += new RoutedEventHandler(MenuFlyoutItemClick);
-                    //metadata_flyout.Items.Add(flyoutItem);
                 }
             });
         }
 
         private void MenuFlyoutAudioItemClick(object sender, RoutedEventArgs e)
         {
-
-            //    foreach (var flyout_item in metadata_flyout.Items)
-            //    {
-            //        mediaitem.TimedMetadataTracks.SetPresentationMode((uint)flyout_item.Tag, TimedMetadataTrackPresentationMode.Disabled);
-            //        flyout_item.Foreground = black;
-            //    }
-            //    var item = (MenuFlyoutItem)sender;
-            //    item.Foreground = skyblue;
-            //    mediaitem.TimedMetadataTracks.SetPresentationMode((uint)((MenuFlyoutItem)sender).Tag,
-            //TimedMetadataTrackPresentationMode.PlatformPresented);
-
             int trackIndex = (int)(((MenuFlyoutItem)sender).Tag);
             mediaitem.AudioTracks.SelectedIndex = trackIndex;
         }
 
         private void MenuFlyoutVideoItemClick(object sender, RoutedEventArgs e)
         {
-
-            //    foreach (var flyout_item in metadata_flyout.Items)
-            //    {
-            //        mediaitem.TimedMetadataTracks.SetPresentationMode((uint)flyout_item.Tag, TimedMetadataTrackPresentationMode.Disabled);
-            //        flyout_item.Foreground = black;
-            //    }
-            //    var item = (MenuFlyoutItem)sender;
-            //    item.Foreground = skyblue;
-            //    mediaitem.TimedMetadataTracks.SetPresentationMode((uint)((MenuFlyoutItem)sender).Tag,
-            //TimedMetadataTrackPresentationMode.PlatformPresented);
-
             int trackIndex = (int)(((MenuFlyoutItem)sender).Tag);
             mediaitem.VideoTracks.SelectedIndex = trackIndex;
         }
@@ -2013,72 +1769,50 @@ namespace VideoPlayer
             catch
             {
             }
-
         }
 
-        private void Toggle_Checked(object sender, RoutedEventArgs e) =>
-    mediaitem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
-        TimedMetadataTrackPresentationMode.PlatformPresented);
-
-        private void Toggle_Unchecked(object sender, RoutedEventArgs e) =>
-    mediaitem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
-        TimedMetadataTrackPresentationMode.Disabled);
-
-        //private bool IsMetadataShow_bool = false;
-        private void Metadata_buttonClick(object sender, RoutedEventArgs e)
+        private void Toggle_Checked(object sender, RoutedEventArgs e)
         {
-            //metadata_gird.Visibility = Visibility.Visible;
-            //if (IsMetadataShow_bool)
-            //{
-            //    show_metadataGrid.Stop();
-            //    hide_metadataGrid.Begin();
-            //    IsMetadataShow_bool = false;
-            //}
-            //else
-            //{
-            //    hide_metadataGrid.Stop();
-            //    show_metadataGrid.Begin();
-            //    IsMetadataShow_bool = true;
-            //}
-
+            try//偶尔出现 checked 崩溃，使用捕获异常语句来防止闪退
+            {
+                mediaitem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
+       TimedMetadataTrackPresentationMode.PlatformPresented);
+            }
+            catch
+            {
+            }
         }
+
+
+        private void Toggle_Unchecked(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                mediaitem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
+       TimedMetadataTrackPresentationMode.Disabled);
+            }
+            catch
+            {
+            }
+        }
+
 
         private void Metadata_girdPointerEntered(object sender, PointerRoutedEventArgs e)
         {
             tmr.Stop();
         }
 
-        private void AddFolders_button_Click(object sender, RoutedEventArgs e)
+        private void AddFolders_buttonClick(object sender, RoutedEventArgs e)
         {
             GetFolderLibraryListViewItems();
-
         }
 
-        private async void RefreshVideos_button_Click(object sender, RoutedEventArgs e)
+        private async void RefreshVideos_buttonClick(object sender, RoutedEventArgs e)
         {
             await GetVideoLibrary();
         }
 
-        private void TransCode_button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(ConversionPage));
-            main_mediaElement.AutoPlay = false;
-            progress_tmr.Stop();
-        }
-
-        //private void Theme_button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    SetTheme();
-        //}
-
-        private void Settings_button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(SettingPage), main_video);
-            main_mediaElement.AutoPlay = false;
-            progress_tmr.Stop();
-        }
-
-        private void Search_autoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        private void Search_autoSuggestBoxTextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
             var list = use_video.Where(p => p.Video_Path == search_autoSuggestBox.Text).Select(p => p.Video_Path).ToList();
             if (list.Count == 0)
@@ -2101,7 +1835,7 @@ namespace VideoPlayer
             search_autoSuggestBox.ItemsSource = value;
         }
 
-        private void Search_autoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        private void Search_autoSuggestBoxQuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
             if (!String.IsNullOrEmpty(search_autoSuggestBox.Text.Trim()))
             {
@@ -2121,68 +1855,118 @@ namespace VideoPlayer
             }
             IsVideoListShow = true;
             view_grid.Visibility = Visibility.Visible;
-            ads_scrollViewer.Visibility = Visibility.Visible;
-            FilmsName_textBlock.Visibility = Visibility.Visible;
         }
 
-        private void CloseMetadata_buttton_Click(object sender, RoutedEventArgs e)
+        private StorageFile cutScreenFile;
+        private async void ScreenShot_itemClick(object sender, RoutedEventArgs e)
         {
-            //show_metadataGrid.Stop();
-            //hide_metadataGrid.Begin();
-            //IsMetadataShow_bool = false;
+            cutScreenFile = await CutScreen.GetScreen(main_video, main_mediaElement);
+            curScreen_textBlock.Text = $"{saveSucceed_str}  {cutScreenFile.Path}";
+            await cutScreen_contentDialog.ShowAsync();
         }
 
-        private void CloseSettings_button_Click(object sender, RoutedEventArgs e)
+        private void CloseDialog_ButtonClick(object sender, RoutedEventArgs e)
         {
-            hide_settingsGrid.Begin();
-            show_settingsGrid.Stop();
-            hideView_button.Content = "\uE70E";
-            ToolTipService.SetToolTip(hideView_button, hideViewStr_no);
-            IsSettingsGridShow_bool = false;
+            addFolder_contentDialog.Hide();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void None_itemClick(object sender, RoutedEventArgs e)
+        {
+            main_mediaElement.Stretch = Stretch.None;
+        }
+
+        private void Uniform_itemClick(object sender, RoutedEventArgs e)
+        {
+            main_mediaElement.Stretch = Stretch.Uniform;
+        }
+
+        private void UniformToFill_itemClick(object sender, RoutedEventArgs e)
+        {
+            main_mediaElement.Stretch = Stretch.UniformToFill;
+        }
+
+        private void Fill_itemClick(object sender, RoutedEventArgs e)
+        {
+            main_mediaElement.Stretch = Stretch.Fill;
+        }
+
+        private void CloseCutDialog_buttonClick(object sender, RoutedEventArgs e)
+        {
+            cutScreen_contentDialog.Hide();
+        }
+
+        private async void EditPicture_buttonClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                bool result = await Windows.System.Launcher.LaunchFileAsync(cutScreenFile);
+            }
+            catch
+            {
+                curScreen_textBlock.Text = noPicture_str;
+            }
+        }
+
+        private async void OpenCutAdress_buttonClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                bool result = await Windows.System.Launcher.LaunchFolderAsync(await KnownFolders.PicturesLibrary.GetFolderAsync("M-Player"));
+            }
+            catch
+            {
+                curScreen_textBlock.Text = noPicturesFolder_str;
+            }
+
+        }
+
+        private void Settings_buttonClick(object sender, RoutedEventArgs e)
+        {
+            main_mediaElement.AutoPlay = false;
+            progress_tmr.Stop();
+            tmr.Stop();//解决偶尔出现设置界面指针消失异常
+            ShowCursor();
+            Frame.Navigate(typeof(SecondPage));
+        }
+
+        private void Replay_menuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (content_progressRing.IsActive)
+            {
+                SetWaitContentDialog();
+            }
+            else
+            {
+                progress_tmr.Stop();
+                #region 右键选项点击播放
+                GetCurrentTheme();
+                main_mediaElement.AutoPlay = true;
+                main_video = (Video)sender_value.DataContext;
+                foreach (var progress in progresslist.progress_list)
+                {
+                    if (progress.Path == main_video.Video_Path)
+                    {
+                        progress.Value = 0;
+                    }
+                }
+                SaveProgressVM.SaveData(progresslist.progress_list, filePath);
+
+                SetSelectedVideoSameCode();
+                #endregion
+            }
+        }
+
+        private async void OpenTheFolder_button_Click(object sender, RoutedEventArgs e)
         {
             sender_value = (FrameworkElement)sender;
             var remove_library = (VideoLibrary)sender_value.DataContext;
             foreach (var folder in myVideos.Folders)
             {
-
                 if (folder.Path == remove_library.FolderPath)
                 {
                     bool result = await Windows.System.Launcher.LaunchFolderAsync(folder);
                 }
             }
-        }
-
-        private void ScreenShot_item_Click(object sender, RoutedEventArgs e)
-        {
-            CutScreen.GetScreen(main_video, main_mediaElement);
-        }
-
-        private void CloseDialog_Button_Click(object sender, RoutedEventArgs e)
-        {
-            addFolder_contentDialog.Hide();
-        }
-
-        private void None_item_Click(object sender, RoutedEventArgs e)
-        {
-            main_mediaElement.Stretch = Stretch.None;
-        }
-
-        private void Uniform_item_Click(object sender, RoutedEventArgs e)
-        {
-            main_mediaElement.Stretch = Stretch.Uniform;
-        }
-
-        private void UniformToFill_item_Click(object sender, RoutedEventArgs e)
-        {
-            main_mediaElement.Stretch = Stretch.UniformToFill;
-        }
-
-        private void Fill_item_Click(object sender, RoutedEventArgs e)
-        {
-            main_mediaElement.Stretch = Stretch.Fill;
         }
     }
 }

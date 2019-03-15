@@ -182,6 +182,8 @@ namespace VideoPlayer.View
             //{
             //    this.RequestedTheme = ElementTheme.Dark;
             //}
+            this.Background = MainPage.page.Background;
+            this.RequestedTheme = ElementTheme.Dark;
             SetIsToggleSwitchIsOn();
             SetSoundPlayerVolume();
             GetLocalDataMethod();
@@ -264,7 +266,7 @@ namespace VideoPlayer.View
             {
                 //List<Progress> setting_progressList = SaveProgressVM.ReadData(filePath);
                 await data_file.DeleteAsync();
-                data_textBlock.Text = "0 KB";               
+                data_textBlock.Text = "0 KB";      
                 //setting_progressList.Clear();
             }           
         }
@@ -272,6 +274,11 @@ namespace VideoPlayer.View
         private void CloseDialog_button_Click(object sender, RoutedEventArgs e)
         {
             about_contentDialog.Hide();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            //transCode_frame.Navigate(typeof(ConversionPage));
         }
     }
 }

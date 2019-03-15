@@ -298,10 +298,6 @@
           <source>关闭</source>
           <target state="translated">Close</target>
         </trans-unit>
-        <trans-unit id="GetVideoAccessError_str" translate="yes" xml:space="preserve">
-          <source>若添加文件夹到视频库弹出错误提示，请打开应用获取本地视频权限</source>
-          <target state="translated">If you add a folder to the video library and pop up an error prompt, open the application to get local video privileges</target>
-        </trans-unit>
         <trans-unit id="OpenLocalSetting_str" translate="yes" xml:space="preserve">
           <source>打开设置</source>
           <target state="translated">Open Settings</target>
@@ -319,7 +315,7 @@
           <target state="translated">Sound volume</target>
         </trans-unit>
         <trans-unit id="useSoundPlayer_textBlock.Text" translate="yes" xml:space="preserve">
-          <source>启用应用音效</source>
+          <source>应用音效</source>
           <target state="translated">Enable app sound</target>
         </trans-unit>
         <trans-unit id="allSelect_checkBox.Content" translate="yes" xml:space="preserve">
@@ -384,19 +380,55 @@
         </trans-unit>
         <trans-unit id="Fill_item.Text" translate="yes" xml:space="preserve">
           <source>填充窗口(拉伸)</source>
-          <target state="new">填充窗口(拉伸)</target>
+          <target state="translated">Fill</target>
         </trans-unit>
         <trans-unit id="None_item.Text" translate="yes" xml:space="preserve">
           <source>原始尺寸</source>
-          <target state="new">原始尺寸</target>
+          <target state="translated">None</target>
         </trans-unit>
         <trans-unit id="UniformToFill_item.Text" translate="yes" xml:space="preserve">
           <source>全屏(保持纵横比)</source>
-          <target state="new">全屏(保持纵横比)</target>
+          <target state="translated">UniformToFill</target>
         </trans-unit>
         <trans-unit id="Uniform_item.Text" translate="yes" xml:space="preserve">
           <source>宽屏(保持纵横比)</source>
-          <target state="new">宽屏(保持纵横比)</target>
+          <target state="translated">Uniform</target>
+        </trans-unit>
+        <trans-unit id="access_textBlock.Text" translate="yes" xml:space="preserve">
+          <source>若添加文件夹到视频库弹出错误提示，请打开本地设置获取相关权限</source>
+          <target state="translated">If adding a folder to the video library pops up an error, please open the local settings to get the relevant permissions.</target>
+        </trans-unit>
+        <trans-unit id="openSettings_button.Content" translate="yes" xml:space="preserve">
+          <source>打开设置</source>
+          <target state="translated">Open Settings</target>
+        </trans-unit>
+        <trans-unit id="closeCutDialog_button.Content" translate="yes" xml:space="preserve">
+          <source>关  闭</source>
+          <target state="translated">Close</target>
+        </trans-unit>
+        <trans-unit id="editPicture_button.Content" translate="yes" xml:space="preserve">
+          <source>编辑图片</source>
+          <target state="translated">Edit picture</target>
+        </trans-unit>
+        <trans-unit id="openCutAdress_button.Content" translate="yes" xml:space="preserve">
+          <source>打开位置</source>
+          <target state="translated">Open Settings</target>
+        </trans-unit>
+        <trans-unit id="replay_menuItem.Text" translate="yes" xml:space="preserve">
+          <source>重新播放该项</source>
+          <target state="translated">Replay the item</target>
+        </trans-unit>
+        <trans-unit id="noPicturesFolder_str" translate="yes" xml:space="preserve">
+          <source>该文件夹已移动或重命名！</source>
+          <target state="translated">The folder has been moved or renamed!</target>
+        </trans-unit>
+        <trans-unit id="noPicture_str" translate="yes" xml:space="preserve">
+          <source>该文件已移动或重命名！</source>
+          <target state="translated">The file has been moved or renamed!</target>
+        </trans-unit>
+        <trans-unit id="transCodeTitle_textBlock.Text" translate="yes" xml:space="preserve">
+          <source>转换格式</source>
+          <target state="translated">Transcode</target>
         </trans-unit>
       </group>
     </body>

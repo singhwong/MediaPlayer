@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10" xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6" IgnorableNamespaces="uap mp uap3 iot uap6">
-  <Identity Name="14523wongsoft.M-Player" Publisher="CN=142C2F57-E79D-408C-83F9-E14BC50B8D43" Version="1.1.61.0" />
+  <Identity Name="14523wongsoft.M-Player" Publisher="CN=142C2F57-E79D-408C-83F9-E14BC50B8D43" Version="1.1.63.0" />
   <mp:PhoneIdentity PhoneProductId="8ffb6abc-1b58-4c69-b328-0b657c521a58" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>M-Player</DisplayName>

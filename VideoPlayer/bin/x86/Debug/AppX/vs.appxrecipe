@@ -19,24 +19,24 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>E75A96BE0A1E3CA5994A2D5885625E812B3A2E39D3E1696678B20C87DF9DCEB6</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>14523wongsoft.M-Player_1.1.61.0_x86__pscw7et81htc4</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>068EE81B10039583137D57818B3A17B1A582569163D36FC09C096F3F2BC1850E</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>14523wongsoft.M-Player_1.1.63.0_x86__pscw7et81htc4</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>14523wongsoft.M-Player_pscw7et81htc4!App</RegisteredUserModeAppID>
     <RegisteredPackageID>14523wongsoft.M-Player</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=142C2F57-E79D-408C-83F9-E14BC50B8D43</RegisteredPackagePublisher>
-    <RegisteredVersion>1.1.61.0</RegisteredVersion>
+    <RegisteredVersion>1.1.63.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-03-11T05:52:18.818</Modified>
+      <Modified>2019-03-15T07:40:20.493</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\VideoPlayer.exe">
       <PackagePath>entrypoint\VideoPlayer.exe</PackagePath>
-      <Modified>2019-03-11T05:52:17.500</Modified>
+      <Modified>2019-03-15T07:40:18.677</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\singh\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
       <PackagePath>ColorCode.Core.dll</PackagePath>
@@ -1030,63 +1030,75 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\VideoPlayer.xr.xml">
       <PackagePath>VideoPlayer.xr.xml</PackagePath>
-      <Modified>2019-03-11T05:52:17.012</Modified>
+      <Modified>2019-03-15T05:49:40.357</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.100</Modified>
+      <Modified>2019-03-15T07:40:18.289</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Controls\AddFoldersAccessDialog.xbf">
+      <PackagePath>Controls\AddFoldersAccessDialog.xbf</PackagePath>
+      <Modified>2019-03-15T07:40:18.289</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Controls\Notification.xbf">
+      <PackagePath>Controls\Notification.xbf</PackagePath>
+      <Modified>2019-03-15T07:40:18.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\acrylic.xbf">
       <PackagePath>Style\acrylic.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.098</Modified>
+      <Modified>2019-03-15T07:40:18.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\buttonStyle_2.xbf">
       <PackagePath>Style\buttonStyle_2.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.099</Modified>
+      <Modified>2019-03-15T07:40:18.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\buttonStyle.xbf">
       <PackagePath>Style\buttonStyle.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.099</Modified>
+      <Modified>2019-03-15T07:40:18.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\listViewStyle.xbf">
       <PackagePath>Style\listViewStyle.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.099</Modified>
+      <Modified>2019-03-15T07:40:18.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\sliderStyle.xbf">
       <PackagePath>Style\sliderStyle.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.043</Modified>
+      <Modified>2019-03-15T07:40:18.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\View\ConversionPage.xbf">
       <PackagePath>View\ConversionPage.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.080</Modified>
+      <Modified>2019-03-15T07:40:18.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\View\ListViewControl.xbf">
       <PackagePath>View\ListViewControl.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.100</Modified>
+      <Modified>2019-03-15T07:40:18.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\View\MainPage.xbf">
       <PackagePath>View\MainPage.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.094</Modified>
+      <Modified>2019-03-15T07:40:18.284</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\progressRingStyle.xbf">
       <PackagePath>Style\progressRingStyle.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.052</Modified>
+      <Modified>2019-03-15T07:40:18.238</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\textBlock_icon.xbf">
       <PackagePath>Style\textBlock_icon.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.099</Modified>
+      <Modified>2019-03-15T07:40:18.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\textBlock_text.xbf">
       <PackagePath>Style\textBlock_text.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.100</Modified>
+      <Modified>2019-03-15T07:40:18.289</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\View\SecondPage.xbf">
+      <PackagePath>View\SecondPage.xbf</PackagePath>
+      <Modified>2019-03-15T07:40:18.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\View\SettingPage.xbf">
       <PackagePath>View\SettingPage.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.101</Modified>
+      <Modified>2019-03-15T07:40:18.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Style\transportControls.xbf">
       <PackagePath>Style\transportControls.xbf</PackagePath>
-      <Modified>2019-03-11T05:52:17.076</Modified>
+      <Modified>2019-03-15T07:40:18.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -1242,11 +1254,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-03-11T03:31:03.418</Modified>
+      <Modified>2019-03-15T07:40:19.331</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gitUWP\UWP-VideoPlayer\VideoPlayer\bin\x86\Debug\Core\VideoPlayer.exe">
       <PackagePath>VideoPlayer.exe</PackagePath>
-      <Modified>2019-03-11T05:52:18.812</Modified>
+      <Modified>2019-03-15T07:40:20.489</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

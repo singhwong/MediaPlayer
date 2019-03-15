@@ -22,13 +22,14 @@ namespace VideoPlayer.ViewModle
         private static string openAdress_str = resourceLoader.GetString("openAdress_str");
         private static string editPhoto_str = resourceLoader.GetString("editPhoto_str");
         private static string closeMessage_str = resourceLoader.GetString("CloseMessageDialog_str");
-        public static async void GetScreen(Video video,MediaElement mediaElement)
+        public static async Task<StorageFile> GetScreen(Video video,MediaElement mediaElement)
         {
+            string desiredName = video.VideoFile.DisplayName + ".jpg";
+            StorageFolder folder = await KnownFolders.PicturesLibrary.CreateFolderAsync("M-Player", CreationCollisionOption.OpenIfExists);
+            var saveFile = await folder.CreateFileAsync(desiredName, CreationCollisionOption.GenerateUniqueName);
             try
             {
-                string desiredName = video.Title + ".jpg";
-                StorageFolder folder = await KnownFolders.PicturesLibrary.CreateFolderAsync("M-Player", CreationCollisionOption.OpenIfExists);
-                StorageFile saveFile = await folder.CreateFileAsync(desiredName, CreationCollisionOption.GenerateUniqueName);
+               
                 RenderTargetBitmap bitmap = new RenderTargetBitmap();
                 await bitmap.RenderAsync(mediaElement);
                 var pixelBuffer = await bitmap.GetPixelsAsync();
@@ -44,25 +45,26 @@ namespace VideoPlayer.ViewModle
                          pixelBuffer.ToArray());
                     await encoder.FlushAsync();
                 }
-                MessageDialog message = new MessageDialog(saveSucceed_str + saveFile.Path);
-                message.Commands.Add(new UICommand(openAdress_str, async (command) =>
-                {
-                    bool result = await Windows.System.Launcher.LaunchFolderAsync(folder);
-                }));
-                message.Commands.Add(new UICommand(editPhoto_str, async (command) =>
-                {
-                    bool result = await Windows.System.Launcher.LaunchFileAsync(saveFile);
-                }));
-                message.Commands.Add(new UICommand(closeMessage_str, (command) =>
-                {
-                }));
-                message.DefaultCommandIndex = 2;
-                await message.ShowAsync();
+                //MessageDialog message = new MessageDialog(saveSucceed_str + saveFile.Path);
+                //message.Commands.Add(new UICommand(openAdress_str, async (command) =>
+                //{
+                //    bool result = await Windows.System.Launcher.LaunchFolderAsync(folder);
+                //}));
+                //message.Commands.Add(new UICommand(editPhoto_str, async (command) =>
+                //{
+                //    bool result = await Windows.System.Launcher.LaunchFileAsync(saveFile);
+                //}));
+                //message.Commands.Add(new UICommand(closeMessage_str, (command) =>
+                //{
+                //}));
+                //message.DefaultCommandIndex = 2;
+                //await message.ShowAsync();
+                
             }
             catch
             {
             }
-
+            return saveFile;
         }
     }
 }

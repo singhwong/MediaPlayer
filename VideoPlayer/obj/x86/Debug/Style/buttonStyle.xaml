@@ -21,7 +21,7 @@
         <Setter Property="FontWeight"
                 Value="Thin" />
         <Setter Property="FontSize"
-                Value="25" />
+                Value="23" />
         <Setter Property="FontFamily"
                 Value="Segoe MDL2 Assets"/>
         <Setter Property="UseSystemFocusVisuals" 
